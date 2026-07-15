@@ -1,0 +1,27 @@
+# Logical task names -> lmms-eval task names.
+# Check your local lmms-eval installation and edit these names if needed.
+tasks:
+  textvqa:
+    ability: OCR
+    lmms_eval_name: textvqa
+    metric: exact_match
+  chartqa:
+    ability: chart_reasoning
+    lmms_eval_name: chartqa
+    metric: relaxed_accuracy
+  docvqa:
+    ability: document_understanding
+    lmms_eval_name: docvqa_val
+    metric: anls
+  scienceqa:
+    ability: science_reasoning
+    lmms_eval_name: scienceqa_img
+    metric: accuracy
+  gqa:
+    ability: general_vqa
+    lmms_eval_name: gqa
+    metric: accuracy
+  mathvista:
+    ability: visual_math_reasoning
+    lmms_eval_name: mathvista
+    metric: accuracy

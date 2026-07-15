@@ -1,0 +1,4 @@
+set,source,count,share,known_count
+Final 520,Contains ChartQA train occurrence,336,0.6461538461538462,403
+Final 520,Contains ChartQA validation occurrence,59,0.11346153846153846,403
+Final 520,Contains ChartQA test occurrence,23,0.04423076923076923,403

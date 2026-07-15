@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{microtype}
+
+\title{Scale Is Not Symmetric: Directional Scale Reliability in Chart Question Answering}
+
+\author{Anonymous EMNLP Submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Chart question answering models must preserve the numerical scale expressed by visual marks, axes, labels, and units. We study a sparse but high-impact reliability failure in which a model predicts a numerically related answer at the wrong scale, such as \textit{0.61} instead of \textit{61}. The tempting repair is to normalize numbers or train a one-direction scale adapter; our central finding is that this is the wrong abstraction. Scale correction is directional and regime-dependent. We construct ScaleQA-Natural, an author-adjudicated and independently inclusion-audited diagnostic set of 520 natural scale-conflict candidates, and use adapters, prompts, structured verifiers, calculators, and policy selectors as probes. In an answer-tuned Qwen2.5-VL-7B setting, a large-positive scale-contrastive adapter improves held-out ChartQA test accuracy from 88.60 to 89.32 and recovers 49.52\% of strict test-set gold-scale errors. Yet on ScaleQA-Natural, self-check prompting and a lightweight no-leak selector outperform a global adapter, while candidate oracles reach 90--92\%. The selector's gain over self-check is modest but stable across held-out splits. The bottleneck is therefore not simply generating scaled alternatives, but selecting the scale regime required by the chart and question. Cross-backbone and external numeric checks show the same boundary: scale-like failures transfer more robustly than a particular correction recipe. Our results argue for regime-aware scale reliability evaluation and caution against unconditional numeric correction.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_problem}
+\input{sections/04_method}
+\input{sections/05_experiments}
+\input{sections/06_analysis}
+\input{sections/07_conclusion}
+\clearpage
+\input{sections/08_limitations}
+
+\bibliography{references}
+
+\appendix
+\input{sections/appendix}
+
+\end{document}

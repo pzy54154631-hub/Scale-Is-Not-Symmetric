@@ -1,0 +1,71 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\paragraph{Setup.}
+The main experiments use Qwen2.5-VL-7B-Instruct \citep{qwen25vl2025}. We use ChartQA validation for development and held-out ChartQA test for the main task result \citep{masry2022chartqa}. We also evaluate InternVL2.5-1B/8B \citep{internvl25} and numeric subsets of PlotQA \citep{methani2020plotqa}, ChartBench \citep{chartbench2024}, MathVista \citep{lu2023mathvista}, and InfographicVQA \citep{mathew2022infographicvqa}. Numeric answers are scored with the repository evaluator: normalized exact match for text answers and 5\% tolerance for numeric answers. The final Qwen scale adapters use $K=300$ pairs, 300 steps, learning rate $10^{-6}$, $\beta=2.0$, and margin $m=0.10$.
+
+The experiments follow Figure~\ref{fig:regime_pipeline}. Held-out ChartQA asks whether a directional update can repair real task errors; ScaleQA-Natural asks whether it remains safe across regimes. Prompting, verification, and policy selection then test whether the correct answer is missing from the candidate set or merely not selected.
+
+\subsection{Held-Out ChartQA}
+
+The first question is deliberately narrow: can a scale-directed intervention fix natural scale errors without damaging the main task?
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/official_test_attribution}}
+\caption{Held-out ChartQA test attribution for Qwen2.5-VL-7B. The scale update is measured on top of the answer-tuned adapter; clean direct scale-only tuning is a negative control.}
+\label{tab:official_test}
+\end{table}
+
+Table~\ref{tab:official_test} separates answer tuning from scale tuning. The raw Qwen2.5-VL-7B pipeline obtains 0.7804 on ChartQA test. Answer tuning reaches 0.8860. Continuing from that adapter, large-positive scale-contrastive tuning reaches 0.8932 over five seeds, a +0.0072 gain over the answer-tuned baseline, with paired bootstrap 95\% CI $[+0.0038,+0.0109]$. In contrast, clean scale-only adaptation from the raw backbone hurts test accuracy. Scale supervision can repair a real direction of error once the model is in a stable chart-answering regime, but it is not a standalone numeric fix.
+
+This attribution also explains why the answer-tuned setting is the only setting where the scale update is useful. The answer-only adapter already improves short-answer formatting, OCR-sensitive answer extraction, and ChartQA-style response alignment. The scale adapter then makes a small preference update inside this stabilized answer space. Starting from the raw backbone, the same scale-only objective is too narrow: it changes numeric preferences without first improving the model's general answer format and grounding behavior.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/chartqa_test_subset_results}}
+\caption{Held-out ChartQA test subset analysis. The strict subset is baseline-zero by construction and is used only as a recovery probe.}
+\label{tab:test_subset_results}
+\end{table}
+
+Table~\ref{tab:test_subset_results} shows where the gain comes from. On strict test-set gold-scale errors, the answer-tuned baseline scores 0 by construction, while the scale adapter recovers 49.52\% of the 21 examples. Non-gold-scale accuracy also increases slightly, from 0.8935 to 0.8966. TextVQA-500 remains unchanged at 0.9420, suggesting no measurable degradation on this adjacent text-rich VQA safety set.
+
+\subsection{ScaleQA-Natural}
+
+The second question is whether the same intervention is safe when scale conflicts are collected across regimes rather than filtered to one held-out recovery subset.
+
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{tables/scaleqa_natural_results}}
+\caption{ScaleQA-Natural diagnostic results. ScaleQA-Natural-520 reports the image-evaluable subset; ScaleQA-Core and InternVL-mined report corrected five-seed pair-mode means.}
+\label{tab:scaleqa_results}
+\end{table*}
+
+ScaleQA-Natural reveals why a single aggregate number is insufficient. On ScaleQA-Natural-520, answer tuning improves the raw backbone from 0.4567 to 0.5095, while a scale-aware prompt drops to 0.4419 and the global large-positive adapter reaches 0.4951. On ScaleQA-Core, balanced and all-pair variants outperform the answer-tuned base; on the InternVL-mined subset, small-positive adaptation is much stronger than every other global policy. Thus, directionality is real, but it is not simply ``large is good, small is bad.'' The safe direction depends on the source and subtype of the scale conflict.
+
+\begin{table}[t]
+\centering
+\small
+\input{tables/scaleqa_tta_baselines}
+\caption{Training-free prompting baselines on ScaleQA-Natural-520 using the answer-tuned Qwen2.5-VL-7B pipeline.}
+\label{tab:tta_baselines}
+\end{table}
+
+Table~\ref{tab:tta_baselines} adds a stronger non-training baseline. A self-check prompt reaches 0.5455, outperforming the direct answer prompt and the global large-positive adapter on ScaleQA-Natural-520. Majority voting gives little improvement, while oracle prompt choice reaches 0.6744. These results weaken any claim that a global adapter is the best intervention; they strengthen the diagnostic conclusion that scale correction depends on selecting the right regime or prompt behavior.
+
+\subsection{Cross-Backbone and External Checks}
+
+The final experimental question is scope: does the reliability phenomenon extend beyond the main Qwen setting, and does the intervention transfer with it?
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/transfer_boundary_compact}}
+\caption{Transfer boundary summary. Full cross-backbone and external rows are reported after the main paper.}
+\label{tab:transfer_boundary}
+\end{table}
+
+Table~\ref{tab:transfer_boundary} summarizes the broader transfer picture. InternVL2.5-1B and InternVL2.5-8B can both be adapted with the same scale-pair recipe, showing that the experiment is not Qwen-only. We also evaluate InternVL2.5-26B as a stronger non-Qwen diagnostic backbone on ScaleQA-Natural, PlotQA, ChartBench, MathVista, and InfographicVQA subsets. The result is not a clean transfer win for the adapter: InternVL2.5-8B shows only tiny differences among large, small, and balanced policies, all Qwen7 stress-set variants tie, and Qwen7 external ChartBench/MathVista/InfographicVQA scores are unchanged across adapters. The 26B base is useful as a stronger diagnostic model, but these checks diagnose prevalence and difficulty rather than adaptation success. We therefore use cross-backbone results to define the method's scope: the phenomenon transfers more robustly than the intervention.

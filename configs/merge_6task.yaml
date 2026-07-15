@@ -1,0 +1,22 @@
+base_model: Qwen/Qwen2.5-VL-7B-Instruct
+adapters:
+  textvqa: outputs/adapters/textvqa
+  chartqa: outputs/adapters/chartqa
+  docvqa: outputs/adapters/docvqa
+  scienceqa: outputs/adapters/scienceqa
+  gqa: outputs/adapters/gqa
+  mathvista: outputs/adapters/mathvista
+merge_methods:
+  - average
+  - task_arithmetic
+  - ties
+  - dare
+  - breadcrumbs
+  - mirage
+mirage:
+  beta: 8.0
+  margin: 0.0
+  target_rank: null
+baselines:
+  density: 0.5
+  seed: 42

@@ -1,0 +1,294 @@
+{
+  "overall": {
+    "axis": 0.5306553911205074,
+    "direct": 0.5243128964059197,
+    "math": 0.5137420718816068,
+    "scale": 0.4904862579281184,
+    "self_check": 0.5454545454545454,
+    "tta_majority": 0.5264270613107822,
+    "tta_oracle": 0.6744186046511628,
+    "unit_guard": 0.5179704016913319
+  },
+  "by_subset": [
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.1926605504587156
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7037037037037037
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8783783783783784
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8220338983050848
+    },
+    {
+      "adapter": "axis",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.24509803921568626
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.22935779816513763
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8513513513513513
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.7627118644067796
+    },
+    {
+      "adapter": "direct",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.2549019607843137
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.1743119266055046
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8648648648648649
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4666666666666667
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.847457627118644
+    },
+    {
+      "adapter": "math",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.1568627450980392
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.12844036697247707
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6296296296296297
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8648648648648649
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8559322033898306
+    },
+    {
+      "adapter": "scale",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.10784313725490197
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.3853211009174312
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6428571428571429
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7037037037037037
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.7297297297297297
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.6101694915254238
+    },
+    {
+      "adapter": "self_check",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.4215686274509804
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.1926605504587156
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8513513513513513
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8135593220338984
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.24509803921568626
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.42201834862385323
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7407407407407407
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9324324324324325
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.7333333333333333
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.9152542372881356
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.4411764705882353
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.1743119266055046
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9054054054054054
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8389830508474576
+    },
+    {
+      "adapter": "unit_guard",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.16666666666666666
+    }
+  ]
+}

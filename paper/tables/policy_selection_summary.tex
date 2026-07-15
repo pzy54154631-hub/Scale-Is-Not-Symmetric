@@ -1,0 +1,12 @@
+\begin{tabular}{lcc}
+\toprule
+Policy or upper bound & Accuracy & Interpretation \\
+\midrule
+Self-check prompt & 0.5514 & strongest fixed prompt \\
+Best no-leak selector & 0.5667 $\pm$ 0.0561 & v10b; survives v11/v13--v17 evidence \\
+Bayesian/statistical selectors & 0.5218--0.5309 & over-switch below self-check \\
+Strong verifiers/calculators & 0.4228--0.5433 & do not select reliably \\
+\midrule
+Policy/candidate oracles & 0.9004--0.9260 & correct candidate often exists \\
+\bottomrule
+\end{tabular}

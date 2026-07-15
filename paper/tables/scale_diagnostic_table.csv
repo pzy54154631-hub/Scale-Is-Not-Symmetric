@@ -1,0 +1,8 @@
+Split,Size,Base Acc.,Recoverable by seeds,Over-correction risk
+All examples,1920,0.8604166666666667,0.005729166666666666,0.0026041666666666665
+Numeric-answer examples,1452,0.8608815426997245,0.006198347107438017,0.0027548209366391185
+Scale-keyword numeric examples,1179,0.8456318914334181,0.006785411365564037,0.0033927056827820186
+Strict gold-scale errors,23,0.0,0.13043478260869565,0.0
+Scale-conflict diagnostic,4,0.25,0.75,0.25
+Recoverable scale conflicts,3,0.0,1.0,0.0
+Over-correction risks,1,1.0,0.0,1.0

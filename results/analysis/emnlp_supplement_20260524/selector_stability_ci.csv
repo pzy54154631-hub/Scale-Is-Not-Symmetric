@@ -1,0 +1,7 @@
+metric,mean,std,ci_low,ci_high,note
+No-leak selector,0.5667368421052632,0.056078734536212524,,,50 held-out splits
+Self-check fixed prompt,0.5513684210526316,0.04295016945015919,,,same splits
+Selector - self-check,0.015368421052631573,0.049152924121421755,0.0016842105263157913,0.028631578947368414,bootstrap p<=0=0.014; wins/ties/losses=30/5/15
+Best fixed policy per split,0.5713684210526315,0.036217819563778744,,,upper bound over fixed policies on test split
+Policy oracle,0.900421052631579,0.0237964876593047,,,upper bound
+Selector switch rate,0.48905263157894735,0.39251409996663994,,,fraction not using self-check

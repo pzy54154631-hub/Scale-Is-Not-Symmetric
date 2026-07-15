@@ -1,0 +1,13 @@
+candidate_id,scale_error_subtype,scale_directions,source_split,source_row_idx
+SCALE-NAT-0083,decimal_to_percent,prediction_too_large,test,28
+SCALE-NAT-0707,value_scaled_down,prediction_too_small,test,70
+SCALE-NAT-0021,value_scaled_down,prediction_too_small,test,71
+SCALE-NAT-0739,value_scaled_up,prediction_too_large,test,74
+SCALE-NAT-0424,value_scaled_up,prediction_too_large,test,75
+SCALE-NAT-0164,percent_to_decimal,prediction_too_small,test,80
+SCALE-NAT-0477,value_scaled_up,prediction_too_large,test,120
+SCALE-NAT-0068,value_scaled_up,prediction_too_large,test,121
+SCALE-NAT-0447,value_scaled_down,prediction_too_small,test,176
+SCALE-NAT-0291,value_scaled_down,prediction_too_small,test,227
+SCALE-NAT-0175,percent_to_decimal,prediction_too_small,test,246
+SCALE-NAT-0220,value_scaled_down,prediction_too_small,test,255

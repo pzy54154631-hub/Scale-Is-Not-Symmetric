@@ -1,0 +1,27 @@
+\begin{tabular}{lcc}
+\toprule
+Baseline or selector & Accuracy & Notes \\
+\midrule
+Self-check prompt & 0.5514 & Best fixed prompt on held-out splits \\
+v8 no-leak selector & 0.5432 $\pm$ 0.0501 & Question, answer, numeric, and chart-context features \\
+v9 expanded selector & 0.5501 $\pm$ 0.0460 & Adds structured/pairwise policies but does not improve \\
+v10b no-leak selector & 0.5667 $\pm$ 0.0561 & Best clean selector; adds corrected TTA-v2 evidence \\
+v11 log-prob selector & 0.5667 $\pm$ 0.0561 & Log-prob evidence preserves but does not improve v10b \\
+v13 rationale selector & 0.5667 $\pm$ 0.0561 & Rationale-verifier evidence preserves v10b \\
+v14/v15 candidate-likelihood selectors & 0.5667 $\pm$ 0.0561 & Answer/large/base likelihood evidence preserves v10b \\
+v16/v17 top-8 selectors & 0.5667 $\pm$ 0.0561 & Larger candidate pools preserve v10b but raise only oracle \\
+Statistical policy fusion & 0.5309 $\pm$ 0.0470 & Beta/Wilson reliability fusion \\
+Bucketed Bayesian selector & 0.5239 $\pm$ 0.0480 & Bucketed policy priors; over-switches \\
+Bayesian-MLP selector & 0.5218 $\pm$ 0.0540 & Bucket priors plus hidden-layer selector; over-switches \\
+Pairwise top-8 verifier & 0.5433 & Candidate comparison prompt \\
+Candidate likelihood top-8 & 0.4503 & Log-probability candidate scoring \\
+Structured-context verifier & 0.4841 & Image, chart context, and top-4 candidates \\
+Structured scale-audit verifier & 0.4376 & Explicit unit/scale audit prompt \\
+Table extraction + calculator & 0.4228 & DePlot-style chart-to-table evidence, then symbolic calculation \\
+\midrule
+Original policy-pool oracle & 0.7023 $\pm$ 0.0384 & Upper bound over early policy pool \\
+Expanded policy-pool oracle & 0.9004 & Upper bound after adding prompts/verifiers \\
+Candidate top-8 oracle & 0.9175 & Correct answer often appears in candidate set \\
+Augmented structured oracle & 0.9260 & Upper bound after adding scaled candidate variants \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,12 @@
+\begin{tabular}{lccc}
+\toprule
+Quantity & Mean & Std. & Additional statistic \\
+\midrule
+No-leak selector & 0.5667 & 0.0561 & 50 held-out splits \\
+Self-check prompt & 0.5514 & 0.0430 & same splits \\
+Selector - self-check & 0.0154 & 0.0492 & 95\% CI [0.0017, 0.0286] \\
+Best fixed policy & 0.5714 & 0.0362 & split oracle over fixed policies \\
+Policy oracle & 0.9004 & 0.0238 & upper bound \\
+Switch rate & 48.9\% & 39.3\% & not using self-check \\
+\bottomrule
+\end{tabular}

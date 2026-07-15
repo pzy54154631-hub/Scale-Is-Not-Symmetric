@@ -1,0 +1,52 @@
+\section{Diagnostic Probes and Policy Selection}
+
+We freeze the MLLM backbone and train LoRA parameters $\Delta$ \citep{hu2021lora}. For a chart image $x$, question $q$, and answer $y$, the adapted model defines $p_{\theta,\Delta}(y\mid x,q)$, with frozen $\theta$. The methods below are organized as a probe ladder rather than a single proposed fix. Directional adapters test whether scale preference can be moved; clean-direct controls test whether that movement is safe without answer tuning; policy selectors test the harder question of whether candidate evidence can be turned into a deployable regime decision.
+
+\begin{figure}[t]
+\centering
+\small
+\setlength{\fboxsep}{4pt}
+\fbox{\begin{minipage}{0.95\linewidth}
+\textbf{Chart + question}
+$\rightarrow$
+\textbf{Base answer} (e.g., \textit{0.61})\\[-0.15em]
+\rule{\linewidth}{0.3pt}\\[-0.2em]
+\textbf{Candidate pool:}
+keep base, self-check answer, directional adapter answers, and explicit scale variants.\\[-0.15em]
+\textbf{Regime evidence:}
+question form, answer magnitude, percent/unit tokens, axis labels, tick values, and candidate likelihoods.\\[-0.15em]
+\textbf{Policy decision:}
+base, self-check, large-positive, small-positive, decimal guard, or unit guard.\\[-0.15em]
+\rule{\linewidth}{0.3pt}\\[-0.1em]
+\begin{tabular}{@{}l@{}}
+\emph{Prediction too small:} $0.61 \rightarrow 61$ \\
+\emph{Prediction too large:} $61 \rightarrow 0.61$ \\
+\emph{True small decimal:} keep $0.0593$ \\
+\emph{Unit mismatch:} millions vs. raw values \\
+\end{tabular}
+\end{minipage}}
+\caption{Regime-aware diagnostic view. Our experiments test whether scale-related candidates can be generated and, more importantly, whether a deployable policy can select the scale regime required by the chart and question.}
+\label{fig:regime_pipeline}
+\end{figure}
+
+\paragraph{Directional adapters as probes.}
+For numeric training examples, we construct scale-related pairs $(y^+,y^-)$. \emph{Large-positive} pairs prefer the larger-scale value; \emph{small-positive} pairs prefer the smaller-scale value. We also evaluate balanced mixtures, all mined pairs, and real-conflict pairs mined from model disagreements. The names describe the training preference, not the observed error direction: an answer that is too small requires a large-positive correction, while an answer that is too large requires the opposite.
+
+\paragraph{Objective.}
+We compute mean token negative log-likelihood $\mathrm{NLL}(y\mid x,q)$ and minimize
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{\mathrm{scale}}
+=\mathrm{softplus}\big(&-\beta[
+\mathrm{NLL}(y^-) \\
+&-\mathrm{NLL}(y^+)-m]\big),
+\end{aligned}
+\end{equation}
+where $m$ is a margin and $\beta$ controls sharpness. The loss encourages the preferred answer to have lower NLL than its scale-related alternative.
+
+\paragraph{Adaptation regimes.}
+The main positive result uses an \emph{answer-tuned} starting point: scale adaptation continues from an answer-only LoRA adapter in the Qwen2.5-VL-7B pipeline. We also test \emph{clean direct} scale-only tuning from the raw backbone to avoid conflating answer tuning with scale tuning. Direct scale-only tuning is unsafe, so we report it as a negative control. At inference time, main results use the same deterministic short-answer decoding template as the baseline, without candidate reranking or external calculators.
+
+\paragraph{Regime-aware policy selection.}
+\label{sec:router_method}
+ScaleQA-Natural suggests that no single direction is safe across all regimes. We therefore evaluate policy selectors that choose among base answering, self-check prompting, unit/axis guards, and directional adapters. The deployable selectors use question text, base prediction text, numeric features, and chart-context strings extracted from the image, including title, axis labels, tick values, legends, and units. To avoid reporting a selector that memorizes the diagnostic labels, the main no-leak selector trains and selects hyperparameters on held-out splits without using gold subtype or direction fields. Oracle subtype, policy-pool oracle, and candidate-pool oracle results are reported only as upper bounds; their role is to show how much headroom remains if regime detection were solved.

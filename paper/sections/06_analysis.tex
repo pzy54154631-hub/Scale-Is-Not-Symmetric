@@ -1,0 +1,44 @@
+\section{Analysis}
+\label{sec:analysis}
+
+The experiments leave a consistent pattern: scale interventions can create useful alternatives, but the system often fails at deciding when to trust them. This section turns that pattern into the paper's mechanism account.
+
+\subsection{Pair Direction Is Not Symmetric}
+
+\begin{table}[t]
+\centering
+\small
+\input{tables/pair_mode_ablation_full}
+\caption{Pair-mode ablation on ChartQA validation. Small-positive adaptation is locally useful in some regimes but globally unsafe on this split.}
+\label{tab:pair_ablation}
+\end{table}
+
+Table~\ref{tab:pair_ablation} reports the development ablation that motivated the method. Large-positive pairs give the best full-validation score among these single-policy variants, while small-positive pairs reduce full accuracy by 1.51 points. The key point is not that small-positive supervision is useless: ScaleQA-Natural shows regimes where it is best. Rather, pair direction changes both which scale conflicts are repaired and which non-scale examples are broken. On ChartQA validation, the large-positive adapter fixes an average of 56.52\% of the 23 strict gold-scale errors across seeds, while breaking 1.27\% of base-correct examples. Additional fix--break tables, subtype results, and case studies are reported after the main paper.
+
+\subsection{Regime Selection Is the Bottleneck}
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/scaleqa_router_results}}
+\caption{Subtype routing on ScaleQA-Natural diagnostics. Fixed best is the best single global policy. Oracle columns use gold information and are upper bounds.}
+\label{tab:router_results}
+\end{table}
+
+The subtype reversal suggests that scale correction should be selected rather than applied globally. Table~\ref{tab:router_results} first evaluates a simple subtype router. On ScaleQA-Core, the best fixed policy scores 0.4997 and the predicted subtype router reaches 0.5071. This gain is small because subtype prediction is still weak. In contrast, the oracle subtype router reaches 0.8077, nearly matching the instance oracle. The gap identifies the missing component: reliable scale-regime detection, not another unconditional scale adapter. This also explains why training-free self-check prompts are competitive on ScaleQA-Natural; different examples require different correction behavior.
+
+The predicted router uses only cheap question/base-answer TF--IDF and numeric features, so its small gain is a lower-bound diagnostic rather than a strong routing result. The oracle gap suggests a concrete path for future systems: add chart-side evidence such as OCR text, axis labels, units, tick values, or visual embeddings before applying a scale correction.
+
+We next test stronger deployable selectors: multi-candidate verifiers, learned and rule-based routers, consensus guards, structured chart-context verification, likelihood scoring, Bayesian fusion, and a DePlot-style table-extraction-plus-calculation baseline (Table~\ref{tab:deployable_selectors}). The progression is important: v8 is clean but weak, v9 raises the policy pool but ties self-check, and v10b is the first no-leak selector that clears self-check. Later variants add log-probability, rationale-verifier, candidate-likelihood, and top-8 evidence, but preserve rather than improve v10b. The best no-leak selector remains 0.5667, modestly above split-matched self-check at 0.5514. Across 50 held-out splits, the selector--self-check difference is +0.0154 with a bootstrap 95\% interval of $[+0.0017,+0.0286]$ (Table~\ref{tab:selector_stability}). This shows that deployable regime evidence is useful, but its distance from the 0.9004--0.9260 oracles is much larger than its gain over self-check.
+
+The gain is small, but its shape is useful. The selector wins by being selective: it changes the fixed prompt behavior only when split-level evidence supports doing so. Its mean switch rate is 48.9\%, and the split-level wins/ties/losses against self-check are 30/5/15 (Table~\ref{tab:selector_stability}). More ambitious statistical fusion, bucketed Bayesian priors, and Bayesian-MLP variants over-switch away from self-check. Extra features are predictive on development partitions, but not calibrated enough to override a safe fixed prompt.
+
+This gives the main methodological lesson. Regime-aware selection is necessary, but more candidate evidence is not automatically better. The useful selector changes behavior only when the scale evidence is strong enough. The experiments therefore separate two capabilities that are easy to conflate: producing a plausible scaled answer and knowing whether it should be used.
+
+The remaining failures are structured. In the image-evaluable ScaleQA-Natural subset, most candidates involve percent evidence in the question or axis context (92.8\%). Question forms are diverse: percent questions, averages, direct value lookup, differences, and extrema all appear. The large-positive adapter fixes 5.71\% of examples that the answer-tuned model misses, but also breaks 7.40\% of examples that it gets right. A new group diagnostic makes the reversal concrete (Table~\ref{tab:selector_group_diagnostics}): large-positive policies are strong when the original prediction is too small, but poor when the prediction is already too large; self-check is safer in the latter regime but leaves large headroom in the former. The structured verifier exposes the same asymmetry at the example level: it performs well when the original prediction is too small, but fails when the original prediction is too large, despite seeing the same image and candidate list. This fix--break asymmetry explains why global adaptation helps strict ChartQA test errors but does not dominate on ScaleQA-Natural: the correct policy depends on question form, unit evidence, and the direction of the original scale conflict.
+
+\subsection{What the Negative Results Establish}
+
+The negative results rule out simple explanations for the oracle gap. Table extraction plus calculation tests whether the issue is only missing arithmetic; it is not. Structured verifiers test whether exposing chart context and explicit scale variants is enough; it is not. Candidate-likelihood and pairwise-verifier variants test whether the model internally prefers the right candidate once shown a compact list; again, the answer is no. The repeated pattern is sharper: evidence and alternatives can be present without a reliable decision about output scale.
+
+This is the reliability boundary we want to expose. Global adapters can repair one direction of scale error, self-check prompts can be strong fixed policies, and lightweight selectors can improve slightly over them. But when the candidate pool expands, most additional headroom appears only in the oracle. The missing capability is calibrated regime detection: deciding when \textit{0.61} is a decimal answer, when it is a percent written as a decimal, and when a larger or smaller unit is required by the axis. Cross-backbone and external checks add the same caution: the phenomenon travels farther than the specific correction recipe.

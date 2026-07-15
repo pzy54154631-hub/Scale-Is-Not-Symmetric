@@ -1,0 +1,7 @@
+\section{Conclusion}
+
+We studied directional scale inconsistency in chart question answering. The main empirical finding is not that one adapter universally fixes scale errors, but that correction is regime-dependent. In answer-tuned Qwen2.5-VL-7B, large-positive scale-contrastive adaptation gives a small held-out ChartQA gain and recovers nearly half of strict test-set scale errors. ScaleQA-Natural explains the boundary: self-check is stronger than a global adapter, small-positive policies help different regimes, and aggressive selectors can hurt by switching too often.
+
+The strongest evidence is the gap between candidate availability and candidate choice. Structured verifiers, likelihood scoring, pairwise comparison, and top-8 pools often contain a correct scaled answer, yet deployable selectors fail to choose it. Our best no-leak selector improves over self-check but remains far below policy and candidate oracles. Cross-backbone and external checks show that scale-like failures transfer more readily than a correction recipe.
+
+Overall, Chart QA systems should evaluate scale reliability by regime, with fix--break accounting and candidate-selection analysis alongside aggregate accuracy.
