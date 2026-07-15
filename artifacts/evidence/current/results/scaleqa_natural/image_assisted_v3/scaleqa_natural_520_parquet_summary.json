@@ -1,0 +1,41 @@
+{
+  "base_n": 403,
+  "new_requested": 86,
+  "new_matched": 70,
+  "unmatched": [
+    "SCALE-NAT-0195",
+    "SCALE-NAT-0386",
+    "SCALE-NAT-0219",
+    "SCALE-NAT-0234",
+    "SCALE-NAT-0692",
+    "SCALE-NAT-0488",
+    "SCALE-NAT-0528",
+    "SCALE-NAT-0576",
+    "SCALE-NAT-0398",
+    "SCALE-NAT-0123",
+    "SCALE-NAT-0125",
+    "SCALE-NAT-0263",
+    "SCALE-NAT-0005",
+    "SCALE-NAT-0127",
+    "SCALE-NAT-0532",
+    "SCALE-NAT-0693"
+  ],
+  "output_n": 473,
+  "source_split_counts": {
+    "train_shard1": 314,
+    "val": 71,
+    "train": 47,
+    "test": 39,
+    "train_shard2": 1,
+    "train_shard3": 1
+  },
+  "subtype_counts": {
+    "value_scaled_down": 118,
+    "decimal_to_percent": 109,
+    "value_scaled_up": 102,
+    "percent_to_decimal": 74,
+    "minor_factor_or_unit_candidate": 28,
+    "minor_factor_percentage_candidate": 27,
+    "untyped_100x": 15
+  }
+}

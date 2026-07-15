@@ -1,0 +1,6 @@
+model,split,total_examples,strict_scale_errors,strict_rate,source_file
+Qwen2.5-VL-7B + answer/large,ChartQA test,2500,10,0.004,results/analysis/chartqa_test_full_qwen7_large5_strict_cases.csv
+Qwen2.5-VL-3B direct/large,ChartQA test,2500,19,0.0076,results/analysis/chartqa_test_full_qwen3_direct_large_strict_cases.csv
+Qwen2.5-VL-3B direct/large,ChartQA val,1920,21,0.0109375,results/analysis/chartqa_val_full_qwen3_direct_large_strict_cases.csv
+InternVL2.5-1B,ChartQA test,2500,3,0.0012,results/analysis/chartqa_test_full_internvl25_1b_strict_cases.csv
+InternVL2.5-1B,ChartQA val,1920,17,0.008854166666666666,results/analysis/chartqa_val_full_internvl25_1b_strict_cases.csv

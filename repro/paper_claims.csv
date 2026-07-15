@@ -1,0 +1,14 @@
+claim_id,paper_location,reported_result,reproduction_level,canonical_entrypoint,required_artifacts
+C1,Table 1 / official_test_attribution,0.8860 answer-tuned; 0.8932 scale-adapted; CI [+0.0038,+0.0109],archived_predictions,scripts/bootstrap_chartqa_full.py,artifacts/evidence/current/results
+C2,Table 2 / chartqa_test_subset_results,49.52% strict scale-error recovery,archived_predictions,scripts/analyze_gold_scale_error_from_eval.py,artifacts/evidence/current/results
+C3,Table 3 / scaleqa_natural_results,ScaleQA-Natural directional adapter comparison,archived_predictions,scripts/summarize_scaleqa_natural_results.py,artifacts/evidence/current/results
+C4,Table 4 / scaleqa_tta_baselines,0.5455 self-check; 0.6744 prompt oracle,archived_predictions,scripts/eval_scaleqa_parquet_tta_prompts_v2.py,artifacts/evidence/current/results
+C5,Table 5 / transfer_boundary_compact,Cross-backbone and external diagnostic results,archived_predictions,manual aggregation documented in paper table,artifacts/evidence/expanded
+C6,Table 7 / scaleqa_router_results,Deployable router and oracle gap,archived_predictions,scripts/scaleqa_regime_router_multiseed.py,results/scaleqa_natural/router_multiseed
+C7,Appendix / bootstrap_chartqa_full,Paired bootstrap confidence intervals,rerunnable_analysis,scripts/bootstrap_chartqa_full.py,artifacts/evidence/current/results
+C8,Appendix / seed_consistency_full,Five-seed fix/break consistency,rerunnable_analysis,scripts/analyze_seed_consistency_full.py,artifacts/evidence/current/results
+C9,Appendix / deployable_selector_results,No-leak selector 0.5667,rerunnable_analysis,scripts/experiment_policy_selector_v10b_tta2_noleak.py,artifacts/evidence/expanded/20260521_scaleqa_policy_selector_v10b_tta2_noleak
+C10,Appendix / structured_verifier_direction,Directional verifier failure,archived_predictions,scripts/eval_scaleqa_structured_verifier_ordered.py,artifacts/evidence/expanded
+C11,Appendix / table_calculator_subtypes,Table-extraction calculator baseline,archived_predictions,scripts/eval_scaleqa_table_calculator.py,artifacts/evidence/expanded/20260521_scaleqa520_table_calculator
+C12,Paper PDF,19-page compiled manuscript,fully_rerunnable,python3 scripts/reproduce.py paper,paper/main.tex
+

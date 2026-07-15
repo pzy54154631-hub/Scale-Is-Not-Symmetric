@@ -61,6 +61,16 @@ latexmk -pdf main.tex
 
 ## Reproducibility notes
 
+Start with the canonical checks:
+
+```bash
+make verify     # validate claims, evidence, tables, and checksums
+make smoke      # compile all Python entrypoints
+make paper      # rebuild the manuscript
+```
+
+See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for the complete workflow and [`repro/paper_claims.csv`](repro/paper_claims.csv) for the paper-claim-to-artifact mapping.
+
 - Experiment configurations are under `configs/`.
 - Paper-ready tables and lightweight summaries are included where available.
 - The original raw archive and large learned weights are not part of this Git repository.
@@ -70,4 +80,3 @@ latexmk -pdf main.tex
 ## Status
 
 This is a cleaned research release assembled from the final project archive. It preserves the runnable source, manuscript, and compact evidence while excluding approximately 42GB of large weights and redundant run artifacts.
-

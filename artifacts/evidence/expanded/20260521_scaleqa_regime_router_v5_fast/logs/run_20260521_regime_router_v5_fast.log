@@ -1,0 +1,31 @@
+loading pool
+seed 0 router 0.5157894736842106 selected logreg_dir
+seed 5 router 0.5684210526315789 selected logreg_sub
+seed 10 router 0.6 selected logreg_dir
+seed 15 router 0.5052631578947369 selected logreg_dir
+seed 20 router 0.5263157894736842 selected logreg_dir
+seed 25 router 0.4631578947368421 selected et_sub
+seed 30 router 0.5578947368421052 selected rf_sub
+seed 35 router 0.5578947368421052 selected rf_sub
+seed 40 router 0.5157894736842106 selected logreg_dir
+seed 45 router 0.5263157894736842 selected logreg_dir
+{
+  "n": 473,
+  "router_mean": 0.5452631578947369,
+  "router_std": 0.0479319622571706,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "best_fixed_split_mean": 0.5665263157894737,
+  "true_regime_oracle_mean": 0.6425263157894737,
+  "label_acc_mean": 0.5058947368421053,
+  "selected_counts": {
+    "rf_sub": 18,
+    "logreg_dir": 15,
+    "et_sub": 14,
+    "logreg_sub": 3
+  },
+  "default_policy_counts": {
+    "tta:self_check": 47,
+    "tta:axis": 3
+  }
+}

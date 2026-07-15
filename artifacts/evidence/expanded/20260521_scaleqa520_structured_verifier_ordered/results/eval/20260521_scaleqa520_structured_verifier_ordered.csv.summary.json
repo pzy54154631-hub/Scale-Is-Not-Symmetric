@@ -1,0 +1,147 @@
+{
+  "overall": {
+    "structured_order_numeric_asc": 0.3403805496828753,
+    "structured_order_numeric_desc": 0.2832980972515856,
+    "structured_order_source_base_last": 0.49471458773784355
+  },
+  "by_direction": [
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_directions": "prediction_too_large",
+      "score": 0.4024896265560166
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_directions": "prediction_too_small",
+      "score": 0.27586206896551724
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_directions": "prediction_too_large",
+      "score": 0.07468879668049792
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_directions": "prediction_too_small",
+      "score": 0.5
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_directions": "prediction_too_large",
+      "score": 0.2033195020746888
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_directions": "prediction_too_small",
+      "score": 0.7974137931034483
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.3302752293577982
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.17857142857142858
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.2962962962962963
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.4594594594594595
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.17796610169491525
+    },
+    {
+      "adapter": "structured_order_numeric_asc",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.027522935779816515
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.32142857142857145
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4074074074074074
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.6621621621621622
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.26666666666666666
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.4491525423728814
+    },
+    {
+      "adapter": "structured_order_numeric_desc",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.049019607843137254
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.1651376146788991
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8783783783783784
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.7796610169491526
+    },
+    {
+      "adapter": "structured_order_source_base_last",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.14705882352941177
+    }
+  ],
+  "n_examples": 473
+}

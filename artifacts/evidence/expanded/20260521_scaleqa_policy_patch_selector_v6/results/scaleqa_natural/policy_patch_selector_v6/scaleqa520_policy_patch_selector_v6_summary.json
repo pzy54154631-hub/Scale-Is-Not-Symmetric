@@ -1,0 +1,24 @@
+{
+  "n": 473,
+  "selector_mean": 0.6861052631578947,
+  "selector_std": 0.042409747609419304,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "best_fixed_split_mean": 0.5665263157894737,
+  "policy_oracle_mean": 0.7040000000000001,
+  "switch_rate_mean": 0.3995789473684211,
+  "selected_model_counts": {
+    "rf": 31,
+    "et": 19
+  },
+  "selected_mode_counts": {
+    "stack": 25,
+    "patch": 25
+  },
+  "selected_margin_counts": {
+    "nan": 25,
+    "0.024999999999999994": 14,
+    "0.04999999999999999": 8,
+    "0.07499999999999998": 3
+  }
+}

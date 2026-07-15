@@ -1,0 +1,74 @@
+=== START chartbench26 2026-05-21T18:20:02+08:00 ===
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+InternLM2ForCausalLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn't directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you're using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you'll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+FlashAttention2 is not installed.
+Warning: Flash attention is not available, using eager attention instead.
+Loading checkpoint shards:   0%|          | 0/11 [00:00<?, ?it/s]Loading checkpoint shards:   9%|▉         | 1/11 [00:00<00:03,  3.30it/s]Loading checkpoint shards:  18%|█▊        | 2/11 [00:00<00:02,  3.31it/s]Loading checkpoint shards:  27%|██▋       | 3/11 [00:00<00:02,  3.94it/s]Loading checkpoint shards:  45%|████▌     | 5/11 [00:00<00:00,  7.13it/s]Loading checkpoint shards:  64%|██████▎   | 7/11 [00:01<00:00,  8.32it/s]Loading checkpoint shards:  82%|████████▏ | 9/11 [00:01<00:00, 10.61it/s]Loading checkpoint shards: 100%|██████████| 11/11 [00:01<00:00,  8.44it/s]
+=== Evaluating base NONE ===
+base 50 acc 0.54
+base 100 acc 0.27
+base 150 acc 0.26
+base 200 acc 0.375
+base 250 acc 0.3
+base 300 acc 0.4066666666666667
+base 350 acc 0.49142857142857144
+base 400 acc 0.4475
+base 450 acc 0.4488888888888889
+base 500 acc 0.408
+SUMMARY base 204 / 500 0.408
+{
+  "base": 0.408
+}
+=== DONE chartbench26 2026-05-21T18:59:35+08:00 ===
+=== START mathvista26 2026-05-21T18:59:35+08:00 ===
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+InternLM2ForCausalLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn't directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you're using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you'll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+FlashAttention2 is not installed.
+Warning: Flash attention is not available, using eager attention instead.
+Loading checkpoint shards:   0%|          | 0/11 [00:00<?, ?it/s]Loading checkpoint shards:   9%|▉         | 1/11 [00:00<00:04,  2.44it/s]Loading checkpoint shards:  18%|█▊        | 2/11 [00:00<00:03,  2.88it/s]Loading checkpoint shards:  36%|███▋      | 4/11 [00:00<00:01,  5.29it/s]Loading checkpoint shards:  55%|█████▍    | 6/11 [00:01<00:00,  8.10it/s]Loading checkpoint shards:  73%|███████▎  | 8/11 [00:01<00:00, 10.64it/s]Loading checkpoint shards: 100%|██████████| 11/11 [00:01<00:00, 15.17it/s]Loading checkpoint shards: 100%|██████████| 11/11 [00:01<00:00,  9.13it/s]
+=== Evaluating base NONE ===
+base 50 acc 0.62
+base 100 acc 0.6
+base 150 acc 0.66
+base 200 acc 0.665
+SUMMARY base 164 / 243 0.6748971193415638
+{
+  "base": 0.6748971193415638
+}
+=== DONE mathvista26 2026-05-21T19:16:55+08:00 ===
+=== START infographic26 2026-05-21T19:16:55+08:00 ===
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/transformers/utils/hub.py:105: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/root/miniconda3/envs/mirage/lib/python3.10/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+InternLM2ForCausalLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn't directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you're using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you'll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+FlashAttention2 is not installed.
+Warning: Flash attention is not available, using eager attention instead.
+Loading checkpoint shards:   0%|          | 0/11 [00:00<?, ?it/s]Loading checkpoint shards:   9%|▉         | 1/11 [00:00<00:02,  3.42it/s]Loading checkpoint shards:  18%|█▊        | 2/11 [00:00<00:02,  4.15it/s]Loading checkpoint shards:  27%|██▋       | 3/11 [00:00<00:01,  4.55it/s]Loading checkpoint shards:  55%|█████▍    | 6/11 [00:00<00:00, 10.29it/s]Loading checkpoint shards:  82%|████████▏ | 9/11 [00:00<00:00, 15.06it/s]Loading checkpoint shards: 100%|██████████| 11/11 [00:00<00:00, 12.13it/s]
+=== Evaluating base NONE ===
+base 50 acc 0.78
+base 100 acc 0.68
+base 150 acc 0.6666666666666666
+base 200 acc 0.665
+base 250 acc 0.632
+base 300 acc 0.63
+SUMMARY base 189 / 300 0.63
+{
+  "base": 0.63
+}
+=== DONE infographic26 2026-05-21T19:44:21+08:00 ===

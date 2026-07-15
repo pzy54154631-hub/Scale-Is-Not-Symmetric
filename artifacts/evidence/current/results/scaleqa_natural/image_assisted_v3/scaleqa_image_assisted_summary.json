@@ -1,0 +1,22 @@
+{
+  "previous_expanded_core_n": 434,
+  "queue_n": 289,
+  "selected_total": 190,
+  "selected_by_tier": {
+    "strong": 48,
+    "image_review": 142
+  },
+  "selected_with_image": 190,
+  "new_yes_added": 86,
+  "new_yes_by_tier": {
+    "strong": 48,
+    "image_review": 38
+  },
+  "expanded_n": 520,
+  "outputs": [
+    "results/scaleqa_natural/image_assisted_v3/scaleqa_image_assisted_candidates.csv",
+    "results/scaleqa_natural/image_assisted_v3/scaleqa_natural_new_yes_codex_image_assisted.csv",
+    "results/scaleqa_natural/image_assisted_v3/scaleqa_natural_expanded_520_codex_image_assisted.csv",
+    "results/scaleqa_natural/image_assisted_v3/scaleqa_image_review.html"
+  ]
+}

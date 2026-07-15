@@ -1,0 +1,147 @@
+{
+  "overall": {
+    "structured_candidate_oracle": 0.9006342494714588,
+    "structured_context_letter": 0.48414376321353064,
+    "structured_scale_audit": 0.4376321353065539
+  },
+  "by_direction": [
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_directions": "prediction_too_large",
+      "score": 0.9253112033195021
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_directions": "prediction_too_small",
+      "score": 0.875
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_directions": "prediction_too_large",
+      "score": 0.17427385892116182
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_directions": "prediction_too_small",
+      "score": 0.8060344827586207
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_directions": "prediction_too_large",
+      "score": 0.0995850622406639
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_directions": "prediction_too_small",
+      "score": 0.7887931034482759
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.944954128440367
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7407407407407407
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9324324324324325
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.8666666666666667
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8898305084745762
+    },
+    {
+      "adapter": "structured_candidate_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.9411764705882353
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.12844036697247707
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6296296296296297
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9054054054054054
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.788135593220339
+    },
+    {
+      "adapter": "structured_context_letter",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.11764705882352941
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.045871559633027525
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.5714285714285714
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5555555555555556
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8783783783783784
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8135593220338984
+    },
+    {
+      "adapter": "structured_scale_audit",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.049019607843137254
+    }
+  ],
+  "n_examples": 473
+}

@@ -1,0 +1,11 @@
+\begin{tabular}{p{0.18\linewidth}p{0.25\linewidth}p{0.25\linewidth}p{0.24\linewidth}}
+\toprule
+Component & Source & Used for & Leakage control \\
+\midrule
+Answer-only tuning & ChartQA/TextVQA training data & Starting adapter for the main Qwen setting & Reported separately from scale tuning; not counted as a scale-objective gain \\
+Scale-pair training & ChartQA training rows and training-set prediction/log-prob caches & LoRA scale adapters and pair-mode ablations & Official ChartQA test and PlotQA are not used for scale-adapter gradients \\
+Development analysis & ChartQA validation and ScaleQA-Core diagnostics & Pair-mode selection, seed checks, and failure analysis & Reported as development evidence; held-out ChartQA test is the main official result \\
+ScaleQA-Natural & Mined model outputs, machine audit, and author adjudication & Diagnostic regime analysis and router experiments & Used as a diagnostic set, not as ordinary task training data for the reported Qwen scale adapters \\
+Held-out/external evaluation & ChartQA test, TextVQA-500, PlotQA numeric-500 & Final task result, safety, and external robustness check & Not used to train the reported scale adapters \\
+\bottomrule
+\end{tabular}

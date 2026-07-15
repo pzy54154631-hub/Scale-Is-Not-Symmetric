@@ -1,0 +1,193 @@
+{
+  "overall": {
+    "answer:rationale_candidate_oracle": 0.8900634249471459,
+    "answer:rationale_counterfactual": 0.2832980972515856,
+    "answer:rationale_default_guard": 0.2832980972515856,
+    "answer:rationale_unit_table": 0.346723044397463
+  },
+  "by_direction": [
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_directions": "prediction_too_large",
+      "score": 0.9087136929460581
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_directions": "prediction_too_small",
+      "score": 0.8706896551724138
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_directions": "prediction_too_large",
+      "score": 0.29045643153526973
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_directions": "prediction_too_small",
+      "score": 0.27586206896551724
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_directions": "prediction_too_large",
+      "score": 0.15767634854771784
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_directions": "prediction_too_small",
+      "score": 0.41379310344827586
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_directions": "prediction_too_large",
+      "score": 0.17427385892116182
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_directions": "prediction_too_small",
+      "score": 0.5258620689655172
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.926605504587156
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7777777777777778
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9459459459459459
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.9333333333333333
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.864406779661017
+    },
+    {
+      "adapter": "answer:rationale_candidate_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.9215686274509803
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.3577981651376147
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.2857142857142857
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.18518518518518517
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.40540540540540543
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.2288135593220339
+    },
+    {
+      "adapter": "answer:rationale_counterfactual",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.19607843137254902
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.14678899082568808
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.32142857142857145
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.2962962962962963
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.5945945945945946
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.3305084745762712
+    },
+    {
+      "adapter": "answer:rationale_default_guard",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.11764705882352941
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.10091743119266056
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.2857142857142857
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4444444444444444
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.6756756756756757
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.5084745762711864
+    },
+    {
+      "adapter": "answer:rationale_unit_table",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.17647058823529413
+    }
+  ],
+  "n_examples": 473
+}

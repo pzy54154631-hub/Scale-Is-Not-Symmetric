@@ -1,0 +1,55 @@
+{
+  "overall": {
+    "pairwise_default_vs_alt": 0.5433403805496829
+  },
+  "by_direction": [
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_directions": "prediction_too_large",
+      "score": 0.43568464730290457
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_directions": "prediction_too_small",
+      "score": 0.6551724137931034
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.3853211009174312
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6428571428571429
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.7297297297297297
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.6666666666666666
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.6101694915254238
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.4215686274509804
+    }
+  ],
+  "n_examples": 473
+}

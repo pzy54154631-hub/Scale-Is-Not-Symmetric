@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Overall & $\Delta$ & Gold-scale & $\Delta$ & Non-scale & $\Delta$ \\
+\midrule
+Base & 79.00 & +0.00 & 0.00 & +0.00 & 82.81 & +0.00 \\
+Scale-aware prompt & 79.00 & +0.00 & 0.00 & +0.00 & 82.81 & +0.00 \\
+Direct SFT (800) & 78.20 & -0.80 & 4.35 & +4.35 & 81.76 & -1.05 \\
+Direct SFT (1500) & 77.40 & -1.60 & 4.35 & +4.35 & 80.92 & -1.89 \\
+Mixed contrastive & 79.40 & +0.40 & 8.70 & +8.70 & 82.81 & +0.00 \\
+Balanced contrastive & 79.20 & +0.20 & 4.35 & +4.35 & 82.81 & +0.00 \\
+Large-only contrastive & 79.00 & +0.00 & 4.35 & +4.35 & 82.60 & -0.21 \\
+Real contrastive & 79.40 & +0.40 & 8.70 & +8.70 & 82.81 & +0.00 \\
+\textbf{Real contrastive (5 seeds)} & \textbf{79.52} & \textbf{+0.52} & 11.30 & +11.30 & 82.81 & +0.00 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Ablation results on ChartQA-500. Gold-scale denotes strict 100$\times$ scale-error cases where the base model predicts an answer at the wrong numerical scale.}
+\label{tab:ablation}
+\end{table*}

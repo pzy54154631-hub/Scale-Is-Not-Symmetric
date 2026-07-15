@@ -1,0 +1,23 @@
+column,label,count
+suggested_label,yes_auto_strict,976
+review_label,missing,929
+review_label,yes,27
+review_label,uncertain,11
+review_label,needs_image,8
+review_label,not_scale,1
+needs_human_review,yes,976
+already_reviewed_candidate_id,False,976
+codex_confidence,missing,929
+codex_confidence,0.58,18
+codex_confidence,0.91,17
+codex_confidence,0.95,8
+codex_confidence,0.86,2
+codex_confidence,0.66,1
+codex_confidence,0.88,1
+codex_reason,missing,929
+codex_reason,Clear single-number 100x mismatch on a chart value/aggregate question.,17
+codex_reason,"Clean 100x relation, but question wording is not specific enough for automatic inclusion.",11
+codex_reason,"100x relation is plausible, but count/unit wording requires chart-unit verification.",8
+codex_reason,Clear 100x decimal/percent-like mismatch on a percentage/rate/share question.,8
+codex_reason,Clean 100x single-number mismatch recurring across multiple models; accepted conservatively.,2
+codex_reason,Gold looks like a year/date answer; factor relation is likely accidental.,1

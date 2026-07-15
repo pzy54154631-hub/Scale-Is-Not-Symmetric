@@ -1,0 +1,7 @@
+set,source,count,share
+Image-evaluable 473,train_shard1,314,0.6638477801268499
+Image-evaluable 473,val,71,0.15010570824524314
+Image-evaluable 473,train,47,0.09936575052854123
+Image-evaluable 473,test,39,0.0824524312896406
+Image-evaluable 473,train_shard2,1,0.0021141649048625794
+Image-evaluable 473,train_shard3,1,0.0021141649048625794

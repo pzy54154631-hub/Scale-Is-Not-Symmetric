@@ -1,0 +1,45 @@
+{
+  "candidate_pool_n": 739,
+  "candidate_pool_first_pass_counts": {
+    "include": 403,
+    "review": 289,
+    "reject": 47
+  },
+  "candidate_pool_second_pass_counts": {
+    "include": 373,
+    "review": 78,
+    "reject": 288
+  },
+  "candidate_pool_agreement": 0.6332882273342354,
+  "candidate_pool_expected_agreement": 0.3413108084105903,
+  "candidate_pool_cohen_kappa": 0.4432703961926365,
+  "candidate_pool_conflicts": 271,
+  "final_520_n": 520,
+  "final_520_second_pass_counts": {
+    "include": 412,
+    "review": 90,
+    "reject": 18
+  },
+  "final_520_second_pass_include_rate": 0.7923076923076923,
+  "final_520_review_or_reject_rate": 0.2076923076923077,
+  "final_520_annotation_sources": {
+    "core_reviewed_yes": 403,
+    "v1_review_queue_self": 8,
+    "v2_new_strict_self": 23,
+    "codex_image_assisted_v3": 86
+  },
+  "final_520_subtype_counts": {
+    "decimal_to_percent": 114,
+    "percent_to_decimal": 96,
+    "value_scaled_down": 120,
+    "value_scaled_up": 104,
+    "minor_factor_or_unit_candidate": 42,
+    "minor_factor_percentage_candidate": 28,
+    "mixed_factor_candidate": 1,
+    "untyped_100x": 15
+  },
+  "notes": [
+    "Second-pass labels are deterministic metadata audit labels, not a second human annotator.",
+    "Disagreement rows are intended for author review before claiming human IAA."
+  ]
+}

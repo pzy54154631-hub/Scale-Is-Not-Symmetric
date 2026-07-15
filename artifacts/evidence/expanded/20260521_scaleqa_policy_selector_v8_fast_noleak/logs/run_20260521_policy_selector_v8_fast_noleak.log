@@ -1,0 +1,51 @@
+building features
+seed 0 {'seed': 0, 'selected_model': 'rf_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5789473684210527, 'self_check': 0.5157894736842106, 'axis': 0.5894736842105263, 'dev_selected_fixed': 0.5157894736842106, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5894736842105263, 'policy_oracle': 0.7157894736842105, 'switch_rate': 0.5578947368421052}
+seed 5 {'seed': 5, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.5473684210526316, 'self_check': 0.5263157894736842, 'axis': 0.5789473684210527, 'dev_selected_fixed': 0.5263157894736842, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5894736842105263, 'policy_oracle': 0.7157894736842105, 'switch_rate': 0.07368421052631578}
+seed 10 {'seed': 10, 'selected_model': 'fixed', 'selected_mode': 'tta:direct', 'selected_margin': None, 'selector': 0.5473684210526316, 'self_check': 0.6105263157894737, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5473684210526316, 'dev_selected_fixed_policy': 'tta:direct', 'best_fixed_split': 0.6105263157894737, 'policy_oracle': 0.7263157894736842, 'switch_rate': 1.0}
+seed 15 {'seed': 15, 'selected_model': 'fixed', 'selected_mode': 'tta:math', 'selected_margin': None, 'selector': 0.4842105263157895, 'self_check': 0.5263157894736842, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.4842105263157895, 'dev_selected_fixed_policy': 'tta:math', 'best_fixed_split': 0.5263157894736842, 'policy_oracle': 0.7052631578947368, 'switch_rate': 1.0}
+seed 20 {'seed': 20, 'selected_model': 'rf_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5368421052631579, 'self_check': 0.5368421052631579, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.49473684210526314, 'dev_selected_fixed_policy': 'tta:axis', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.6947368421052632, 'switch_rate': 0.6736842105263158}
+seed 25 {'seed': 25, 'selected_model': 'rf_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5789473684210527, 'self_check': 0.5052631578947369, 'axis': 0.5578947368421052, 'dev_selected_fixed': 0.5578947368421052, 'dev_selected_fixed_policy': 'tta:axis', 'best_fixed_split': 0.5578947368421052, 'policy_oracle': 0.6842105263157895, 'switch_rate': 0.5368421052631579}
+seed 30 {'seed': 30, 'selected_model': 'rf_small', 'selected_mode': 'patch', 'selected_margin': 0.22499999999999998, 'selector': 0.5578947368421052, 'self_check': 0.5684210526315789, 'axis': 0.5368421052631579, 'dev_selected_fixed': 0.5684210526315789, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5684210526315789, 'policy_oracle': 0.7157894736842105, 'switch_rate': 0.010526315789473684}
+seed 35 {'seed': 35, 'selected_model': 'et_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.6, 'self_check': 0.5789473684210527, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5789473684210527, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5789473684210527, 'policy_oracle': 0.7368421052631579, 'switch_rate': 0.6842105263157895}
+seed 40 {'seed': 40, 'selected_model': 'base_logreg', 'selected_mode': 'multiclass', 'selected_margin': None, 'selector': 0.43157894736842106, 'self_check': 0.5157894736842106, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.42105263157894735, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5157894736842106, 'policy_oracle': 0.6947368421052632, 'switch_rate': 0.3684210526315789}
+seed 45 {'seed': 45, 'selected_model': 'fixed', 'selected_mode': 'main:large_seed4', 'selected_margin': None, 'selector': 0.4631578947368421, 'self_check': 0.5368421052631579, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.4631578947368421, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.6631578947368421, 'switch_rate': 1.0}
+{
+  "n": 473,
+  "selector_mean": 0.5431578947368421,
+  "selector_std": 0.050100244357767464,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "dev_selected_fixed_mean": 0.5326315789473685,
+  "best_fixed_split_mean": 0.5665263157894737,
+  "policy_oracle_mean": 0.7040000000000001,
+  "switch_rate_mean": 0.504421052631579,
+  "selected_model_counts": {
+    "fixed": 17,
+    "rf_small": 14,
+    "et_small": 9,
+    "logreg": 7,
+    "base_logreg": 3
+  },
+  "selected_mode_counts": {
+    "patch": 18,
+    "stack": 12,
+    "tta:axis": 4,
+    "tta:unit_guard": 4,
+    "main:large_seed4": 3,
+    "multiclass": 3,
+    "tta:self_check": 2,
+    "tta:direct": 2,
+    "verifier:candidate_majority": 1,
+    "tta:math": 1
+  },
+  "dev_selected_fixed_policy_counts": {
+    "tta:self_check": 24,
+    "tta:axis": 8,
+    "tta:unit_guard": 6,
+    "main:large_seed4": 5,
+    "tta:direct": 3,
+    "tta:math": 2,
+    "verifier:candidate_majority": 1,
+    "tta:tta_majority": 1
+  }
+}

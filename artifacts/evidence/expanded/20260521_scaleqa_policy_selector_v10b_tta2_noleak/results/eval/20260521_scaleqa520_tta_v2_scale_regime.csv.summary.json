@@ -1,0 +1,222 @@
+{
+  "overall": {
+    "axis_unit_audit": 0.44820295983086683,
+    "decimal_guard": 0.5285412262156448,
+    "percent_display": 0.4439746300211416,
+    "regime_check": 0.4439746300211416,
+    "tta_majority": 0.4439746300211416,
+    "tta_oracle": 0.733615221987315
+  },
+  "by_subset": [
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.045871559633027525
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6428571428571429
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5925925925925926
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8918918918918919
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8389830508474576
+    },
+    {
+      "adapter": "axis_unit_audit",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.029411764705882353
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6697247706422018
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.5357142857142857
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5185185185185185
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.3783783783783784
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.5333333333333333
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.5
+    },
+    {
+      "adapter": "decimal_guard",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5196078431372549
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.027522935779816515
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6071428571428571
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5925925925925926
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9324324324324325
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8305084745762712
+    },
+    {
+      "adapter": "percent_display",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.0196078431372549
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.027522935779816515
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.5714285714285714
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5925925925925926
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9324324324324325
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8389830508474576
+    },
+    {
+      "adapter": "regime_check",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.0196078431372549
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.027522935779816515
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6071428571428571
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5925925925925926
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9054054054054054
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.3333333333333333
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8389830508474576
+    },
+    {
+      "adapter": "tta_majority",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.029411764705882353
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6788990825688074
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6296296296296297
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9459459459459459
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.6
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8898305084745762
+    },
+    {
+      "adapter": "tta_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5196078431372549
+    }
+  ]
+}

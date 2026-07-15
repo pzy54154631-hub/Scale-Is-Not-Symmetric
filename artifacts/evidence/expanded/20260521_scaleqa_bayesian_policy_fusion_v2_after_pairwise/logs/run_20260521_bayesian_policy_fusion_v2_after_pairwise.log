@@ -1,0 +1,50 @@
+[wait] waiting for pairwise verifier
+[run] pairwise ready, running bayesian fusion v2
+n_ids=473 n_rows=10879 n_adapters=23 adapters=['main:answer_tuned', 'main:base', 'main:large_seed1', 'main:large_seed2', 'main:large_seed3', 'main:large_seed4', 'main:large_seed5', 'pairwise_default_vs_alt', 'structured_context_letter', 'structured_order_numeric_asc', 'structured_order_numeric_desc', 'structured_order_source_base_last', 'structured_scale_audit', 'tta:axis', 'tta:direct', 'tta:math', 'tta:scale', 'tta:self_check', 'tta:tta_majority', 'tta:unit_guard', 'verifier:candidate_majority', 'verifier:letter_axis', 'verifier:letter_scale_guard']
+seed 0 {'seed': 0, 'bayes_fusion': 0.4631578947368421, 'self_check': 0.5157894736842106, 'axis': 0.5894736842105263, 'direct': 0.5789473684210527, 'pairwise': 0.5684210526315789, 'top4_context': 0.5263157894736842, 'oracle': 0.8210526315789474, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.5, 'w_mag': 0.0, 'w_vote': 2.0, 'w_prior': 0.25, 'dev_score': 0.5684210526315789}
+seed 5 {'seed': 5, 'bayes_fusion': 0.5368421052631579, 'self_check': 0.5263157894736842, 'axis': 0.5789473684210527, 'direct': 0.5789473684210527, 'pairwise': 0.5789473684210527, 'top4_context': 0.5368421052631579, 'oracle': 0.8736842105263158, 'alpha': 5.0, 'w_global': 1.0, 'w_ctx': 0.0, 'w_mag': 1.0, 'w_vote': 1.5, 'w_prior': 0.25, 'dev_score': 0.5684210526315789}
+seed 10 {'seed': 10, 'bayes_fusion': 0.6105263157894737, 'self_check': 0.6105263157894737, 'axis': 0.5684210526315789, 'direct': 0.5473684210526316, 'pairwise': 0.5368421052631579, 'top4_context': 0.4631578947368421, 'oracle': 0.8526315789473684, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.5, 'w_mag': 0.0, 'w_vote': 2.0, 'w_prior': 0.25, 'dev_score': 0.49473684210526314}
+seed 15 {'seed': 15, 'bayes_fusion': 0.5684210526315789, 'self_check': 0.5263157894736842, 'axis': 0.49473684210526314, 'direct': 0.49473684210526314, 'pairwise': 0.49473684210526314, 'top4_context': 0.45263157894736844, 'oracle': 0.8105263157894737, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.5, 'w_mag': 0.0, 'w_vote': 2.0, 'w_prior': 0.25, 'dev_score': 0.4842105263157895}
+seed 20 {'seed': 20, 'bayes_fusion': 0.5052631578947369, 'self_check': 0.5368421052631579, 'axis': 0.49473684210526314, 'direct': 0.5052631578947369, 'pairwise': 0.5052631578947369, 'top4_context': 0.45263157894736844, 'oracle': 0.8315789473684211, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.0, 'w_mag': 0.0, 'w_vote': 2.0, 'w_prior': 0.25, 'dev_score': 0.6}
+seed 25 {'seed': 25, 'bayes_fusion': 0.5684210526315789, 'self_check': 0.5052631578947369, 'axis': 0.5578947368421052, 'direct': 0.5473684210526316, 'pairwise': 0.5473684210526316, 'top4_context': 0.47368421052631576, 'oracle': 0.8210526315789474, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.0, 'w_mag': 0.0, 'w_vote': 1.5, 'w_prior': 0.25, 'dev_score': 0.5789473684210527}
+seed 30 {'seed': 30, 'bayes_fusion': 0.5368421052631579, 'self_check': 0.5684210526315789, 'axis': 0.5368421052631579, 'direct': 0.5263157894736842, 'pairwise': 0.5157894736842106, 'top4_context': 0.4631578947368421, 'oracle': 0.7684210526315789, 'alpha': 5.0, 'w_global': 1.0, 'w_ctx': 0.5, 'w_mag': 0.5, 'w_vote': 0.0, 'w_prior': 0.25, 'dev_score': 0.5789473684210527}
+seed 35 {'seed': 35, 'bayes_fusion': 0.4842105263157895, 'self_check': 0.5789473684210527, 'axis': 0.5684210526315789, 'direct': 0.5684210526315789, 'pairwise': 0.5684210526315789, 'top4_context': 0.5263157894736842, 'oracle': 0.7894736842105263, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.5, 'w_mag': 0.0, 'w_vote': 1.5, 'w_prior': 0.25, 'dev_score': 0.5157894736842106}
+seed 40 {'seed': 40, 'bayes_fusion': 0.5368421052631579, 'self_check': 0.5157894736842106, 'axis': 0.5157894736842106, 'direct': 0.4842105263157895, 'pairwise': 0.4842105263157895, 'top4_context': 0.3894736842105263, 'oracle': 0.7894736842105263, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 1.0, 'w_mag': 0.5, 'w_vote': 0.0, 'w_prior': 0.25, 'dev_score': 0.5473684210526316}
+seed 45 {'seed': 45, 'bayes_fusion': 0.5157894736842106, 'self_check': 0.5368421052631579, 'axis': 0.5157894736842106, 'direct': 0.5263157894736842, 'pairwise': 0.5157894736842106, 'top4_context': 0.4421052631578947, 'oracle': 0.7789473684210526, 'alpha': 0.5, 'w_global': 1.0, 'w_ctx': 0.0, 'w_mag': 0.0, 'w_vote': 1.5, 'w_prior': 0.25, 'dev_score': 0.5578947368421052}
+{
+  "n": 473,
+  "n_rows": 10879,
+  "bayes_mean": 0.5149473684210527,
+  "bayes_std": 0.04963955101118013,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "direct_mean": 0.5341052631578947,
+  "pairwise_mean": 0.5313684210526316,
+  "top4_context_mean": 0.4797894736842106,
+  "oracle_mean": 0.812842105263158,
+  "best_params_counts": {
+    "0.5|0.0|0.0|2.0": 10,
+    "0.5|0.5|0.0|2.0": 8,
+    "0.5|0.0|0.0|1.5": 4,
+    "0.5|1.0|0.0|1.5": 3,
+    "0.5|1.0|0.0|0.5": 3,
+    "0.5|0.5|1.0|0.0": 2,
+    "0.5|1.5|0.5|1.5": 2,
+    "0.5|0.5|0.0|1.5": 2,
+    "0.5|1.5|0.0|0.0": 2,
+    "5.0|0.0|1.0|1.5": 1,
+    "0.5|1.0|0.0|2.0": 1,
+    "0.5|0.0|0.0|1.0": 1,
+    "0.5|0.0|0.0|0.0": 1,
+    "1.0|1.0|0.0|1.5": 1,
+    "0.5|0.0|0.5|1.5": 1,
+    "0.5|0.5|0.0|1.0": 1,
+    "0.5|0.5|0.0|0.0": 1,
+    "5.0|0.5|0.5|0.0": 1,
+    "2.0|1.5|0.0|0.5": 1,
+    "0.5|1.0|0.5|0.0": 1,
+    "0.5|1.5|0.5|0.0": 1,
+    "0.5|0.0|0.0|0.5": 1,
+    "0.5|1.5|0.0|2.0": 1
+  }
+}

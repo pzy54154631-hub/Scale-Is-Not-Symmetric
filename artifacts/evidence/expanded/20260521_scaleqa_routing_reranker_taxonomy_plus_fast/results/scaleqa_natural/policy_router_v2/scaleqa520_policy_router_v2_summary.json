@@ -1,0 +1,156 @@
+{
+  "name": "scaleqa520_policy_router_v2",
+  "n": 473,
+  "n_policies": 17,
+  "policies": [
+    "main:answer_tuned",
+    "main:base",
+    "main:large_seed1",
+    "main:large_seed2",
+    "main:large_seed3",
+    "main:large_seed4",
+    "main:large_seed5",
+    "tta:axis",
+    "tta:direct",
+    "tta:math",
+    "tta:scale",
+    "tta:self_check",
+    "tta:tta_majority",
+    "tta:unit_guard",
+    "verifier:candidate_majority",
+    "verifier:letter_axis",
+    "verifier:letter_scale_guard"
+  ],
+  "metrics": {
+    "fixed_main:answer_tuned": {
+      "mean": 0.5122105263157894,
+      "std": 0.04642746033798821,
+      "min": 0.43157894736842106,
+      "max": 0.6736842105263158
+    },
+    "fixed_main:base": {
+      "mean": 0.4597894736842105,
+      "std": 0.04297911675870981,
+      "min": 0.3368421052631579,
+      "max": 0.6
+    },
+    "fixed_main:large_seed1": {
+      "mean": 0.48884210526315797,
+      "std": 0.039049131142683234,
+      "min": 0.4105263157894737,
+      "max": 0.6105263157894737
+    },
+    "fixed_main:large_seed2": {
+      "mean": 0.49073684210526325,
+      "std": 0.04011910584280947,
+      "min": 0.4105263157894737,
+      "max": 0.6210526315789474
+    },
+    "fixed_main:large_seed3": {
+      "mean": 0.49031578947368426,
+      "std": 0.040299068531783326,
+      "min": 0.4105263157894737,
+      "max": 0.6210526315789474
+    },
+    "fixed_main:large_seed4": {
+      "mean": 0.503578947368421,
+      "std": 0.0420170935067845,
+      "min": 0.42105263157894735,
+      "max": 0.6421052631578947
+    },
+    "fixed_main:large_seed5": {
+      "mean": 0.49515789473684213,
+      "std": 0.03984025992971042,
+      "min": 0.4105263157894737,
+      "max": 0.6210526315789474
+    },
+    "fixed_tta:axis": {
+      "mean": 0.5347368421052632,
+      "std": 0.04409888210109829,
+      "min": 0.47368421052631576,
+      "max": 0.7368421052631579
+    },
+    "fixed_tta:direct": {
+      "mean": 0.5336842105263158,
+      "std": 0.04152391359844834,
+      "min": 0.4631578947368421,
+      "max": 0.7263157894736842
+    },
+    "fixed_tta:math": {
+      "mean": 0.5189473684210526,
+      "std": 0.04354415709945942,
+      "min": 0.42105263157894735,
+      "max": 0.6736842105263158
+    },
+    "fixed_tta:scale": {
+      "mean": 0.4915789473684211,
+      "std": 0.03968614502374932,
+      "min": 0.4105263157894737,
+      "max": 0.631578947368421
+    },
+    "fixed_tta:self_check": {
+      "mean": 0.5486315789473684,
+      "std": 0.047057819238867114,
+      "min": 0.47368421052631576,
+      "max": 0.6736842105263158
+    },
+    "fixed_tta:tta_majority": {
+      "mean": 0.5324210526315789,
+      "std": 0.045417019235867176,
+      "min": 0.45263157894736844,
+      "max": 0.7263157894736842
+    },
+    "fixed_tta:unit_guard": {
+      "mean": 0.5252631578947369,
+      "std": 0.03985671663367991,
+      "min": 0.45263157894736844,
+      "max": 0.6736842105263158
+    },
+    "fixed_verifier:candidate_majority": {
+      "mean": 0.5176842105263159,
+      "std": 0.04852694720587549,
+      "min": 0.43157894736842106,
+      "max": 0.6947368421052632
+    },
+    "fixed_verifier:letter_axis": {
+      "mean": 0.46799999999999997,
+      "std": 0.04477113742007539,
+      "min": 0.3684210526315789,
+      "max": 0.631578947368421
+    },
+    "fixed_verifier:letter_scale_guard": {
+      "mean": 0.4667368421052631,
+      "std": 0.04519341165487709,
+      "min": 0.37894736842105264,
+      "max": 0.6210526315789474
+    },
+    "global_train_selected": {
+      "mean": 0.5357894736842106,
+      "std": 0.04601847743789279,
+      "min": 0.45263157894736844,
+      "max": 0.6736842105263158
+    },
+    "learned_policy_router": {
+      "mean": 0.5338947368421052,
+      "std": 0.04425449197453571,
+      "min": 0.4421052631578947,
+      "max": 0.6631578947368421
+    },
+    "oracle_policy": {
+      "mean": 0.7023157894736842,
+      "std": 0.03839978517662789,
+      "min": 0.631578947368421,
+      "max": 0.8315789473684211
+    }
+  },
+  "chosen_model_counts": {
+    "logreg_text": 26,
+    "logreg_num": 13,
+    "extra_trees": 7,
+    "random_forest": 4
+  },
+  "files": {
+    "results": "results/scaleqa_natural/policy_router_v2/scaleqa520_policy_router_v2_results.csv",
+    "choices": "results/scaleqa_natural/policy_router_v2/scaleqa520_policy_router_v2_choices.csv"
+  }
+}

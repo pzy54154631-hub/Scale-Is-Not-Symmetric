@@ -1,0 +1,193 @@
+{
+  "overall": {
+    "base:candlik_candidate_oracle": 0.8900634249471459,
+    "base:candlik_direct": 0.4904862579281184,
+    "base:candlik_scale_guard": 0.427061310782241,
+    "base:candlik_unit_first": 0.42917547568710357
+  },
+  "by_direction": [
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_directions": "prediction_too_large",
+      "score": 0.9087136929460581
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_directions": "prediction_too_small",
+      "score": 0.8706896551724138
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5933609958506224
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_directions": "prediction_too_small",
+      "score": 0.38362068965517243
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5850622406639004
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_directions": "prediction_too_small",
+      "score": 0.2629310344827586
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5726141078838174
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_directions": "prediction_too_small",
+      "score": 0.2801724137931034
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.926605504587156
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7777777777777778
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9459459459459459
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.9333333333333333
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.864406779661017
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.9215686274509803
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6697247706422018
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.4642857142857143
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4074074074074074
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.3108108108108108
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.7333333333333333
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.4067796610169492
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5196078431372549
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6146788990825688
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.39285714285714285
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4074074074074074
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.21621621621621623
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.5333333333333333
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.2627118644067797
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5686274509803921
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6146788990825688
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.39285714285714285
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4444444444444444
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.22972972972972974
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4666666666666667
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.2796610169491525
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5490196078431373
+    }
+  ],
+  "n_examples": 473
+}

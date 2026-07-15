@@ -1,0 +1,29 @@
+models:
+  qwen_main:
+    id: Qwen/Qwen2.5-VL-7B-Instruct
+    role: main backbone
+    local_env: MODEL_DIR
+  internvl_1b:
+    id: OpenGVLab/InternVL2_5-1B
+    role: cross-backbone diagnostic and adaptation
+    local_env: INTERNVL_1B_DIR
+  internvl_8b:
+    id: OpenGVLab/InternVL2_5-8B
+    role: cross-backbone diagnostic and adaptation
+    local_env: INTERNVL_8B_DIR
+  internvl_26b:
+    id: OpenGVLab/InternVL2_5-26B
+    role: diagnostic-only backbone
+    local_env: INTERNVL_26B_DIR
+
+datasets:
+  chartqa:
+    id: HuggingFaceM4/ChartQA
+    role: training, development, and held-out test
+  textvqa:
+    id: lmms-lab/textvqa
+    role: adjacent-task safety evaluation
+  scaleqa_natural:
+    path: results/scaleqa_natural
+    role: author-adjudicated diagnostic data and audit artifacts
+

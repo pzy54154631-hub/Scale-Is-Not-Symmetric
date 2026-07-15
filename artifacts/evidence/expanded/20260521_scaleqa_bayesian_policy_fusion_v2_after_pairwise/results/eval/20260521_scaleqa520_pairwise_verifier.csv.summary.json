@@ -1,0 +1,55 @@
+{
+  "overall": {
+    "pairwise_default_vs_alt": 0.5221987315010571
+  },
+  "by_direction": [
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_directions": "prediction_too_large",
+      "score": 0.2821576763485477
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_directions": "prediction_too_small",
+      "score": 0.771551724137931
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.22935779816513763
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.7142857142857143
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.6296296296296297
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8513513513513513
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.7627118644067796
+    },
+    {
+      "adapter": "pairwise_default_vs_alt",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.2549019607843137
+    }
+  ],
+  "n_examples": 473
+}

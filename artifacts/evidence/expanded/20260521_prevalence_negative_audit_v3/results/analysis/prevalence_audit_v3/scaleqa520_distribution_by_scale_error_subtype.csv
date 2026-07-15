@@ -1,0 +1,8 @@
+scale_error_subtype,count,share
+value_scaled_down,118,0.24947145877378435
+decimal_to_percent,109,0.23044397463002114
+value_scaled_up,102,0.2156448202959831
+percent_to_decimal,74,0.15644820295983086
+minor_factor_or_unit_candidate,28,0.05919661733615222
+minor_factor_percentage_candidate,27,0.05708245243128964
+untyped_100x,15,0.03171247357293869

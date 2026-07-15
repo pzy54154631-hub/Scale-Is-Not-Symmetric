@@ -1,0 +1,264 @@
+[info] examples=473 pools=473 contexts=473 adapter=none
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:02,  1.34it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:02,  1.45it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:02<00:01,  1.47it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:02<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:02<00:00,  2.02it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:02<00:00,  1.72it/s]
+[progress] 25/473 base:candlik_direct=0.4000 base:candlik_scale_guard=0.1600 base:candlik_unit_first=0.2400
+[progress] 50/473 base:candlik_direct=0.4200 base:candlik_scale_guard=0.2800 base:candlik_unit_first=0.3400
+[progress] 75/473 base:candlik_direct=0.4267 base:candlik_scale_guard=0.2933 base:candlik_unit_first=0.3333
+[progress] 100/473 base:candlik_direct=0.4500 base:candlik_scale_guard=0.3300 base:candlik_unit_first=0.3500
+[progress] 125/473 base:candlik_direct=0.4880 base:candlik_scale_guard=0.3680 base:candlik_unit_first=0.3680
+[progress] 150/473 base:candlik_direct=0.4667 base:candlik_scale_guard=0.3533 base:candlik_unit_first=0.3733
+[progress] 175/473 base:candlik_direct=0.4629 base:candlik_scale_guard=0.3486 base:candlik_unit_first=0.3600
+[progress] 200/473 base:candlik_direct=0.4450 base:candlik_scale_guard=0.3300 base:candlik_unit_first=0.3450
+[progress] 225/473 base:candlik_direct=0.4400 base:candlik_scale_guard=0.3333 base:candlik_unit_first=0.3467
+[progress] 250/473 base:candlik_direct=0.4480 base:candlik_scale_guard=0.3360 base:candlik_unit_first=0.3520
+[progress] 275/473 base:candlik_direct=0.4509 base:candlik_scale_guard=0.3418 base:candlik_unit_first=0.3564
+[progress] 300/473 base:candlik_direct=0.4567 base:candlik_scale_guard=0.3467 base:candlik_unit_first=0.3633
+[progress] 325/473 base:candlik_direct=0.4708 base:candlik_scale_guard=0.3692 base:candlik_unit_first=0.3908
+[progress] 350/473 base:candlik_direct=0.4829 base:candlik_scale_guard=0.3914 base:candlik_unit_first=0.4086
+[progress] 375/473 base:candlik_direct=0.4907 base:candlik_scale_guard=0.4053 base:candlik_unit_first=0.4187
+[progress] 400/473 base:candlik_direct=0.4850 base:candlik_scale_guard=0.4225 base:candlik_unit_first=0.4250
+[progress] 425/473 base:candlik_direct=0.4824 base:candlik_scale_guard=0.4259 base:candlik_unit_first=0.4282
+[progress] 450/473 base:candlik_direct=0.4911 base:candlik_scale_guard=0.4267 base:candlik_unit_first=0.4289
+{
+  "overall": {
+    "base:candlik_candidate_oracle": 0.8900634249471459,
+    "base:candlik_direct": 0.4904862579281184,
+    "base:candlik_scale_guard": 0.427061310782241,
+    "base:candlik_unit_first": 0.42917547568710357
+  },
+  "by_direction": [
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_directions": "prediction_too_large",
+      "score": 0.9087136929460581
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_directions": "prediction_too_small",
+      "score": 0.8706896551724138
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5933609958506224
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_directions": "prediction_too_small",
+      "score": 0.38362068965517243
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5850622406639004
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_directions": "prediction_too_small",
+      "score": 0.2629310344827586
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_directions": "prediction_too_large",
+      "score": 0.5726141078838174
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_directions": "prediction_too_small",
+      "score": 0.2801724137931034
+    }
+  ],
+  "by_subtype": [
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.926605504587156
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.7777777777777778
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.9459459459459459
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.9333333333333333
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.864406779661017
+    },
+    {
+      "adapter": "base:candlik_candidate_oracle",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.9215686274509803
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6697247706422018
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.4642857142857143
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4074074074074074
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.3108108108108108
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.7333333333333333
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.4067796610169492
+    },
+    {
+      "adapter": "base:candlik_direct",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5196078431372549
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6146788990825688
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.39285714285714285
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4074074074074074
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.21621621621621623
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.5333333333333333
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.2627118644067797
+    },
+    {
+      "adapter": "base:candlik_scale_guard",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5686274509803921
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.6146788990825688
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.39285714285714285
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4444444444444444
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.22972972972972974
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4666666666666667
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.2796610169491525
+    },
+    {
+      "adapter": "base:candlik_unit_first",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.5490196078431373
+    }
+  ],
+  "n_examples": 473
+}
+building features
+seed 0 {'seed': 0, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.5578947368421052, 'self_check': 0.5157894736842106, 'axis': 0.5894736842105263, 'dev_selected_fixed': 0.5157894736842106, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.6105263157894737, 'policy_oracle': 0.9368421052631579, 'switch_rate': 0.07368421052631578}
+seed 5 {'seed': 5, 'selected_model': 'fixed', 'selected_mode': 'decimal_guard', 'selected_margin': None, 'selector': 0.4842105263157895, 'self_check': 0.5263157894736842, 'axis': 0.5789473684210527, 'dev_selected_fixed': 0.4842105263157895, 'dev_selected_fixed_policy': 'decimal_guard', 'best_fixed_split': 0.5894736842105263, 'policy_oracle': 0.9157894736842105, 'switch_rate': 1.0}
+seed 10 {'seed': 10, 'selected_model': 'base_logreg', 'selected_mode': 'multiclass', 'selected_margin': None, 'selector': 0.5473684210526316, 'self_check': 0.6105263157894737, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5473684210526316, 'dev_selected_fixed_policy': 'tta:direct', 'best_fixed_split': 0.6105263157894737, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.9157894736842105}
+seed 15 {'seed': 15, 'selected_model': 'et_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5263157894736842, 'self_check': 0.5263157894736842, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.4842105263157895, 'dev_selected_fixed_policy': 'tta:math', 'best_fixed_split': 0.5263157894736842, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.8210526315789474}
+seed 20 {'seed': 20, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.09999999999999999, 'selector': 0.5473684210526316, 'self_check': 0.5368421052631579, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.49473684210526314, 'dev_selected_fixed_policy': 'tta:axis', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.042105263157894736}
+seed 25 {'seed': 25, 'selected_model': 'fixed', 'selected_mode': 'decimal_guard', 'selected_margin': None, 'selector': 0.5368421052631579, 'self_check': 0.5052631578947369, 'axis': 0.5578947368421052, 'dev_selected_fixed': 0.5368421052631579, 'dev_selected_fixed_policy': 'decimal_guard', 'best_fixed_split': 0.5578947368421052, 'policy_oracle': 0.8947368421052632, 'switch_rate': 1.0}
+seed 30 {'seed': 30, 'selected_model': 'rf_small', 'selected_mode': 'patch', 'selected_margin': 0.19999999999999996, 'selector': 0.6105263157894737, 'self_check': 0.5684210526315789, 'axis': 0.5368421052631579, 'dev_selected_fixed': 0.5684210526315789, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5684210526315789, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.07368421052631578}
+seed 35 {'seed': 35, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.631578947368421, 'self_check': 0.5789473684210527, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5789473684210527, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5789473684210527, 'policy_oracle': 0.9263157894736842, 'switch_rate': 0.21052631578947367}
+seed 40 {'seed': 40, 'selected_model': 'rf_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.6210526315789474, 'self_check': 0.5157894736842106, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.42105263157894735, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5157894736842106, 'policy_oracle': 0.8631578947368421, 'switch_rate': 0.2}
+seed 45 {'seed': 45, 'selected_model': 'rf_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5894736842105263, 'self_check': 0.5368421052631579, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.4631578947368421, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.8842105263157894, 'switch_rate': 0.8210526315789474}
+{
+  "n": 473,
+  "selector_mean": 0.5667368421052631,
+  "selector_std": 0.056078734536212524,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "dev_selected_fixed_mean": 0.5273684210526316,
+  "best_fixed_split_mean": 0.5713684210526315,
+  "policy_oracle_mean": 0.9004210526315789,
+  "switch_rate_mean": 0.48905263157894735,
+  "selected_model_counts": {
+    "et_small": 18,
+    "rf_small": 17,
+    "fixed": 9,
+    "base_logreg": 2,
+    "logreg": 2,
+    "base_histgb": 2
+  },
+  "selected_mode_counts": {
+    "patch": 24,
+    "stack": 13,
+    "decimal_guard": 6,
+    "multiclass": 4,
+    "tta:axis": 1,
+    "tta:unit_guard": 1,
+    "main:large_seed4": 1
+  },
+  "dev_selected_fixed_policy_counts": {
+    "tta:self_check": 19,
+    "decimal_guard": 12,
+    "tta:axis": 5,
+    "tta:unit_guard": 4,
+    "main:large_seed4": 4,
+    "tta:direct": 2,
+    "tta:math": 2,
+    "verifier:candidate_majority": 1,
+    "tta:tta_majority": 1
+  }
+}

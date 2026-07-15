@@ -1,0 +1,10 @@
+scale_directions,unit_class,n,answer_tuned_acc,large_mean_acc,self_check_acc,fix_rate,break_rate,oracle_rate
+prediction_too_large,percent-axis-or-question,225,0.29333333333333333,0.14044444444444446,0.4311111111111111,0.0,0.15555555555555556,0.7733333333333333
+prediction_too_small,percent-axis-or-question,214,0.7242990654205608,0.8485981308411215,0.6495327102803738,0.12149532710280374,0.0,0.9018691588785047
+prediction_too_small,no-explicit-unit,9,0.7777777777777778,0.7777777777777778,0.5555555555555556,0.0,0.0,0.7777777777777778
+prediction_too_small,large-unit-word,7,1.0,1.0,1.0,0.0,0.0,1.0
+prediction_too_large,large-unit-word,6,0.3333333333333333,0.3333333333333333,0.5,0.0,0.0,0.6666666666666666
+prediction_too_large,no-explicit-unit,5,0.4,0.4,0.6,0.0,0.0,0.6
+prediction_too_large,ratio-or-rate,4,0.25,0.25,0.25,0.0,0.0,0.25
+prediction_too_small,ratio-or-rate,2,0.5,1.0,1.0,0.5,0.0,1.0
+prediction_too_large,currency,1,0.0,0.0,1.0,0.0,0.0,1.0

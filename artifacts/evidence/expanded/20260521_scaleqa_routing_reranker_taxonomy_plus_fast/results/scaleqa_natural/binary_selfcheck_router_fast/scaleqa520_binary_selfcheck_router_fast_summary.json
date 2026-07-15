@@ -1,0 +1,15 @@
+{
+  "n": 473,
+  "mean": 0.5384210526315789,
+  "std": 0.038830400086030926,
+  "selfcheck_fixed": 0.5454545454545454,
+  "alt_counts": {
+    "main:answer_tuned": 13,
+    "tta:direct": 2,
+    "tta:unit_guard": 2,
+    "tta:axis": 1,
+    "verifier:candidate_majority": 1,
+    "main:large_seed2": 1
+  },
+  "mean_switch_rate": 0.20368421052631577
+}

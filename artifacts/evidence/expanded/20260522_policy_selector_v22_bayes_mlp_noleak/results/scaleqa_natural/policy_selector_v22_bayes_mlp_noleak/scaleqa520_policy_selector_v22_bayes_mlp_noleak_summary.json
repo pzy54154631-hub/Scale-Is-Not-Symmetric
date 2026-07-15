@@ -1,0 +1,33 @@
+{
+  "n": 473,
+  "n_policies": 60,
+  "selector_mean": 0.5217543859649123,
+  "selector_std": 0.054006246182044366,
+  "selfcheck_mean": 0.5449122807017545,
+  "axis_mean": 0.5340350877192982,
+  "dev_selected_fixed_mean": 0.5221052631578948,
+  "best_fixed_split_mean": 0.5687719298245614,
+  "policy_oracle_mean": 0.9340350877192982,
+  "switch_rate_mean": 0.6182456140350876,
+  "mode_counts": {
+    "policy_mlp": 17,
+    "fixed": 13
+  },
+  "default_counts": {
+    "tta:self_check": 19,
+    "decimal_guard": 5,
+    "tta:axis": 3,
+    "tta:direct": 1,
+    "tta:math": 1,
+    "tta:unit_guard": 1
+  },
+  "dev_selected_fixed_policy_counts": {
+    "tta:self_check": 9,
+    "decimal_guard": 9,
+    "tta:axis": 4,
+    "tta:unit_guard": 3,
+    "tta:direct": 2,
+    "tta:math": 2,
+    "verifier:candidate_majority": 1
+  }
+}

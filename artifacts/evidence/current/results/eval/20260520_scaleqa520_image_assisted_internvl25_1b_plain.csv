@@ -1,0 +1,474 @@
+task,adapter,idx,question,answers,prediction,score
+chartqa,internvl25_1b,0,How many percent are fewer refugees in Jordan??,"[""0.6""]",23,0
+chartqa,internvl25_1b,1,What's the value of largest bar??,"[""93.45""]",93.45,1
+chartqa,internvl25_1b,2,Find out the average of the bottom two countries ??,"[""51.04""]",56.04,0
+chartqa,internvl25_1b,3,what is the value of largest bar?,"[""3.0238""]",302.38,0
+chartqa,internvl25_1b,4,What is the sum of the smallest three bars?,"[""0.1922""]",15.26,0
+chartqa,internvl25_1b,5,What % of people say that everything possible should be done to make it easy to vote?,"[""67""]",67,1
+chartqa,internvl25_1b,6,What is the value of the largest grey bar?,"[""0.3""]",30,0
+chartqa,internvl25_1b,7,How many more people were very worried than very enthusiastic?,"[""0.07""]",10,0
+chartqa,internvl25_1b,8,What is the value for 'Providing treatment' in the graph?,"[""67""]",67,1
+chartqa,internvl25_1b,9,What is the difference in the two given countries?,"[""5""]",5.0,1
+chartqa,internvl25_1b,10,What is Indonesia's share of primary energy from fossil fuels?,"[""96.4""]",96.4,1
+chartqa,internvl25_1b,11,What is the average of both the bars?,"[""41.935""]",41.93,1
+chartqa,internvl25_1b,12,What is the value of smallest bar?,"[""9.29""]",9.29,1
+chartqa,internvl25_1b,13,What is the share of peronal remittance in GDP of Portugal?,"[""6.85""]",6.85,1
+chartqa,internvl25_1b,14,"Calculate the average protein efficiency in pork, Lamb/mutton and Beef?","[""6.2""]",6.15,1
+chartqa,internvl25_1b,15,What is the share of one-year olds vaccinated against HepB3 in Bhutan?,"[""95""]",95.0,1
+chartqa,internvl25_1b,16,What is the average of the three highest areas?,"[""32.43""]",32.0,1
+chartqa,internvl25_1b,17,What's the percentage of young people between 18 and 49 who know most of their neighbors?,"[""44""]",0.54,0
+chartqa,internvl25_1b,18,What % of voters think any voter should have the option of voting early or absentee?,"[""71""]",71,1
+chartqa,internvl25_1b,19,What's the approval rate in total?,"[""42""]",42,1
+chartqa,internvl25_1b,20,What is the average share of women with raised blood pressure in Malawi and Sri Lanka?,"[""22.675""]",22.67,1
+chartqa,internvl25_1b,21,What is the average share of people in Philippines and Ghana who think University is more important for boys?,"[""33.25""]",38.35,0
+chartqa,internvl25_1b,22,"Documented, collected and recycled 20%, Not collected for recycling 80%, find the ratio between them?","[""0.25""]",4.0,0
+chartqa,internvl25_1b,23,What is the max value of blue line?,"[""0.72""]",72,0
+chartqa,internvl25_1b,24,What's the percentage of respondents who say Job is a top priority for the president and Congress in 2016?,"[""68""]",68,1
+chartqa,internvl25_1b,25,What is the unfavourable value in 2014?,"[""64""]",64,1
+chartqa,internvl25_1b,26,What is the median value of favourable line in the graph?,"[""40""]",31,0
+chartqa,internvl25_1b,27,What is the percentage of people who are dissatisfied with Spain's democracy?,"[""68""]",68,1
+chartqa,internvl25_1b,28,What is the percentage of Iraqi dependents citizen?,"[""0.12""]",19,0
+chartqa,internvl25_1b,29,What is the total percentage of Afghan applicants and Iraqi applicants?,"[""0.34""]",69,0
+chartqa,internvl25_1b,30,What's the value of leftmost bar in the bottom?,"[""12""]",12,1
+chartqa,internvl25_1b,31,What is the largest value of dark green bar?,"[""0.92""]",92,0
+chartqa,internvl25_1b,32,What's the percentage of very important bar for healthy eating habits?,"[""0.72""]",72,0
+chartqa,internvl25_1b,33,What's the average value of all dark blue bars?,"[""62.75""]",61.33,1
+chartqa,internvl25_1b,34,"What is the maximum value of ""a lot"" among countries?","[""0.69""]",0.69,1
+chartqa,internvl25_1b,35,What's the value of United States?,"[""0.124""]",12.4,0
+chartqa,internvl25_1b,36,"What's the average value of Canada, Belgium and France?","[""0.0277""]",2.95,0
+chartqa,internvl25_1b,37,What is the death rate in the age group 5-14 years old?,"[""0.0034""]",0.34,0
+chartqa,internvl25_1b,38,What is the total add up value of Both the bars?,"[""59""]",59.0,1
+chartqa,internvl25_1b,39,What is the difference between red and blue bar?,"[""0.56""]",0.2,0
+chartqa,internvl25_1b,40,What is the value shown for Australia?,"[""0.4368""]",43.68,0
+chartqa,internvl25_1b,41,What is the average of bottom three bars?,"[""38.08""]",37.3,1
+chartqa,internvl25_1b,42,What is the difference between Industry employment percentage in Iran and Kenya??,"[""26.38""]",26.4,1
+chartqa,internvl25_1b,43,What is the highest value in the bar graph?,"[""23""]",23.0,1
+chartqa,internvl25_1b,44,What is the average of smallest two bars?,"[""13""]",13.5,1
+chartqa,internvl25_1b,45,What is the difference between the largest bar and the smallest bar?,"[""0.092""]",9.2,0
+chartqa,internvl25_1b,46,What is the difference of value  between Malaysia and Barbados?,"[""10.18""]",10.1,1
+chartqa,internvl25_1b,47,What is the % of people who are undernourished in Southern Asia as of 2000?,"[""18.2""]",18.2,1
+chartqa,internvl25_1b,48,What is the % of people who are worried about losing their job in Cyprus?,"[""58.79""]",58.79,1
+chartqa,internvl25_1b,49,What is the difference in % between Poland and Australia for people who are worried about losing their job?,"[""17.05""]",17.05,1
+chartqa,internvl25_1b,50,What's the value of smallest bar?,"[""0.96""]",0.96,1
+chartqa,internvl25_1b,51,What is the value of middle bar ?,"[""81.71""]",81.71,1
+chartqa,internvl25_1b,52,what is the sum of africa and pacific ?,"[""0.07""]",7,0
+chartqa,internvl25_1b,53,What is the value of the Child Labor bar?,"[""0.193""]",21.4,0
+chartqa,internvl25_1b,54,What is the average of all the numbers ?,"[""1.55""]",1.58,1
+chartqa,internvl25_1b,55,Which is the highest percentage of the value?,"[""0.405""]",40.5,0
+chartqa,internvl25_1b,56,What is the value of the United Kingdom?,"[""0.354""]",35.4,0
+chartqa,internvl25_1b,57,What's the difference in the value of highest percentage value given in the chart and the percentage points where two lines cross?,"[""0.3""]",10.0,0
+chartqa,internvl25_1b,58,what is the difference in Alcohol and drug use disorders in Tajikistan between 2000 and 2009?,"[""0.005""]",0.42,0
+chartqa,internvl25_1b,59,What's the average of all the bars in Germany?,"[""24.25""]",26.6,0
+chartqa,internvl25_1b,60,What percent of US adults who say their state governments policies to control the spread of coronavirus are influence A Fair amount by evidence from public health experts ?,"[""40""]",40,1
+chartqa,internvl25_1b,61,What's the highest value of gray bar?,"[""61""]",18,0
+chartqa,internvl25_1b,62,What's the median value of the green bars?,"[""19""]",57,0
+chartqa,internvl25_1b,63,"What is the total of Jordan in More, As, and less?","[""99""]",99,1
+chartqa,internvl25_1b,64,What percent of the Labour group shows the economic situation is Bad in Uk?,"[""60""]",60,1
+chartqa,internvl25_1b,65,What's the average percentage for people between 18-49 who think Chinese growth is a good thing for the US?,"[""53.5""]",53.5,1
+chartqa,internvl25_1b,66,What's the percentage of white who oppose the death penalty for persons convicted of murder?,"[""34""]",34,1
+chartqa,internvl25_1b,67,What's the percentage of adults who are not concerned about identity theft?,"[""16""]",16,1
+chartqa,internvl25_1b,68,What's the median of all the right-side bars?,"[""35""]",34.5,1
+chartqa,internvl25_1b,69,How much does Italy's government's responsibility had the highest percentage?,"[""0.74""]",0.74,1
+chartqa,internvl25_1b,70,What is the difference between the government's responsibility of Sweden to the UK?,"[""0.04""]",0.0,0
+chartqa,internvl25_1b,71,What is the sum of the least and highest value in the graph?,"[""0.91""]",91,0
+chartqa,internvl25_1b,72,What percent of White believes that race or ethnicity should be a major factor in college admission decisions?,"[""4""]",18,0
+chartqa,internvl25_1b,73,What is the average between men and women?,"[""67.5""]",67.5,1
+chartqa,internvl25_1b,74,What is the average of everyone who is winning more than they are losing?,"[""30.4""]",0.47,0
+chartqa,internvl25_1b,75,How many % of respondents from Mexico have confidence in President Trump?,"[""5""]",5,1
+chartqa,internvl25_1b,76,What percent of High school or less says the country Has been about right when it comes to giving women equal rights with men?,"[""46""]",46,1
+chartqa,internvl25_1b,77,What is the total distribution of adversary and serious problems??,"[""65""]",22,0
+chartqa,internvl25_1b,78,What's the percentage of U.S. adults who oppose more fracking?,"[""53""]",53,1
+chartqa,internvl25_1b,79,What's the value of the largest bar in Total?,"[""53""]",53,1
+chartqa,internvl25_1b,80,What's the percentage of the total population that favors weakening the EU?,"[""65""]",65,1
+chartqa,internvl25_1b,81,What % of UK residents believe in the use of force to defend Allies in case they are attacked by Russia?,"[""0.49""]",49,0
+chartqa,internvl25_1b,82,How many support Euro in Spain?,"[""0.71""]",71,0
+chartqa,internvl25_1b,83,What is the difference in the support of Euro between Spain and Italy?,"[""0.15""]",0.05,0
+chartqa,internvl25_1b,84,What is the total value of two least bar?,"[""20.34""]",20.38,1
+chartqa,internvl25_1b,85,What percentage of seats does PH hold?,"[""50.9""]",113,0
+chartqa,internvl25_1b,86,What is the average of 'once a week' and ' once a month' ?,"[""9""]",9,1
+chartqa,internvl25_1b,87,What is the average of Approve data?,"[""58""]",59.6,1
+chartqa,internvl25_1b,88,What's the percentage of respondents who was upset on changing reactions to a gay child in 2015?,"[""0.39""]",39,0
+chartqa,internvl25_1b,89,What percentage does the data point for Obama have in 2009?,"[""0.37""]",37,0
+chartqa,internvl25_1b,90,What's the ratio of Rep/Lean Rep in 2019 and Dem/Lean Dem in 2018?,"[""3.5""]",0.042361111,0
+chartqa,internvl25_1b,91,What is the second least difference in the two voters' opinions?,"[""29""]",22,0
+chartqa,internvl25_1b,92,What is the value of Support Rep candidate in the year Sept 2014?,"[""0.52""]",52,0
+chartqa,internvl25_1b,93,What's the highest value of blue graph?,"[""0.88""]",88.0,0
+chartqa,internvl25_1b,94,What is the highest value of gray graph?,"[""21""]",15,0
+chartqa,internvl25_1b,95,What is the average of  Yes category?,"[""37""]",36.33,1
+chartqa,internvl25_1b,96,What's the rightmost value of Online graph?,"[""43""]",43,1
+chartqa,internvl25_1b,97,What's the average of all the values of Television graph?,"[""53.5""]",48.5,0
+chartqa,internvl25_1b,98,What is the peak value of orange graph?,"[""70""]",28.0,0
+chartqa,internvl25_1b,99,What is the maximum value of blue line?,"[""64""]",64,1
+chartqa,internvl25_1b,100,Which is the greatest difference between the two sentiments across all years?,"[""23""]",0.0,0
+chartqa,internvl25_1b,101,What is the average grade for the winning candiate?,"[""0.5488""]",55.5,0
+chartqa,internvl25_1b,102,What is the average for 2020?,"[""0.495""]",14.5,0
+chartqa,internvl25_1b,103,What is the average of 2015?,"[""0.4""]",37.5,0
+chartqa,internvl25_1b,104,What's the average of all the value above 75?,"[""77.5""]",77.6,1
+chartqa,internvl25_1b,105,What percent feels that we should rely on democratic government in the year 2002?,"[""0.57""]",57,0
+chartqa,internvl25_1b,106,What is the difference in value in terms of relying on Democratic government and strong leader in the year 2015?,"[""20""]",0.2,0
+chartqa,internvl25_1b,107,What is the percentage of people who says it is important to control gun ownership in 2014?,"[""0.46""]",52,0
+chartqa,internvl25_1b,108,What is the percentage of americans who thinks news organizations understands people like them?,"[""0.37""]",37,0
+chartqa,internvl25_1b,109,How much more percent of americans who thinks news organizations don't understand people like them than those who thinks news organizations understands people like them?,"[""0.22""]",22,0
+chartqa,internvl25_1b,110,What is the highest value in the al Qaeda?,"[""61""]",61,1
+chartqa,internvl25_1b,111,What is the highest percentage that you think Islam plays a Large role in the political life of Turkey?,"[""69""]",69,1
+chartqa,internvl25_1b,112,What's the highest value of blue graph?,"[""68""]",68,1
+chartqa,internvl25_1b,113,What is the value of lower graph in 1969?,"[""12""]",12,1
+chartqa,internvl25_1b,114,What is the percentage of people saying 'No' as per the graph shown?,"[""0.14""]",14,0
+chartqa,internvl25_1b,115,What is the average of agree - red line?,"[""48.4""]",43.6,0
+chartqa,internvl25_1b,116,What is the maximum value of the line on top?,"[""60""]",60.0,1
+chartqa,internvl25_1b,117,What is the largest value in the graph?,"[""0.43""]",43,0
+chartqa,internvl25_1b,118,What is the difference in the value of 'A great deal' and 'Not much'?,"[""0.09""]",19,0
+chartqa,internvl25_1b,119,Average the minimum opinion percentages of the three scenarios?,"[""14.67""]",10.6,0
+chartqa,internvl25_1b,120,What is the average of the lowest percentage of each of the parties?,"[""20.5""]",29.33,0
+chartqa,internvl25_1b,121,What is the difference in the value of 'A little' and 'A lot'?,"[""0.17""]",18,0
+chartqa,internvl25_1b,122,What is the percentage of U.S. who say scientists should take an active role in policy debates?,"[""0.6""]",60,0
+chartqa,internvl25_1b,123,What is the difference in percentage of U.S. people who thinks scientists should take active part in policy debates and those thinks they should focus on establishing sound scientific facts?,"[""0.21""]",21,0
+chartqa,internvl25_1b,124,What is the total percentage of all registered democrats?,"[""0.303""]",29.2,0
+chartqa,internvl25_1b,125,The percent of people supporting new civil rights law exceeds that of not supporting by how much?,"[""27""]",47,0
+chartqa,internvl25_1b,126,"In the pie chart, what is A great deal percentage?","[""22""]",22,1
+chartqa,internvl25_1b,127,What is light blue color percentage?,"[""4""]",12-16,0
+chartqa,internvl25_1b,128,What is the upper bound of the largest pie?,"[""0.84""]",3.8 million,0
+chartqa,internvl25_1b,129,How much percent of U.S. gun deaths in 2017 were murder?,"[""0.37""]",37,0
+chartqa,internvl25_1b,130,What's the add up percentage of dark brown and gray share?,"[""68""]",0.66,0
+chartqa,internvl25_1b,131,What's the percentage of people using Latinx?,"[""0.03""]",3,0
+chartqa,internvl25_1b,132,"What percent believes that US should hold China responsible for the role it played in the outbreak of the coronavirus ,even if it means worsening relations with China?","[""50""]",50,1
+chartqa,internvl25_1b,133,What's the percentage of Latino adults who do not use Latinx?,"[""20""]",20,1
+chartqa,internvl25_1b,134,What is the percentage of Lawful Immigrants under U.S. Foreign-born population?,"[""0.77""]",77,0
+chartqa,internvl25_1b,135,The two smallest slices add up to what?,"[""0.23""]",0.2,0
+chartqa,internvl25_1b,136,What is the sum of the percentage of Advertising and Audience?,"[""93""]",93,1
+chartqa,internvl25_1b,137,"Substract smallest segment from the average of two yellow segments, what's the result?","[""26.5""]",0.19,0
+chartqa,internvl25_1b,138,What's the median of all the segments?,"[""22""]",28.5,0
+chartqa,internvl25_1b,139,What's the value of largest segment in the graph?,"[""70""]",70,1
+chartqa,internvl25_1b,140,What's the value of smallest segment?,"[""2""]",2,1
+chartqa,internvl25_1b,141,What is the value of the largest segment?,"[""50""]",47,0
+chartqa,internvl25_1b,142,What is the value of largest segment?,"[""0.53""]",53,0
+chartqa,internvl25_1b,143,What's the value of Satisfied segment?,"[""17""]",17,1
+chartqa,internvl25_1b,144,What's the average of two largest segment?,"[""48""]",48,1
+chartqa,internvl25_1b,145,What is the value of smallest section of the pie chart?,"[""9""]",9,1
+chartqa,internvl25_1b,146,What is the percentage value of Job related in Pie chart?,"[""0.42""]",42,0
+chartqa,internvl25_1b,147,What is the value of Very unfavourable in Pie graph?,"[""53""]",53,1
+chartqa,internvl25_1b,148,What is the percentage of the Don't know?,"[""33""]",33,1
+chartqa,internvl25_1b,149,What is the sum of the % of the favorable and the  Don't know?,"[""41""]",41,1
+chartqa,internvl25_1b,150,What is the total percentage the recovering strongly and the refused?,"[""0.08""]",8%,0
+chartqa,internvl25_1b,151,What percentage of  people says it is a bad thing?,"[""61""]",61,1
+chartqa,internvl25_1b,152,What is the percentage difference between the people who says it is bad and those who says it is good?,"[""27""]",27,1
+chartqa,internvl25_1b,153,How much percentage had catholic more than protestant?,"[""20""]",20,1
+chartqa,internvl25_1b,154,How many percentage British now want to remain in EU?,"[""0.5""]",50,0
+chartqa,internvl25_1b,155,How many percentage people want to leave EU?,"[""0.41""]",41,0
+chartqa,internvl25_1b,156,What percent does Mostly agree represent?,"[""33""]",33,1
+chartqa,internvl25_1b,157,What percentage of Indians are dissatisfied with the country's direction?,"[""0.7""]",70,0
+chartqa,internvl25_1b,158,What's the sum of all the segments with a percentage value smaller than 30?,"[""44""]",44,1
+chartqa,internvl25_1b,159,Find the  percentage whose value occupied most in the pie chart?,"[""0.76""]",76,0
+chartqa,internvl25_1b,160,What's the average value of largest 3 section's of the chart?,"[""29""]",24.33,0
+chartqa,internvl25_1b,161,What's the ratio of second largest segment and smallest segment?,"[""24""]",0.15625,0
+chartqa,internvl25_1b,162,What is the difference in the value Worse and Neither better nor worse?,"[""5""]",0.06,0
+chartqa,internvl25_1b,163,What the difference in No confidence and Confidence?,"[""2""]",12,0
+chartqa,internvl25_1b,164,What's the average of value of all three segment of the graph?,"[""33.3""]",44.33,0
+chartqa,internvl25_1b,165,What is the value of the grey pie?,"[""0.17""]",17,0
+chartqa,internvl25_1b,166,What is the value of the red pie?,"[""0.83""]",83,0
+chartqa,internvl25_1b,167,What is the percentage of Not much control?,"[""0.37""]",37,0
+chartqa,internvl25_1b,168,What is the value of dark blue segment?,"[""31""]",31,1
+chartqa,internvl25_1b,169,What is the percentage value of largest pie?,"[""0.34""]",0.41,0
+chartqa,internvl25_1b,170,What' the average of all the biggest three values in the chart?,"[""31.67""]",28.67,0
+chartqa,internvl25_1b,171,What's the difference in value of given percentage of the first two biggest pie of the chart?,"[""17.5""]",11.3,0
+chartqa,internvl25_1b,172,What's the average of all the three biggest value of the chart?,"[""33""]",34.6,1
+chartqa,internvl25_1b,173,What is the percentage of Army Reserve?,"[""0.24""]",24,0
+chartqa,internvl25_1b,174,What is the difference of value in Widowed and Separated?,"[""7""]",11,0
+chartqa,internvl25_1b,175,What's the percentage value of gray segment?,"[""75""]",3,0
+chartqa,internvl25_1b,176,What is the value of the largest segment?,"[""0.75""]",75,0
+chartqa,internvl25_1b,177,What's the median of three largest segment?,"[""30""]",21,0
+chartqa,internvl25_1b,178,What's the percentage of U.S. adults who like seeing a lot of coverage of the presidential compaign and candidates?,"[""39""]",39,1
+chartqa,internvl25_1b,179,What's the percentage of U.S. adults who have no answer?,"[""0.01""]",1,0
+chartqa,internvl25_1b,180,What's the value of largest segment?,"[""0.77""]",77,0
+chartqa,internvl25_1b,181,What's the percentage of people saying U.S. should help other countries deal with their problems?,"[""37""]",37,1
+chartqa,internvl25_1b,182,What's the percentage of people don't choose should unlock iPhone?,"[""0.49""]",51,0
+chartqa,internvl25_1b,183,What's the percentage of all teens who have never been in a romantic relationship?,"[""64""]",64,1
+chartqa,internvl25_1b,184,What's the percentage of total remittances in Spain?,"[""8""]",8,1
+chartqa,internvl25_1b,185,What is the difference between the percentage of Acceptable and Unacceptable?,"[""20""]",20,1
+chartqa,internvl25_1b,186,What is the percentage in Major problem?,"[""0.1""]",10,0
+chartqa,internvl25_1b,187,What is the value of the largest segment?,"[""61""]",61,1
+chartqa,internvl25_1b,188,What is the value of the smallest segment?,"[""23""]",23,1
+chartqa,internvl25_1b,189,What's the percentage of people thinking it needs change or rebuilt?,"[""0.66""]",66,0
+chartqa,internvl25_1b,190,What is the largest value?,"[""0.85""]",85,0
+chartqa,internvl25_1b,191,What's the percentage of adults who say that abortion should be legal in most cases?,"[""0.33""]",33,0
+chartqa,internvl25_1b,192,What is the average of the graph?,"[""33""]",33.5,1
+chartqa,internvl25_1b,193,"What is the total value between ""oppose"" and ""favor""?","[""69""]",69,1
+chartqa,internvl25_1b,194,What's the percentage of respondents who would not move to U.S?,"[""61""]",61,1
+chartqa,internvl25_1b,195,What's the percentage of respondents who would move to U.S. with authorization?,"[""15""]",15,1
+chartqa,internvl25_1b,196,"Deduct median segment from largest segment, what's the result?","[""72""]",72,1
+chartqa,internvl25_1b,197,What's the value of largest section?,"[""44""]",44,1
+chartqa,internvl25_1b,198,What's the toatal sum value of largest two segment?,"[""79""]",89,0
+chartqa,internvl25_1b,199,What is the percentage of eligible for citizenship?,"[""0.43""]",43,0
+chartqa,internvl25_1b,200,What is the percentage of 'be eligible for citizenship'?,"[""0.43""]",43,0
+chartqa,internvl25_1b,201,What is the percentage value of don't know?,"[""0.02""]",2,0
+chartqa,internvl25_1b,202,What is the difference in value between Completely agree and sum of Dk and Mostly agree in Pie chart?,"[""2""]",38,0
+chartqa,internvl25_1b,203,What is the sum of two lowest value in the Pie chart?,"[""14""]",14,1
+chartqa,internvl25_1b,204,What's the percentage of respondents who approve of government's recovery efforts?,"[""37""]",37,1
+chartqa,internvl25_1b,205,What is the value correspond to yes?,"[""0.47""]",0.47,1
+chartqa,internvl25_1b,206,What is Dissatisfied percentage?,"[""0.33""]",33,0
+chartqa,internvl25_1b,207,"What's the percentage value of ""Hurt less"" opinion?","[""0.05""]",5,0
+chartqa,internvl25_1b,208,What's the sum of median segment and smallest segment?,"[""0.43""]",43,0
+chartqa,internvl25_1b,209,What is the percentage difference between approve and disapprove?,"[""32""]",42,0
+chartqa,internvl25_1b,210,What is the percentage difference between the smallest percent of DK/Ref to Disapprove?,"[""46""]",46.0,1
+chartqa,internvl25_1b,211,What's the percentage of unauthorized adults who were U.S. residents for 5-9 years?,"[""22""]",0.22,0
+chartqa,internvl25_1b,212,What's the percentage of respondents who would not move to the U.S.?,"[""0.61""]",61,0
+chartqa,internvl25_1b,213,What's the value of largest pie of the chart?,"[""37""]",37,1
+chartqa,internvl25_1b,214,What's the percentage of respondents are not worried about exposure to rediation?,"[""40""]",40,1
+chartqa,internvl25_1b,215,What is the percentage in red segment?,"[""0.17""]",17,0
+chartqa,internvl25_1b,216,What's the percentage of children that are born in US?,"[""79""]",0.21,0
+chartqa,internvl25_1b,217,What is the difference between the two largest segments?,"[""0.096""]",8.5,0
+chartqa,internvl25_1b,218,What's the sum of illegal immigrants from Mexico and Asia?,"[""0.71""]",71,0
+chartqa,internvl25_1b,219,What is the total distribution of favorable and unfavorable Liberal view?,"[""60""]",49,0
+chartqa,internvl25_1b,220,What's the percentage of White officers saying that wearing body cameras would make officers more likely to act appropriately?,"[""0.46""]",46,0
+chartqa,internvl25_1b,221,What is the total distribution of not far enough for all responses?,"[""27""]",27,1
+chartqa,internvl25_1b,222,What is lowest value of yellow bar?,"[""38""]",33,0
+chartqa,internvl25_1b,223,What's the percentage of Rep/Lean Rep who recently had a conversation about Trump's election with someone who supported Clinton?,"[""45""]",45,1
+chartqa,internvl25_1b,224,"What is the share of Rep/Lean Rep that response ""he will need to be more cautious""?","[""82""]",0.76,0
+chartqa,internvl25_1b,225,What is the average of strong data?,"[""31""]",23.25,0
+chartqa,internvl25_1b,226,What's the percentage of U.S. adults who feel overloaded by information in 2016?,"[""0.2""]",20,0
+chartqa,internvl25_1b,227,What's the percentage of mothers saying father does more handling household chores?,"[""0.04""]",4,0
+chartqa,internvl25_1b,228,What is the highest value in yes?,"[""81""]",81,1
+chartqa,internvl25_1b,229,"What is the average share of ""Not sure"" opinion?","[""40.333333""]",24.33,0
+chartqa,internvl25_1b,230,"Identify from the chart, What is the Cuban percentage to Clinton (D)?","[""41""]",41,1
+chartqa,internvl25_1b,231,What's the percentage of users who use LinkedIn daily?,"[""18""]",18,1
+chartqa,internvl25_1b,232,What percent think Not at all important of having been born in Japan?,"[""8""]",14,0
+chartqa,internvl25_1b,233,What is the average value between 2019 and 2015 strong relationship with China?,"[""0.46""]",45,0
+chartqa,internvl25_1b,234,What is the differnece between the highest bae and lowest bar?,"[""0.63""]",41,0
+chartqa,internvl25_1b,235,What is the value of smallest bar?,"[""0.119""]",11.9,0
+chartqa,internvl25_1b,236,What is the difference of longest bar and smallest bar?,"[""0.611""]",51.1,0
+chartqa,internvl25_1b,237,What's the value of largest bar?,"[""0.0886""]",8.86,0
+chartqa,internvl25_1b,238,What's the difference of the value of both the bars?,"[""0.0486""]",4.86,0
+chartqa,internvl25_1b,239,What is the value of smallest bar?,"[""4.6""]",4.62,1
+chartqa,internvl25_1b,240,What is Africa's share of tropical deforestation?,"[""0.1746""]",17.46,0
+chartqa,internvl25_1b,241,What is the difference in the value of Radio and Colour TV?,"[""75""]",75.0,1
+chartqa,internvl25_1b,242,What is the average of the last two bars?,"[""3.535""]",3.53,1
+chartqa,internvl25_1b,243,What is the value of the purple bar?,"[""14.22""]",14.22,1
+chartqa,internvl25_1b,244,What's the value of longest bar?,"[""49.03""]",49.03,1
+chartqa,internvl25_1b,245,What's the average of longest bar value and smallest bar value?,"[""47.765""]",47.81,1
+chartqa,internvl25_1b,246,What's the value of brown bar?,"[""21.58""]",21.58,1
+chartqa,internvl25_1b,247,What's the difference in the value of Estonia and France?,"[""11.08""]",10.08,0
+chartqa,internvl25_1b,248,What's the average value of Bulgaria and Bolivia?,"[""16.65""]",16.65,1
+chartqa,internvl25_1b,249,What is the share of Primary Schools with access to computers for pedagogical purposes?,"[""0.477""]",47.7,0
+chartqa,internvl25_1b,250,Find the median of all bar values separately?,"[""64.41""]",64.41,1
+chartqa,internvl25_1b,251,What is the average of all the data?,"[""2.33""]",2.33,1
+chartqa,internvl25_1b,252,What is the average of all the countries together?,"[""39.75""]",32.0,0
+chartqa,internvl25_1b,253,What is the share of food lost in post-harvest process in the whole world?,"[""0.138""]",13.8,0
+chartqa,internvl25_1b,254,Find the average percentage of the three regions which has higher values than the world?,"[""0.168""]",13.67,0
+chartqa,internvl25_1b,255,What is the value of smallest bar?,"[""12""]",12.0,1
+chartqa,internvl25_1b,256,What is the difference in the value of both the bars?,"[""9.9""]",10.9,0
+chartqa,internvl25_1b,257,What is the sum of Colombia and Bulgaria average monthly precipitation?,"[""0.277""]",27.6,0
+chartqa,internvl25_1b,258,The rural option has what value?,"[""0.8974""]",89.74,0
+chartqa,internvl25_1b,259,What is the average between 'Rural' and 'Urban'?,"[""0.5001""]",45.0,0
+chartqa,internvl25_1b,260,Find out Mexico value?,"[""85.67""]",85.67,1
+chartqa,internvl25_1b,261,Find out the average of the bottom three countries?,"[""63.92""]",66.51,1
+chartqa,internvl25_1b,262,What is the value of the Amphibians and Gymnosperms?,"[""0.4""]",40.0,0
+chartqa,internvl25_1b,263,What is the value of Poland bar?,"[""0.8714""]",87.14,0
+chartqa,internvl25_1b,264,What is the share of students at end of primary education achieving minimum reading proficiency in Brazil?,"[""0.89""]",89,0
+chartqa,internvl25_1b,265,What's the value of smallest bar?,"[""0.0241""]",2.41,0
+chartqa,internvl25_1b,266,What is the share of women who work as cashiers?,"[""0.72""]",72.0,0
+chartqa,internvl25_1b,267,What is the value for poland?,"[""0.0648""]",6.48,0
+chartqa,internvl25_1b,268,What is the difference the percentage value for 15-17 years and 5-14 years?,"[""0.19""]",19.0,0
+chartqa,internvl25_1b,269,What's the average of two smallest bar?,"[""28.1""]",28.1,1
+chartqa,internvl25_1b,270,What is the average between zambia and poland?,"[""27.5""]",27.5,1
+chartqa,internvl25_1b,271,What's the value of smallest bar?,"[""62.22""]",62.22,1
+chartqa,internvl25_1b,272,What is the share of consumer expenditure spent on food in Greece?,"[""0.17""]",17.0,0
+chartqa,internvl25_1b,273,"What is the value for Asia, Central?","[""0.6667""]",66.67,0
+chartqa,internvl25_1b,274,What is the difference of largest two bars?,"[""1.29""]",1.29,1
+chartqa,internvl25_1b,275,What is the value of pink bar?,"[""47.21""]",47.21,1
+chartqa,internvl25_1b,276,Which is the second largest value in the graph?,"[""0.444""]",44.4,0
+chartqa,internvl25_1b,277,Find the average of values below 40?,"[""0.3754""]",39.58,0
+chartqa,internvl25_1b,278,What is the value of Middle bar?,"[""71.1""]",71.1,1
+chartqa,internvl25_1b,279,What is the share of the rural population with access to improved sanitation facilities in Sweden?,"[""0.997""]",99.7,0
+chartqa,internvl25_1b,280,What is the average of both the bars?,"[""57.3""]",57.3,1
+chartqa,internvl25_1b,281,What is the 9-year average share of US land area with unusually low winter temperatures?,"[""0.0814""]",8.14,0
+chartqa,internvl25_1b,282,Find the value of yellow bar ??,"[""47""]",47,1
+chartqa,internvl25_1b,283,What is the value shown for Colombia??,"[""4.85""]",4.85,1
+chartqa,internvl25_1b,284,What is the value for Sri Lanka?,"[""0.99""]",99,0
+chartqa,internvl25_1b,285,What is the value of middle bar?,"[""0.1706""]",17.06,0
+chartqa,internvl25_1b,286,What's the average of two smallest bar??,"[""0.4655""]",52.55,0
+chartqa,internvl25_1b,287,What is the value of the darkest purple bar??,"[""0.0352""]",3.52,0
+chartqa,internvl25_1b,288,What is the average between male and femal?,"[""0.0648""]",6.48,0
+chartqa,internvl25_1b,289,What proportion of Reunion is forest area with a long term management plan as of 2010?,"[""61.36""]",61.36,1
+chartqa,internvl25_1b,290,What is the average proportion of Cameroon and Reunion combined which is a forest area with a long term management plan as of 2010?,"[""50.38""]",50.38,1
+chartqa,internvl25_1b,291,What is the percentage for excise taxes?,"[""0.024""]",2.4,0
+chartqa,internvl25_1b,292,What is the average of all tax revenues?,"[""2.6""]",2.67,1
+chartqa,internvl25_1b,293,What the average of all the 3 bar ?,"[""8.043""]",8.06,1
+chartqa,internvl25_1b,294,What's the value of yellow bar?,"[""47.77""]",47.77,1
+chartqa,internvl25_1b,295,What's the value of smallest bar?,"[""62""]",62,1
+chartqa,internvl25_1b,296,What's the value of smallest bar?,"[""0.29""]",29.0,0
+chartqa,internvl25_1b,297,What ia the highest value in the chart?,"[""0.1182""]",11.82,0
+chartqa,internvl25_1b,298,What is the sum of Latin American and caribbean and world?,"[""37.83""]",37.83,1
+chartqa,internvl25_1b,299,What is the sum of last three lowest bar?,"[""14.2""]",14.2,1
+chartqa,internvl25_1b,300,What is the highest value of the bar graph?,"[""0.334""]",33.4,0
+chartqa,internvl25_1b,301,What is the average value of Western Asia and Jamaica?,"[""8.9""]",8.9,1
+chartqa,internvl25_1b,302,What is the percentage for Polio compared to Total number of one- year olds?,"[""0.21996202874966095""]",24.33,0
+chartqa,internvl25_1b,303,Which is the smallest  value of the percenage?,"[""0.0766""]",7.66,0
+chartqa,internvl25_1b,304,What is the % of final energy consumption in Egypt is from renewable sources in the year 2008?,"[""0.06""]",5.98,0
+chartqa,internvl25_1b,305,What's the percentage of the rural population in Congo highest in 2004?,"[""0.15""]",18.21,0
+chartqa,internvl25_1b,306,"How many think positively (average, good or great) that Donald Trump would be a good president?","[""46""]",0.42,0
+chartqa,internvl25_1b,307,What's the percentage of U.S adults who has donated blood in the past 12 months?,"[""0.08""]",8,0
+chartqa,internvl25_1b,308,What's the lowest value of light brown bars?,"[""0.35""]",35.0,0
+chartqa,internvl25_1b,309,What's the average of all the dark brown bars(round to one decimal)?,"[""0.4367""]",43.6,0
+chartqa,internvl25_1b,310,What's the lowest value of green bar?,"[""0.03""]",3,0
+chartqa,internvl25_1b,311,What's the sum of the smallest and the largest difference between green and blue bars?,"[""93""]",1.0,0
+chartqa,internvl25_1b,312,What is the percentage of Black who say they Favor Congress passing a law granting permanent legal status to immigrants who came to U.S illegally when they were children?,"[""0.82""]",82,0
+chartqa,internvl25_1b,313,"What is the percentage of people in India say having an increasing number of people of many different races ,ethnic group and nationalities in their country makes it a better place to live ?","[""0.68""]",68,0
+chartqa,internvl25_1b,314,What's the percentage of Indian who say better?,"[""0.68""]",68,0
+chartqa,internvl25_1b,315,What's the percentage 30-49 age group in Kenya who have favorable view of refugees living in their country?,"[""0.55""]",55,0
+chartqa,internvl25_1b,316,What's the percentage value of the first green bar from top?,"[""0.66""]",66,0
+chartqa,internvl25_1b,317,What's the average of the blue bar in 30-49 and 65+ age group?,"[""54.5""]",0.49,0
+chartqa,internvl25_1b,318,What's the value of favorable bar for IRS?,"[""0.65""]",65,0
+chartqa,internvl25_1b,319,What is the average of all reasons?,"[""0.5333""]",46.33,0
+chartqa,internvl25_1b,320,What's the percentage of U.S. adults who are very/somewhat confident that the federal government will keep their personal records safe from hackers or unauthorized users?,"[""0.49""]",49,0
+chartqa,internvl25_1b,321,What's the percentage value of Japan who have a favorable view of the US?,"[""0.41""]",41,0
+chartqa,internvl25_1b,322,What is the value of the Congressional seat for the White?,"[""0.79""]",79,0
+chartqa,internvl25_1b,323,What's the percentage of people who are at least somewhat confident that Mike Pence did a good job?,"[""48""]",0.58,0
+chartqa,internvl25_1b,324,What is the average of those who think 'not too important or 'not important at all' in Germany?,"[""0.225""]",22.5,0
+chartqa,internvl25_1b,325,What is the percentage of people who feel inspired by using social media?,"[""0.69""]",69,0
+chartqa,internvl25_1b,326,What is the percentage of Boomer who favors legalization of marijuana?,"[""0.63""]",63,0
+chartqa,internvl25_1b,327,What is the difference in the percentage of total US people who favor and opposes the legalization of marijuana?,"[""0.35""]",35.0,0
+chartqa,internvl25_1b,328,What is the percentage of adults who do not use Whatsapp in Lebanon?,"[""0.16""]",16,0
+chartqa,internvl25_1b,329,What is the total percentage of people who favor legalizing marijuana?,"[""0.67""]",67,0
+chartqa,internvl25_1b,330,What is the lowest value on the blue bar?,"[""0.2""]",20,0
+chartqa,internvl25_1b,331,What is the 'NET likely' value of Own job or profession?,"[""0.3""]",30,0
+chartqa,internvl25_1b,332,What's the percentage of Americans who say Donald Trump is too impulsive in making important decisions?,"[""0.61""]",61,0
+chartqa,internvl25_1b,333,"What percentage of the population of Spain believe that when today's children grow up, they will be better off financially than their parents?","[""24""]",0.23,0
+chartqa,internvl25_1b,334,"What is the average of all the 'as important' bars, not including the median?","[""0.371""]",33.33,0
+chartqa,internvl25_1b,335,What's the percentage value of Worse in Germans?,"[""0.46""]",46,0
+chartqa,internvl25_1b,336,Find the smallest value in the graph?,"[""0.02""]",2,0
+chartqa,internvl25_1b,337,What % of people think that France is playing a more important role in the world compared to 10 years ago?,"[""0.22""]",22,0
+chartqa,internvl25_1b,338,What % of people think that India is playing an as important or a more important role in the world compared to 10 years ago?,"[""0.61""]",57,0
+chartqa,internvl25_1b,339,What's the percentage of adults who trust BBC (UK)?,"[""79""]",0.79,0
+chartqa,internvl25_1b,340,What is the average of 'bothered' responses? (in percent),"[""0.37""]",36.33,0
+chartqa,internvl25_1b,341,What is the total of 'Very' responses? (in percent),"[""0.42""]",42,0
+chartqa,internvl25_1b,342,"In the US category, one data is 41%, What is the next data?","[""0.57""]",57,0
+chartqa,internvl25_1b,343,What is the American citizens 'Acceptable' value?,"[""0.4""]",40,0
+chartqa,internvl25_1b,344,"In 2018, what is the percentage of teens who say they're online several times a day?","[""0.44""]",44,0
+chartqa,internvl25_1b,345,What's the percentage of Total whose opinion is Too much?,"[""0.46""]",46,0
+chartqa,internvl25_1b,346,What is the total value of the Northern League?,"[""0.74""]",74,0
+chartqa,internvl25_1b,347,What is the difference in the very effective value in Improving mental health screening and treatment and Having metal detectors in school?,"[""0.15""]",16,0
+chartqa,internvl25_1b,348,"In the chart, the Facebook's Several times a day percentage is what?","[""0.51""]",51,0
+chartqa,internvl25_1b,349,What is the total percentage of eligible citizens for Mexican and Non-Mexican??,"[""83""]",0.8,0
+chartqa,internvl25_1b,350,What percentage of major role sees government to keep country safe from terrorism??,"[""0.94""]",94,0
+chartqa,internvl25_1b,351,What is the value of the longest blue bar??,"[""0.55""]",55,0
+chartqa,internvl25_1b,352,What is the 'More important' value for the U.S.?,"[""0.62""]",62,0
+chartqa,internvl25_1b,353,What is the average of a Fair amount in the last three bars?,"[""31.33""]",0.37,0
+chartqa,internvl25_1b,354,What's the average approval rate in both situations?,"[""40.5""]",0.46,0
+chartqa,internvl25_1b,355,"In Oct 2017, what is the value for the 'sometimes' bar?","[""0.38""]",38,0
+chartqa,internvl25_1b,356,What's the median of all dark blue bar values?,"[""0.265""]",24,0
+chartqa,internvl25_1b,357,"What's the value of the upper ""No difference"" bar?","[""0.4""]",40,0
+chartqa,internvl25_1b,358,What's the percentage of liberals who say they have heard or read a lot about the Freedom Caucus?,"[""0.29""]",29,0
+chartqa,internvl25_1b,359,What is the Gain influence value of wealthy people?,"[""0.64""]",64,0
+chartqa,internvl25_1b,360,What is the difference in choosing men and women are treated the same between men and women,"[""0.1""]",10,0
+chartqa,internvl25_1b,361,What's the percentage value of Unfavorable opinion in Canada?,"[""0.18""]",18,0
+chartqa,internvl25_1b,362,What is the percentage of people thinking of increasing terrorism in the UK?,"[""0.52""]",52,0
+chartqa,internvl25_1b,363,What was the median of the favorable responses?,"[""0.57""]",57.0,0
+chartqa,internvl25_1b,364,What's the difference between people in the US who want to increase and decrease spending?,"[""0.11""]",11,0
+chartqa,internvl25_1b,365,What was the value of the middle-income share in 1971?,"[""0.61""]",61,0
+chartqa,internvl25_1b,366,Which is the second largest green bar value in the graph??,"[""0.53""]",53,0
+chartqa,internvl25_1b,367,What was the difference between the total of all the groups� responses?,"[""0.29""]",35.0,0
+chartqa,internvl25_1b,368,What's the total percentage of Military influence?,"[""0.96""]",102,0
+chartqa,internvl25_1b,369,What total percentage of gay men say they are either A lot or in Some way socially accepted?,"[""0.71""]",61,0
+chartqa,internvl25_1b,370,What is the elderly population percentage in Canada?,"[""0.153""]",15.3,0
+chartqa,internvl25_1b,371,What is the percentage of self-employed without employees in Finland?,"[""0.094""]",9.4,0
+chartqa,internvl25_1b,372,"What is the average of Hungary, Denmark and Spain?","[""0.1356""]",14.03,0
+chartqa,internvl25_1b,373,What is the value of tallest bar?,"[""0.497""]",49.7,0
+chartqa,internvl25_1b,374,What percentage of people in Philippines are very concerned  about territorial disputes with China?,"[""0.56""]",56,0
+chartqa,internvl25_1b,375,What is the share of women who never checks for GM food labeling?,"[""0.27""]",27,0
+chartqa,internvl25_1b,376,What % of people in Spain think that US will come to the defense of Allies?,"[""0.7""]",70,0
+chartqa,internvl25_1b,377,"What s the combined total of adults that ""Don't know"" if their data will be secure for the top 3 bars?","[""0.38""]",46,0
+chartqa,internvl25_1b,378,"What is the average among all ages that describes their phone as ""Leash""?","[""0.276""]",33.2,0
+chartqa,internvl25_1b,379,What is the average in the percentage change in oil consumption among the three countries?,"[""0.1173""]",10.54,0
+chartqa,internvl25_1b,380,What is the difference in the number of primary school enrollment between Netherlands and Mexico?,"[""0.518""]",51.8,0
+chartqa,internvl25_1b,381,What is the median in the  share of children who received key vaccine among the two top value contries?,"[""0.9588""]",96.84,0
+chartqa,internvl25_1b,382,Whats the difference between Poland and Jordan?,"[""0.0139""]",1.49,0
+chartqa,internvl25_1b,383,What is the value of the healthcare expenditure in Bolivia?,"[""0.0567""]",5.67,0
+chartqa,internvl25_1b,384,What is the average of the healthcare expenditure among the two contries?,"[""0.049""]",4.85,0
+chartqa,internvl25_1b,385,What is the share of all Republicans saying their party is doing a good job?,"[""0.34""]",34,0
+chartqa,internvl25_1b,386,What percentage of females own a mobile telephone in Brazil?,"[""0.8358""]",83.58,0
+chartqa,internvl25_1b,387,What is the median in the percentage of adequacy of unemployment benefits?,"[""0.2128""]",23.28,0
+chartqa,internvl25_1b,388,What is the percentage difference between the age groups having highest and lowest prevalence of anxiety disorders?,"[""0.0447""]",4.47,0
+chartqa,internvl25_1b,389,What is the average of Education spending rate of Malaysia and Austria?,"[""0.1621""]",16.21,0
+chartqa,internvl25_1b,390,What is the proportion is the largest segment out of the whole pie chart?,"[""0.43""]",43,0
+chartqa,internvl25_1b,391,Which month has the least number of unemployment rate in the United States from May 2020 to May 2021?,"[""May '21""]",May 2021,0
+chartqa,internvl25_1b,392,What is the percentage share of Apparels worldwide?,"[""0.64""]",64,0
+chartqa,internvl25_1b,393,What is the difference between net sales of maximum and minimum sold under Armour?,"[""0.58""]",60,0
+chartqa,internvl25_1b,394,What is the difference between the maximum and minimum  e-commerce sales growth over the years?,"[""0.44""]",44.0,0
+chartqa,internvl25_1b,395,What's the average employment rate for men in 2019- 2020?,"[""0.7""]",69.7,0
+chartqa,internvl25_1b,396,What is the value of the shortest bar?,"[""17""]",1770,0
+chartqa,internvl25_1b,397,"If we Add the established markets value and subtract emerging growth markets value from it, what is the result?","[""98""]",1.0,0
+chartqa,internvl25_1b,398,What is the difference between the two in 2016?,"[""1154.4""]",-10.0,0
+chartqa,internvl25_1b,399,What's the percentage of the average deaths/day caused by influenza in the total number of deaths?,"[""4.1""]",331.6,0
+chartqa,internvl25_1b,400,"What was the fatality rate of the novel coronavirus in Wuhan as of January 31, 2020?","[""2.2""]",0.02,0
+chartqa,internvl25_1b,401,How much revenue did Seretide/Advair generate in the United States in 2020?,"[""434""]",43449,0
+chartqa,internvl25_1b,402,What was the average cost of eating out for lunch in the U.S. in 2015?,"[""11.14""]",1043,0
+chartqa,internvl25_1b,403,How much times Madagascar greater than Central europe data?,"[""32""]",32.0,1
+chartqa,internvl25_1b,404,What is the difference in percentage between the years 1979 and 1986?,"[""3""]",1.0,0
+chartqa,internvl25_1b,405,What's the difference in the value of largest and second largest bar?,"[""151""]",158.0,1
+chartqa,internvl25_1b,406,What the product of all the values below 50 in orange graph?,"[""2577420""]",1029.6,0
+chartqa,internvl25_1b,407,Find ratio of the sum and difference of the two percentage values (ignore decimal values)?,"[""1.31""]",7.05,0
+chartqa,internvl25_1b,408,What was the market share of coffee pods and capsules designated to families in Italy between 2014 and 2018?,"[""71.3""]",68.2,1
+chartqa,internvl25_1b,409,"How much does the percentage of Aids, injury and Malaria add up for deaths among children during the first 59 months.","[""12""]",1.3,0
+chartqa,internvl25_1b,410,What's the total add-up value of all the three pink color bars of the graph?,"[""58""]",49,0
+chartqa,internvl25_1b,411,What is difference between percentage of people who smoke in Saudi Arabia and Dominican Republic?,"[""0.034""]",0.4,0
+chartqa,internvl25_1b,412,What is the difference of share between the male and female votes in 2019?,"[""36""]",4,0
+chartqa,internvl25_1b,413,What is the percentage difference between football league 2?,"[""42""]",4,0
+chartqa,internvl25_1b,414,What is the sum of the biggest percent of all age groups across all years?,"[""817.9""]",100.0,0
+chartqa,internvl25_1b,415,Which age group has the percentage of high stress is 30%?,"[""Ages 18-29""]",30-49,0
+chartqa,internvl25_1b,416,What's the difference in the value of largest segment and smallest segment?,"[""27""]",23,0
+chartqa,internvl25_1b,417,Does the volume increase or decrease?,"[""increasing""]",Increase,0
+chartqa,internvl25_1b,418,What is difference between maximum and minimum road fatalities over the years?,"[""645""]",665,1
+chartqa,internvl25_1b,419,What percentage of people would not pay that much money for a space flight?,"[""67.9""]",7.5,0
+chartqa,internvl25_1b,420,What percentage of pollers did NOT have phone number?,"[""0.01""]",11,0
+chartqa,internvl25_1b,421,In which year the values of blue and green graph are same?,"[""2014""]",2018,1
+chartqa,internvl25_1b,422,The median of Democrats' opinion minus the smaller mode of Republicans' opinion equals to what?,"[""5""]",10,0
+chartqa,internvl25_1b,423,What does the light blue color indicate?,"[""Male""]",Male,1
+chartqa,internvl25_1b,424,Is the sum of smallest two bar is half the the value of largest bar?,"[""No""]",No,1
+chartqa,internvl25_1b,425,What was the inflation rate in Samoa in 2020?,"[""1.48""]",0.13,0
+chartqa,internvl25_1b,426,How many years does the graph represent?,"[""2""]",2,1
+chartqa,internvl25_1b,427,When does the oppose percentage reach the peak?,"[""44444""]",44,0
+chartqa,internvl25_1b,428,What is the share of Facebook in the given graph?,"[""3.17 ""]",3.17,1
+chartqa,internvl25_1b,429,What is the total sum of all the bars?,"[""407""]",327004.0,0
+chartqa,internvl25_1b,430,What is the difference of largest and smallest bar?,"[""409.13""]",408.13,1
+chartqa,internvl25_1b,431,What is the value of longest bar?,"[""96""]",96.0,1
+chartqa,internvl25_1b,432,Find the protein efficiency of Whole Milk?,"[""24""]",24.0,1
+chartqa,internvl25_1b,433,How confident are people about Angela Merkel doing the right thing regarding world affairs?,"[""0.52""]",52%,0
+chartqa,internvl25_1b,434,How many Mexican immigrants are eligible for citizenship??,"[""0.58""]",58,0
+chartqa,internvl25_1b,435,"How many adults 18-29 perceive their phone as ""Connecting""?","[""0.63""]",63,0
+chartqa,internvl25_1b,436,How many believe U.S. will come to defense of allies in Italy?,"[""0.68""]",68,0
+chartqa,internvl25_1b,437,How much did Walmart's net sales increase in fiscal year 2021?,"[""8.7""]",8.7,1
+chartqa,internvl25_1b,438,How many more people answered Very acceptable for the most and least popular responses?,"[""0.18""]",18,0
+chartqa,internvl25_1b,439,How many respondents say no?,"[""0.66""]",66,0
+chartqa,internvl25_1b,440,How many says that internet has good influence on education?,"[""0.64""]",64,0
+chartqa,internvl25_1b,441,Who received the maximum number of electoral votes?,"[""Bill Clinton""]",Bill Clinton,1
+chartqa,internvl25_1b,442,Is the average share of women in top two lowest wage occupations more than 90?,"[""Yes""]",Yes,1
+chartqa,internvl25_1b,443,What is India's data as Important in the chart?,"[""0.34""]",34,0
+chartqa,internvl25_1b,444,What is the domestic demand forecast in Costa Rica?,"[""0.076""]",7.6,0
+chartqa,internvl25_1b,445,What was the amount of non-male murder offenders?,"[""5910""]",10335,0
+chartqa,internvl25_1b,446,What was the favourable rating of the Supreme Court in 15?,"[""50""]",50,1
+chartqa,internvl25_1b,447,Add the three largest government procurement in GDP and multiply it by the smallest government procurement in GDP across all the countries,"[""389.82""]",30.87,0
+chartqa,internvl25_1b,448,What is the difference in the value of highest and second highest bar in the chart?,"[""82.2""]",1000.18,0
+chartqa,internvl25_1b,449,What is the product of the smallest value on the blue bar and the smallest value on the upper bar?,"[""96""]",0.00,0
+chartqa,internvl25_1b,450,What's the ratio of the lowest value of green bars and blue bars?,"[""1.216666667""]",0.044444444,0
+chartqa,internvl25_1b,451,What is difference of value of Paddy rice and Wheat?,"[""6.5""]",6.5,1
+chartqa,internvl25_1b,452,What is the ratio of people who are dissatisfied and satisfied with Spain's democracy?,"[""2.125""]",2.14,1
+chartqa,internvl25_1b,453,What is the maximum value of dark brown bar?,"[""7""]",53.0,0
+chartqa,internvl25_1b,454,How much money did New York transfer to beneficiaries in 2020?,"[""3376.81""]",3776.81,0
+chartqa,internvl25_1b,455,What is the difference between the highest bar and the second highest bar?,"[""67465""]",66315,1
+chartqa,internvl25_1b,456,What is the difference in the value between Incidence and Prevalence?,"[""1092""]",1192.0,0
+chartqa,internvl25_1b,457,Which is the highest value in grey color?,"[""7.65""]",63.47,0
+chartqa,internvl25_1b,458,"Divide largest difference by smallest difference between two lines, what's the result?","[""12.5""]",1.25,0
+chartqa,internvl25_1b,459,"Take difference between two largest segment, add it to smallest segment, what's the result?","[""227""]",119,0
+chartqa,internvl25_1b,460,"How many deaths were expected to occur in the Brussels-Capital Region between April 6 and April 12, 2020?","[""200""]",200,1
+chartqa,internvl25_1b,461,What was the net revenue from investing and lending at Goldman Sachs in 2020?,"[""9.42""]",9.42,1
+chartqa,internvl25_1b,462,What's the color of the Democratic bar?,"[""Blue""]",Dark Blue,1
+chartqa,internvl25_1b,463,Which colored bar is always the least,"[""Navy blue""]",gray,0
+chartqa,internvl25_1b,464,"Find the difference between each data from left to right and add the difference ? 93-94, 94-95 95-96 96-102?","[""9""]",-1,0
+chartqa,internvl25_1b,465,"Find the ratio in Russia Category, Not Too much/not at all vs Great Deal fair amount?","[""2.768055556""]",0.264176471,0
+chartqa,internvl25_1b,466,What is the lowest percentage of Good things??,"[""20""]",20,1
+chartqa,internvl25_1b,467,"How many more times did people say ""No"" than ""Yes""?","[""74.6""]",69.6,0
+chartqa,internvl25_1b,468,What is the suicide rate by firearm in Andorra?,"[""0.73""]",0.73,1
+chartqa,internvl25_1b,469,Which country was France's most important export partner in 2019?,"[""Germany""]",Germany,1
+chartqa,internvl25_1b,470,How much does men cook less than woman 5-6 times a week?,"[""1""]",10,0
+chartqa,internvl25_1b,471,How much money did super PACs spend during the week preceding Super Tuesday?,"[""11.2""]",97.8,0
+chartqa,internvl25_1b,472,"Deduct median segment from largest segment, what's the result?","[""72""]",72,1

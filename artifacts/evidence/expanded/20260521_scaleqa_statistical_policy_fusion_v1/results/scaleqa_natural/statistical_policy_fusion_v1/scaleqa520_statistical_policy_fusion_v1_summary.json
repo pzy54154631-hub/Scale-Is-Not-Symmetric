@@ -1,0 +1,26 @@
+{
+  "n": 473,
+  "stat_mean": 0.5309473684210526,
+  "stat_std": 0.04698841726788338,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "direct_mean": 0.5341052631578947,
+  "pairwise_mean": 0.5313684210526316,
+  "decimal_guard_mean": 0.5168421052631579,
+  "oracle_mean": 0.9004210526315789,
+  "selected_modes": {
+    "answer": 41,
+    "policy": 9
+  },
+  "selected_metrics": {
+    "mean": 36,
+    "lcb": 14
+  },
+  "alpha_counts": {
+    "0.5": 39,
+    "2.0": 11
+  },
+  "z_counts": {
+    "1.0": 50
+  }
+}

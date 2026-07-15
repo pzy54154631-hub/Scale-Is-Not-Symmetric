@@ -1,0 +1,50 @@
+building features
+seed 0 {'seed': 0, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.5578947368421052, 'self_check': 0.5157894736842106, 'axis': 0.5894736842105263, 'dev_selected_fixed': 0.5157894736842106, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.6105263157894737, 'policy_oracle': 0.9368421052631579, 'switch_rate': 0.07368421052631578}
+seed 5 {'seed': 5, 'selected_model': 'fixed', 'selected_mode': 'decimal_guard', 'selected_margin': None, 'selector': 0.4842105263157895, 'self_check': 0.5263157894736842, 'axis': 0.5789473684210527, 'dev_selected_fixed': 0.4842105263157895, 'dev_selected_fixed_policy': 'decimal_guard', 'best_fixed_split': 0.5894736842105263, 'policy_oracle': 0.9157894736842105, 'switch_rate': 1.0}
+seed 10 {'seed': 10, 'selected_model': 'base_logreg', 'selected_mode': 'multiclass', 'selected_margin': None, 'selector': 0.5473684210526316, 'self_check': 0.6105263157894737, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5473684210526316, 'dev_selected_fixed_policy': 'tta:direct', 'best_fixed_split': 0.6105263157894737, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.9157894736842105}
+seed 15 {'seed': 15, 'selected_model': 'et_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5263157894736842, 'self_check': 0.5263157894736842, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.4842105263157895, 'dev_selected_fixed_policy': 'tta:math', 'best_fixed_split': 0.5263157894736842, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.8210526315789474}
+seed 20 {'seed': 20, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.09999999999999999, 'selector': 0.5473684210526316, 'self_check': 0.5368421052631579, 'axis': 0.49473684210526314, 'dev_selected_fixed': 0.49473684210526314, 'dev_selected_fixed_policy': 'tta:axis', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.042105263157894736}
+seed 25 {'seed': 25, 'selected_model': 'fixed', 'selected_mode': 'decimal_guard', 'selected_margin': None, 'selector': 0.5368421052631579, 'self_check': 0.5052631578947369, 'axis': 0.5578947368421052, 'dev_selected_fixed': 0.5368421052631579, 'dev_selected_fixed_policy': 'decimal_guard', 'best_fixed_split': 0.5578947368421052, 'policy_oracle': 0.8947368421052632, 'switch_rate': 1.0}
+seed 30 {'seed': 30, 'selected_model': 'rf_small', 'selected_mode': 'patch', 'selected_margin': 0.19999999999999996, 'selector': 0.6105263157894737, 'self_check': 0.5684210526315789, 'axis': 0.5368421052631579, 'dev_selected_fixed': 0.5684210526315789, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5684210526315789, 'policy_oracle': 0.9052631578947369, 'switch_rate': 0.07368421052631578}
+seed 35 {'seed': 35, 'selected_model': 'et_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.631578947368421, 'self_check': 0.5789473684210527, 'axis': 0.5684210526315789, 'dev_selected_fixed': 0.5789473684210527, 'dev_selected_fixed_policy': 'tta:self_check', 'best_fixed_split': 0.5789473684210527, 'policy_oracle': 0.9263157894736842, 'switch_rate': 0.21052631578947367}
+seed 40 {'seed': 40, 'selected_model': 'rf_small', 'selected_mode': 'patch', 'selected_margin': 0.024999999999999994, 'selector': 0.6210526315789474, 'self_check': 0.5157894736842106, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.42105263157894735, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5157894736842106, 'policy_oracle': 0.8631578947368421, 'switch_rate': 0.2}
+seed 45 {'seed': 45, 'selected_model': 'rf_small', 'selected_mode': 'stack', 'selected_margin': None, 'selector': 0.5894736842105263, 'self_check': 0.5368421052631579, 'axis': 0.5157894736842106, 'dev_selected_fixed': 0.4631578947368421, 'dev_selected_fixed_policy': 'main:large_seed4', 'best_fixed_split': 0.5368421052631579, 'policy_oracle': 0.8842105263157894, 'switch_rate': 0.8210526315789474}
+{
+  "n": 473,
+  "selector_mean": 0.5667368421052631,
+  "selector_std": 0.056078734536212524,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "dev_selected_fixed_mean": 0.5273684210526316,
+  "best_fixed_split_mean": 0.5713684210526315,
+  "policy_oracle_mean": 0.9004210526315789,
+  "switch_rate_mean": 0.48905263157894735,
+  "selected_model_counts": {
+    "et_small": 18,
+    "rf_small": 17,
+    "fixed": 9,
+    "base_logreg": 2,
+    "logreg": 2,
+    "base_histgb": 2
+  },
+  "selected_mode_counts": {
+    "patch": 24,
+    "stack": 13,
+    "decimal_guard": 6,
+    "multiclass": 4,
+    "tta:axis": 1,
+    "tta:unit_guard": 1,
+    "main:large_seed4": 1
+  },
+  "dev_selected_fixed_policy_counts": {
+    "tta:self_check": 19,
+    "decimal_guard": 12,
+    "tta:axis": 5,
+    "tta:unit_guard": 4,
+    "main:large_seed4": 4,
+    "tta:direct": 2,
+    "tta:math": 2,
+    "verifier:candidate_majority": 1,
+    "tta:tta_majority": 1
+  }
+}

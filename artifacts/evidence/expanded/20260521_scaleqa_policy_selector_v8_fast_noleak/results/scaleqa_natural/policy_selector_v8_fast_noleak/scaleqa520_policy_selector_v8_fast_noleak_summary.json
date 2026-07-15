@@ -1,0 +1,40 @@
+{
+  "n": 473,
+  "selector_mean": 0.5431578947368421,
+  "selector_std": 0.050100244357767464,
+  "selfcheck_mean": 0.5513684210526315,
+  "axis_mean": 0.5410526315789475,
+  "dev_selected_fixed_mean": 0.5326315789473685,
+  "best_fixed_split_mean": 0.5665263157894737,
+  "policy_oracle_mean": 0.7040000000000001,
+  "switch_rate_mean": 0.504421052631579,
+  "selected_model_counts": {
+    "fixed": 17,
+    "rf_small": 14,
+    "et_small": 9,
+    "logreg": 7,
+    "base_logreg": 3
+  },
+  "selected_mode_counts": {
+    "patch": 18,
+    "stack": 12,
+    "tta:axis": 4,
+    "tta:unit_guard": 4,
+    "main:large_seed4": 3,
+    "multiclass": 3,
+    "tta:self_check": 2,
+    "tta:direct": 2,
+    "verifier:candidate_majority": 1,
+    "tta:math": 1
+  },
+  "dev_selected_fixed_policy_counts": {
+    "tta:self_check": 24,
+    "tta:axis": 8,
+    "tta:unit_guard": 6,
+    "main:large_seed4": 5,
+    "tta:direct": 3,
+    "tta:math": 2,
+    "verifier:candidate_majority": 1,
+    "tta:tta_majority": 1
+  }
+}

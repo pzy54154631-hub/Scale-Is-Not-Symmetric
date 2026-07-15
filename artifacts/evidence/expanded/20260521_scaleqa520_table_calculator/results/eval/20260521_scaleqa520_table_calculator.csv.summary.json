@@ -1,0 +1,115 @@
+{
+  "overall": {
+    "table_calc_or_reason": 0.42283298097251587,
+    "table_calculator": 0.4080338266384778,
+    "table_reason": 0.3890063424947146
+  },
+  "by_subtype": [
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.01834862385321101
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6785714285714286
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.4444444444444444
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8378378378378378
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.26666666666666666
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.847457627118644
+    },
+    {
+      "adapter": "table_calc_or_reason",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.00980392156862745
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.01834862385321101
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.6428571428571429
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.37037037037037035
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8243243243243243
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.26666666666666666
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.8220338983050848
+    },
+    {
+      "adapter": "table_calculator",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.00980392156862745
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "decimal_to_percent",
+      "score": 0.027522935779816515
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "minor_factor_or_unit_candidate",
+      "score": 0.5714285714285714
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "minor_factor_percentage_candidate",
+      "score": 0.5185185185185185
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "percent_to_decimal",
+      "score": 0.8378378378378378
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "untyped_100x",
+      "score": 0.4
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "value_scaled_down",
+      "score": 0.6949152542372882
+    },
+    {
+      "adapter": "table_reason",
+      "scale_error_subtype": "value_scaled_up",
+      "score": 0.00980392156862745
+    }
+  ],
+  "n_examples": 473
+}

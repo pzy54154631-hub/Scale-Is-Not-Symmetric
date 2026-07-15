@@ -1,0 +1,23 @@
+{
+  "20260522_chartbench500_qwen7_external_suite.csv.summary.json": {
+    "base": 0.482,
+    "answer_tuned": 0.482,
+    "large_pos_seed1": 0.482,
+    "small_pos_seed1": 0.482,
+    "balanced_seed1": 0.482
+  },
+  "20260522_mathvista243_qwen7_external_suite.csv.summary.json": {
+    "base": 0.6707818930041153,
+    "answer_tuned": 0.6707818930041153,
+    "large_pos_seed1": 0.6707818930041153,
+    "small_pos_seed1": 0.6707818930041153,
+    "balanced_seed1": 0.6707818930041153
+  },
+  "20260522_infographicvqa300_qwen7_external_suite.csv.summary.json": {
+    "base": 0.7766666666666666,
+    "answer_tuned": 0.7766666666666666,
+    "large_pos_seed1": 0.7766666666666666,
+    "small_pos_seed1": 0.7766666666666666,
+    "balanced_seed1": 0.7766666666666666
+  }
+}
