@@ -19,6 +19,10 @@ All single-adapter systems use the same short-answer prompt and deterministic sh
 \paragraph{ScaleQA-Natural annotation.}
 Candidate scale conflicts are mined from model predictions and automatically prefilled with numeric-ratio features. The review workflow assigns labels including scale diagnostic candidate, requires image inspection, non-scale, uncertain, and duplicate. Positive labels require that the gold answer and prediction refer to the same chart quantity but differ primarily by a simple scale relation; wrong entity, wrong operation, OCR failure, arbitrary numeric miss, ambiguous question, and duplicate cases are excluded or sent to adjudication. The final ScaleQA-Natural-520 set contains author-adjudicated positive candidates after question/gold deduplication. The image-evaluable subset contains 473 examples with available ChartQA image rows. The audit workflow exports three files: the 739-row candidate audit, a conflict queue, and a 108-row final-positive adjudication queue. After this adjudication, an independent second reviewer audited the 520 final positive inclusions and agreed with all inclusion labels. The release package is intended to include item IDs, source split and row index, question, gold answer, model prediction, subtype, direction, review label, audit metadata, and scripts for reproducing the filters. We reference ChartQA images by source row rather than redistributing them.
 
+\paragraph{Annotation guideline.}
+\label{app:guideline}
+Annotators mark an item as a scale diagnostic only when the prediction and gold answer are both grounded in the chart question and differ primarily by a simple multiplicative scale relation, such as percentage versus decimal form or a visible unit-scale mismatch. Items are rejected when the prediction reflects the wrong visual entity, wrong operation, OCR failure, ambiguous wording, duplicate evidence, or an arbitrary numeric miss. Ambiguous cases go to a review queue and are not included without adjudication. Annotation was performed from the chart image together with the question and answers, not from metadata alone.
+
 \paragraph{PlotQA external subset.}
 The PlotQA external check uses a 500-example subset sampled from the official PlotQA test parquet after filtering to examples with a single numeric answer. We use the same relaxed numeric evaluator as the ChartQA experiments. This subset is intended as an external numeric-answer transfer check rather than a full PlotQA benchmark.
 
@@ -393,7 +397,7 @@ All ChartQA test examples with a single numeric gold answer were scanned with th
 
 \paragraph{Row-level overlap.}
 \label{app:overlap}
-\verify{[Report the number of ScaleQA-Natural rows that coincide with ChartQA training rows used for answer tuning or scale-pair construction, and, if nonzero, re-report Table~\ref{tab:scaleqa_results} on the row-disjoint subset.]}
+Source split of the 473 image-evaluable items: train shard 1, 314; validation, 71; train, 47; test, 39; train shards 2--3, 2. Items from any training split (363) are the training-row subset of Table~\ref{tab:row_overlap}. The analysis is in \texttt{results/scaleqa\_natural/row\_overlap\_split\_analysis.csv}; the leave-source-out run is \texttt{scripts/experiment\_policy\_selector\_v10b\_leave\_source\_out.py} with outputs under \texttt{results/scaleqa\_natural/leave\_source\_out\_v10b/}.
 
 \section{Oracle Definitions}
 \label{app:oracles}

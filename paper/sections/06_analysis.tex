@@ -1,12 +1,12 @@
 \section{Analysis}
 \label{sec:analysis}
 
-The experiments leave a consistent pattern: scale interventions create useful alternatives, but the system fails at deciding when to trust them. This section turns that pattern into the paper's mechanism account.
+Scale interventions create useful alternatives; the system fails at deciding when to trust them.
 
 \subsection{Pair Direction Is Not Symmetric}
 
 
-Table~\ref{tab:pair_ablation} (appendix) reports the development ablation that motivated the probes. Prefer-large pairs give the best full-validation score among single-policy variants, while prefer-small pairs reduce full accuracy by 1.51 points. The point is not that prefer-small supervision is useless; ScaleQA-Natural shows regimes where it is best. Rather, pair direction changes both which scale conflicts are repaired and which non-scale examples are broken. On ChartQA validation, the prefer-large adapter fixes a mean of 13/23 strict candidates across seeds while breaking 1.27\% of base-correct examples (Table~\ref{tab:seed_consistency}).
+In the development ablation (Table~\ref{tab:pair_ablation}, appendix), prefer-large pairs give the best full-validation score while prefer-small pairs reduce it by 1.51 points; yet ScaleQA-Natural shows regimes where prefer-small is best. Pair direction changes both which scale conflicts are repaired and which non-scale examples are broken. On ChartQA validation, the prefer-large adapter fixes a mean of 13/23 strict candidates across seeds while breaking 1.27\% of base-correct examples (Table~\ref{tab:seed_consistency}).
 
 \paragraph{Fix--break asymmetry on ScaleQA-Natural.}
 On ScaleQA-Natural-473 the same adapter fixes 5.71\% of examples the answer-tuned model misses but breaks 7.40\% of examples it gets right, a net loss. The group diagnostic (Table~\ref{tab:selector_group_diagnostics}) makes the reversal concrete: prefer-large policies are strong when the original prediction is too small but poor when it is already too large, and self-check is safer in the latter regime but leaves large headroom in the former. The structured verifier shows the same asymmetry at the example level despite seeing the same image and candidate list. This is why a global adapter can help the verified test-set slice yet fail as a deployment policy: the correct action depends on question form, unit evidence, and the direction of the original conflict.
@@ -15,20 +15,30 @@ On ScaleQA-Natural-473 the same adapter fixes 5.71\% of examples the answer-tune
 \label{sec:selector}
 
 
-The subtype reversal suggests that correction should be selected rather than applied globally. Table~\ref{tab:router_results} (appendix) evaluates a simple subtype router on ScaleQA-Core: the best fixed policy scores 49.97 and the predicted-subtype router 50.71, while the oracle-subtype router reaches 80.77. The gap identifies the missing component: reliable scale-regime detection, not another unconditional adapter.
+The subtype reversal suggests that correction should be selected rather than applied globally. On ScaleQA-Core a simple subtype router reaches 50.71 against 49.97 for the best fixed policy, while the oracle-subtype router reaches 80.77 (Table~\ref{tab:router_results}, appendix): the missing component is regime detection, not another adapter.
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \small
-\resizebox{\textwidth}{!}{\input{tables/selector_main_comparison}}
+\resizebox{\linewidth}{!}{\input{tables/selector_main_comparison}}
 \caption{Deployable selection versus fixed policies and oracles on ScaleQA-Natural-473. ``Label-free'' means no gold subtype or direction feature is used; it does not mean an untouched test set, so we additionally report leave-source-out evaluation. The full ladder of selector variants is in Appendix~\ref{app:selectors}.}
 \label{tab:selector_main}
-\end{table*}
+\end{table}
 
-Table~\ref{tab:selector_main} compares the strongest deployable selector with fixed policies, verifiers, and oracles. The label-free selector reaches 56.67 against split-matched self-check at 55.14; across 50 held-out splits the paired difference is $+1.54$ points with bootstrap 95\% CI $[+0.17,+2.86]$ and split-level wins/ties/losses of 30/5/15. We state this result with two caveats. First, selector features were developed over several iterations on the same diagnostic collection, so even without gold labels the estimate is exposed to researcher-level overfitting; the leave-source-out row, in which the selector is trained on some mining sources and evaluated on others, \verify{shows that it frequently falls back to self-check and its advantage is not stable}. Second, an oracle that picks the best \emph{fixed} policy per split reaches 57.14, so the selector does not yet beat a well-chosen fixed prompt. We therefore do not present it as a strong deployable method; its role is to show that chart-side evidence carries some regime signal while most headroom remains unclaimed. Selectors that switch more aggressively (statistical fusion, bucketed Bayesian priors, Bayesian-MLP) all fall below self-check, because additional evidence that is predictive on development partitions is not calibrated enough to override a safe fixed prompt (Appendix~\ref{app:selectors}).
+Table~\ref{tab:selector_main} compares the strongest selector with fixed policies, verifiers, and oracles. \emph{Protocol.} For each of 50 random 60/20/20 partitions, every selector configuration (feature model, stack-vs-patch mode, switch margin) and every fixed policy is scored on the 20\% dev partition only; the single best configuration is refit on train+dev and scored once on the 20\% test partition. The label-free selector reaches 56.67 against split-matched self-check at 55.14; the paired per-split difference is $+1.54$ points (bootstrap 95\% CI $[+0.19,+2.88]$; Wilcoxon $p=0.028$; 30 wins / 5 ties / 15 losses, sign test $p=0.036$). Two comparisons bound this result. A fixed policy chosen on the same dev partition scores only 52.74 on test, below self-check: naive dev-based policy choice overfits, and the selector's gain comes from switching conservatively (48.9\% of items) rather than from strong regime detection. An oracle that picks the best fixed policy per test split reaches 57.14, so the selector does not yet beat a well-chosen fixed prompt.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/leave_source_out}}
+\caption{Leave-source-out evaluation of the same selector. Each ChartQA source split that contributed ScaleQA items is held out in turn; configuration is chosen on a dev partition of the remaining sources. The selector is below self-check on every held-out source.}
+\label{tab:lso}
+\end{table}
+
+The advantage does not survive source shift. Table~\ref{tab:lso} holds out each mining source in turn: the selector falls below self-check on all four, by 1.0 to 6.9 points, while the policy oracle stays at 79--84. Since selector features were also iterated over several versions on this collection (Appendix~\ref{app:selectors}), even the random-split gain is an upper estimate. The selector is therefore not a deployable method; it shows that chart-side evidence carries a weak, source-specific regime signal while most oracle headroom remains unclaimed. More aggressive selectors (statistical fusion, Bayesian priors, Bayesian-MLP) fall below self-check even on random splits (Appendix~\ref{app:selectors}).
 
 \subsection{What the Negative Results Establish}
 
 The negative results rule out simple explanations for the gap between generation and selection. Table extraction plus calculation tests whether the issue is missing arithmetic; it is not (42.28). Structured verifiers test whether exposing chart context and explicit scale variants is enough; it is not (48.41). Candidate-likelihood and pairwise-verifier variants test whether the model internally prefers the right candidate once shown a compact list; again no. Blind sampling (Table~\ref{tab:blind_oracle}) shows that the missing answer is usually not missing: the model generates the correct scale in \verify{79.3\%} of cases within 20 samples. Candidate generation and regime selection both matter, and the second is the larger gap.
 
-This is the reliability boundary we want to expose. A directional adapter can repair one verified direction of scale error, self-check prompts are strong fixed policies, and lightweight selectors improve slightly over them; but when the candidate pool expands, most additional headroom appears only in the oracle. The missing capability is calibrated regime detection: deciding when \textit{0.61} is a decimal answer, when it is a percent written as a decimal, and when a larger or smaller unit is required by the axis.
+The missing capability is calibrated regime detection: deciding when \textit{0.61} is a decimal answer, when it is a percent written as a decimal, and when a larger or smaller unit is required by the axis.

@@ -12,3 +12,7 @@ C10,Appendix / structured_verifier_direction,Directional verifier failure,archiv
 C11,Appendix / table_calculator_subtypes,Table-extraction calculator baseline,archived_predictions,scripts/eval_scaleqa_table_calculator.py,artifacts/evidence/expanded/20260521_scaleqa520_table_calculator
 C12,Paper PDF,19-page compiled manuscript,fully_rerunnable,python3 scripts/reproduce.py paper,paper/main.tex
 
+C13,Table row_overlap / §5.2,prefer-large +7.3 [+1.5;+13.6] on 110 row-disjoint items; -4.1 [-7.8;-0.4] on 363 training-row items,rerunnable_analysis,results/scaleqa_natural/row_overlap_split_analysis.csv (from reranker_v2 candidate pool),artifacts/evidence/expanded/20260521_scaleqa_routing_reranker_taxonomy_plus_fast
+C14,Table lso / §6.2,leave-source-out selector below self-check on all 4 sources (-1.0 to -6.9),rerunnable_analysis,scripts/experiment_policy_selector_v10b_leave_source_out.py,results/scaleqa_natural/leave_source_out_v10b
+C15,§6.2 paired statistics,selector-self-check +1.54 CI[+0.19;+2.88] Wilcoxon p=0.028 sign p=0.036; dev-selected fixed 52.74,rerunnable_analysis,paired analysis of v10b results.csv,artifacts/evidence/expanded/20260521_scaleqa_policy_selector_v10b_tta2_noleak
+C16,§3 / Appendix overlap,363 of 473 image-evaluable items from ChartQA training rows,rerunnable_analysis,candidate_pool source_split counts,artifacts/evidence/expanded/20260521_scaleqa_routing_reranker_taxonomy_plus_fast

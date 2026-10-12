@@ -6,6 +6,12 @@ This document is the point-by-point response to paste into the ARR resubmission 
 
 ## Summary of changes
 
+**Added after the first draft (computed from files already in the repo, no GPU):**
+- Row-overlap analysis: 363/473 ScaleQA items come from ChartQA training rows. On the 110 row-disjoint items the prefer-large adapter *helps* (+7.3, CI [+1.5,+13.6]); on training-row items it hurts (−4.1). Direction asymmetry identical in both. New Table `row_overlap_analysis`, §5.2.
+- Leave-source-out selector evaluation: selector is below self-check on every held-out source (−1.0 to −6.9). New Table `leave_source_out`, §6.2. This is a negative result and is reported as such.
+- Exact selector protocol (60/20/20, selection on dev only) and paired tests (Wilcoxon p=0.028, sign p=0.036); dev-selected fixed policy 52.74 < self-check.
+
+
 1. **Reframed the contribution** as a diagnostic study with one verified targeted effect (abstract, §1, §7). Removed "the obvious fix is tempting and wrong"; claims are now stated as "the unconditional interventions we test do not solve this."
 2. **Narrowed scope** explicitly to percentage–decimal, factor-of-100 errors on ChartQA-like data (abstract, §1, §7, Limitations).
 3. **Added blinded, construction-independent verification** of strict ChartQA test errors (§3, Appendix "Verified Strict Test Errors"). The ratio rule is now described as a *candidate filter*, not a definition of a scale error.
@@ -77,8 +83,8 @@ Source: author response of 8 July 2026. None of these are in the repository's `a
 | 0/17, 1/17, 12/17, 14/17 | abstract, §1, Table controls | Fill random-negative and non-directional rows. |
 | ChartQA val 86.40 → 86.95 (3 seeds) | Table controls | Confirm this is validation (N=1920), consistent with `bootstrap_chartqa_full`. |
 | Blind pass@20 79.3 vs single 52.4 on 473 | abstract, §1, §5, §6 | Confirm sampling temperature and that 52.4 is single stochastic sample (not greedy 50.95). |
-| Leave-source-out selector result | Table selector_main | Fill with number. |
-| Row-level overlap count | §3, Appendix | Fill. |
+| ~~Leave-source-out selector~~ | DONE: Table lso, computed from repo files (C14) | selector below self-check on all 4 sources |
+| ~~Row-level overlap count~~ | DONE: 363/473 from training rows (C16); adapter effect recomputed on row-disjoint subset (C13) | **remaining**: whether any of the 363 rows are among the K=300 scale-pair rows |
 | Per-item verified table | Appendix | Fill. |
 
 ## Not done (time)

@@ -1,6 +1,6 @@
 \section{Diagnostic Probes and Policy Selection}
 
-We freeze the MLLM backbone and train LoRA parameters $\Delta$ \citep{hu2021lora}. For a chart image $x$, question $q$, and answer $y$, the adapted model defines $p_{\theta,\Delta}(y\mid x,q)$ with frozen $\theta$. The methods below form a probe ladder rather than a single proposed fix. Directional adapters test whether scale preference can be moved; compute-matched controls test whether the movement is due to the scale objective; clean-direct controls test whether it is safe without answer tuning; blind sampling tests whether the correct answer is generated at all; and selectors test whether candidate evidence can be turned into a deployable regime decision.
+We freeze the MLLM backbone and train LoRA parameters $\Delta$ \citep{hu2021lora}; for chart $x$, question $q$, and answer $y$ the adapted model defines $p_{\theta,\Delta}(y\mid x,q)$. The methods form a probe ladder, not a single fix: directional adapters test whether scale preference can be moved, compute-matched and clean-direct controls test why and whether safely, blind sampling tests whether the correct answer is generated at all, and selectors test whether candidate evidence yields a regime decision.
 
 \begin{figure}[t]
 \centering
@@ -48,7 +48,7 @@ where $m$ is a margin and $\beta$ controls sharpness. The loss encourages the pr
 The main positive result uses an \emph{answer-tuned} starting point: scale adaptation continues from an answer-only LoRA adapter in the Qwen2.5-VL-7B pipeline for 300 additional steps. Because any continuation could help simply through more optimization, we add \emph{compute-matched controls} that continue the same answer-tuned adapter for the same 300 steps with (a)~ordinary answer examples, (b)~random or shuffled numeric negatives, and (c)~non-directional balanced pairs with matched answer frequency. We also test \emph{clean direct} scale-only tuning from the raw backbone as a safety control. At inference, main results use the same deterministic short-answer decoding template as the baseline, without reranking or calculators.
 
 \paragraph{Blind-generation oracle.}
-To test whether candidate oracles are high only because the pool contains deterministic scale transforms of the base answer, we also draw $20$ stochastic samples from the answer-tuned model with no scale prompt and no transformation, and report single-sample accuracy against pass@20. This separates ``the model can generate the right scale'' from ``our transformation rules reproduce the mined relation.''
+To test whether candidate oracles are high only because pools contain deterministic transforms of the base answer, we also draw 20 stochastic samples with no scale prompt and no transformation and report pass@20 against single-sample accuracy.
 
 \paragraph{Label-free policy selection.}
 \label{sec:router_method}

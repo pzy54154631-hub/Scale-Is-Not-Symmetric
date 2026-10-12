@@ -1,16 +1,18 @@
-\begin{tabular}{lcc}
+\begin{tabular}{lc}
 \toprule
-Method on ScaleQA-Natural-473 (50 held-out splits) & Accuracy & Notes \\
+Method on ScaleQA-Natural-473 & Acc. \\
 \midrule
-Self-check prompt (fixed policy) & 55.14 $\pm$ 4.30 & strongest fixed prompt \\
-Label-free selector (chart-context + candidate evidence) & 56.67 $\pm$ 5.61 & paired $\Delta$ vs.\ self-check $+1.54$, 95\% CI $[+0.17,+2.86]$ \\
-Label-free selector, leave-source-out & \verify{[fill]} & \verify{falls back to self-check on most held-out sources} \\
-Best fixed policy chosen per split (oracle over fixed policies) & 57.14 $\pm$ 3.62 & uses split labels \\
-Pairwise top-8 verifier & 54.33 & candidate comparison prompt \\
-Structured-context verifier & 48.41 & image + chart context + top-4 candidates \\
-Table extraction + calculator & 42.28 & DePlot-style evidence, symbolic calculation \\
+Self-check prompt (fixed policy; 50 splits) & 55.14 $\pm$ 4.30 \\
+Label-free selector (50 splits) & 56.67 $\pm$ 5.61 \\
+\quad paired $\Delta$ vs.\ self-check & $+1.54$ [$+0.19$, $+2.88$] \\
+\quad fixed policy chosen on dev & 52.74 \\
+\quad best fixed policy per test split (oracle) & 57.14 $\pm$ 3.62 \\
+Label-free selector, leave-source-out (Table~\ref{tab:lso}) & $\Delta$ $-1.0$ to $-6.9$ \\
+Pairwise top-8 verifier & 54.33 \\
+Structured-context verifier & 48.41 \\
+Table extraction + calculator & 42.28 \\
 \midrule
-Policy-pool oracle & 90.04 & upper bound \\
-Candidate top-8 oracle & 91.75 & upper bound \\
+Policy-pool oracle & 90.04 \\
+Candidate top-8 oracle & 91.75 \\
 \bottomrule
 \end{tabular}

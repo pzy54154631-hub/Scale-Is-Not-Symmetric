@@ -2,11 +2,69 @@
 \label{sec:experiments}
 
 \paragraph{Setup.}
-The main experiments use Qwen2.5-VL-7B-Instruct \citep{qwen25vl2025}. We use ChartQA validation (1{,}920 examples) for development and held-out ChartQA test (2{,}500 examples) for the main task result \citep{masry2022chartqa}. We also evaluate InternVL2.5-1B/8B/26B \citep{internvl25} and numeric subsets of PlotQA \citep{methani2020plotqa}, ChartBench \citep{chartbench2024}, MathVista \citep{lu2023mathvista}, and InfographicVQA \citep{mathew2022infographicvqa}. Numeric answers are scored with the repository evaluator: normalized exact match for text answers and 5\% tolerance for numeric answers. The final Qwen scale adapters use $K=300$ pairs, 300 steps, learning rate $10^{-6}$, $\beta=2.0$, and margin $m=0.10$. All accuracy differences are reported in percentage points.
+The main experiments use Qwen2.5-VL-7B-Instruct \citep{qwen25vl2025}. We use ChartQA validation (1{,}920 examples) for development and held-out ChartQA test (2{,}500 examples) for the main task result \citep{masry2022chartqa}. We also evaluate InternVL2.5-1B/8B/26B \citep{internvl25} and numeric subsets of PlotQA \citep{methani2020plotqa}, ChartBench \citep{chartbench2024}, MathVista \citep{lu2023mathvista}, and InfographicVQA \citep{mathew2022infographicvqa}. Numeric answers are scored with the repository evaluator: normalized exact match for text answers and 5\% tolerance for numeric answers. The final Qwen scale adapters use $K=300$ pairs, 300 steps, learning rate $10^{-6}$, $\beta=2.0$, and margin $m=0.10$. All accuracy differences are in percentage points.
 
 \subsection{Held-Out ChartQA and Verified Strict Errors}
 
 The first question is deliberately narrow: can a scale-directed update fix natural scale errors without damaging the main task, and is the effect due to the scale objective rather than extra training?
 
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/official_test_attribution}}
+\caption{Held-out ChartQA test attribution for Qwen2.5-VL-7B. The scale update is measured on top of the answer-tuned adapter; clean direct scale-only tuning is a safety control. ``Large-positive'' denotes the prefer-large adapter.}
+\label{tab:official_test}
+\end{table}
 
-Table~\ref{tab:transfer_boundary} (appendix) summarizes the transfer picture. InternVL2.5-1B and 8B can be adapted with the same scale-pair recipe, and InternVL2.5-26B serves as a stronger diagnostic backbone on ScaleQA-Natural, PlotQA, ChartBench, MathVista, and InfographicVQA subsets. These checks establish two narrow facts: ratio-related scale errors occur under every backbone we test, and the prefer-large adapter does not transfer as a correction (InternVL2.5-8B shows only tiny differences among directions, and Qwen external subsets are unchanged across adapters). Because the models, prompts, and subset sizes differ, they do not establish a common prevalence or taxonomy across models; we use them to bound the method's scope, not to claim a cross-model phenomenon with a stable rate.
+Table~\ref{tab:official_test} separates answer tuning from scale tuning. The raw pipeline obtains 78.04 on ChartQA test; answer tuning reaches 88.60. Continuing from that adapter, prefer-large scale-contrastive tuning reaches 89.32 over five seeds, +0.72 points with paired bootstrap 95\% CI $[+0.38,+1.09]$. Clean scale-only adaptation from the raw backbone hurts test accuracy by 3.5--6.7 points. The aggregate gain is small because strict scale errors are rare (Table~\ref{tab:strict_prevalence}); non-scale accuracy moves only from 89.35 to 89.66 (Table~\ref{tab:test_subset_results}), and TextVQA-500 is unchanged at 94.20 (a small adjacent-task check, not a general safety guarantee).
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/compute_matched_controls}}
+\caption{Compute-matched controls. Every row continues the same answer-tuned adapter for the same number of steps; only the continuation data differs. Recovery is reported as counts over the \verify{17} blind-verified strict test errors with Wilson 95\% intervals.}
+\label{tab:controls}
+\end{table}
+
+Table~\ref{tab:controls} answers the attribution question. On the verified strict test errors the answer-tuned baseline recovers \verify{0/17}. Continuing with ordinary answer examples recovers \verify{1/17}, and non-directional or random-negative continuation is statistically tied with the baseline on ChartQA validation. Directional scale supervision recovers \verify{12/17} in the three-seed control setting and \verify{14/17} with the main five-seed prefer-large adapter. The intervals are wide, but they exclude the control outcomes: the targeted effect comes from directional scale supervision, not from 300 more steps. This is a verified diagnostic-slice result, not a population-level rate (per-seed counts: Appendix~\ref{app:strict_verified}).
+
+\subsection{ScaleQA-Natural}
+\label{sec:scaleqa_results}
+
+The second question is whether the same intervention is safe when scale conflicts are collected across regimes rather than filtered to one verified recovery subset.
+
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{tables/scaleqa_natural_results}}
+\caption{ScaleQA-Natural diagnostic results. The first row is the image-evaluable ScaleQA-Natural-473 subset; ScaleQA-Core and InternVL-mined report five-seed pair-mode means. Large/Small denote prefer-large/prefer-small adapters.}
+\label{tab:scaleqa_results}
+\end{table*}
+
+On ScaleQA-Natural-473, answer tuning improves the raw backbone from 45.67 to 50.95, a scale-aware prompt drops to 44.19, and the global prefer-large adapter reaches 49.51, \emph{below} the answer-tuned base. On ScaleQA-Core, balanced and all-pair variants outperform the answer-tuned base; on the InternVL-mined subset, prefer-small adaptation is far stronger than every other global policy (74.90 versus 33.23 balanced).
+
+\begin{table*}[t]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{tables/row_overlap_analysis}}
+\caption{Row-overlap analysis on ScaleQA-Natural-473. Prefer-large is the five-seed mean; $\Delta$ is the paired per-item difference with a bootstrap 95\% CI; Fix/Break are the percentages of items the adapter corrects/breaks relative to the answer-tuned model. The direction asymmetry is the same on both subsets; the aggregate sign differs because 56\% of training-row items are prediction-too-large versus 33\% of row-disjoint items.}
+\label{tab:row_overlap}
+\end{table*}
+
+Table~\ref{tab:row_overlap} separates the items by whether their ChartQA row was seen during answer tuning. The aggregate ``adapter hurts'' result is carried entirely by the training-row items ($-4.1$ points, CI $[-7.8,-0.4]$, breaking 8.8\%). On the 110 row-disjoint items the same adapter \emph{helps} ($+7.3$ points, CI $[+1.5,+13.6]$, fixing 9.1\% and breaking 2.7\%) and edges self-check (58.18 versus 55.45). The direction breakdown shows why: in both subsets prefer-large helps when the prediction is too small and hurts when it is already too large; the subsets differ mainly in their mix of directions. Directionality is the stable finding; the sign of a global adapter's aggregate effect on a mined set depends on the set's direction composition, itself a reason not to deploy unconditional correction.
+
+Training-free prompting baselines (Table~\ref{tab:tta_baselines_app}, appendix) are stronger than the global adapter on the full set. A self-check prompt reaches 54.55; majority voting adds little, while oracle prompt choice reaches 67.44. The question becomes whether the right answer is missing or merely not selected.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/blind_oracle}}
+\caption{Candidate coverage on ScaleQA-Natural-473 decomposed by candidate source. Blind sampling uses no scale prompt and no deterministic transformation, so its coverage is not implied by the mining rule.}
+\label{tab:blind_oracle}
+\end{table}
+
+Table~\ref{tab:blind_oracle} addresses a construction concern directly: because ScaleQA-Natural is mined through multiplicative relations and the structured oracle pools contain explicit scale variants, oracles over those pools are high partly by construction. The blind-generation row removes both. With no scale prompt and no transformation, \verify{20} stochastic samples already contain a correct answer for \verify{79.3\%} of examples, against \verify{52.4\%} for a single sample. Deterministic variants raise coverage only further, to 91.75--92.60; most of the gap to deployable methods is present without them.
+
+\subsection{Cross-Backbone and External Checks}
+
+The final question is scope: does the phenomenon extend beyond the main Qwen setting, and does the intervention transfer with it? Table~\ref{tab:transfer_boundary} (appendix) summarizes the picture. InternVL2.5-1B and 8B can be adapted with the same scale-pair recipe, and InternVL2.5-26B serves as a stronger diagnostic backbone on ScaleQA-Natural, PlotQA, ChartBench, MathVista, and InfographicVQA subsets. These checks establish two narrow facts: ratio-related scale errors occur under every backbone we test, and the prefer-large adapter does not transfer as a correction (InternVL2.5-8B shows only tiny differences among directions, and Qwen external subsets are unchanged across adapters). Because models, prompts, and subset sizes differ, they do not establish a common prevalence or taxonomy across models; we use them to bound the method's scope.

@@ -1,0 +1,15 @@
+\begin{tabular}{lrrrrrrr}
+\toprule
+ScaleQA-Natural-473 subset & $N$ & Answer-tuned & Prefer-large & Self-check & $\Delta$(large$-$ans.) [95\% CI] & Fix & Break \\
+\midrule
+Items from ChartQA training rows & 363 & 50.96 & 46.89 & 54.27 & $-4.1$ [$-7.8$, $-0.4$] & 4.7 & 8.8 \\
+Items from ChartQA val/test rows (row-disjoint) & 110 & 50.91 & 58.18 & 55.45 & $+7.3$ [$+1.5$, $+13.6$] & 9.1 & 2.7 \\
+All & 473 & 50.95 & 49.51 & 54.55 & $-1.4$ [$-4.7$, $+1.7$] & 5.7 & 7.4 \\
+\midrule
+\multicolumn{8}{l}{\emph{By direction} (answer-tuned / prefer-large / self-check):} \\
+Prediction too large, training rows & 205 & 30.7 & 15.3 & 45.4 & & & \\
+Prediction too small, training rows & 158 & 77.2 & 87.8 & 65.8 & & & \\
+Prediction too large, row-disjoint & 36 & 22.2 & 14.4 & 33.3 & & & \\
+Prediction too small, row-disjoint & 74 & 64.9 & 79.5 & 66.2 & & & \\
+\bottomrule
+\end{tabular}
