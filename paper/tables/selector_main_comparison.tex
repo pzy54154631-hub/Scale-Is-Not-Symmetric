@@ -1,0 +1,16 @@
+\begin{tabular}{lcc}
+\toprule
+Method on ScaleQA-Natural-473 (50 held-out splits) & Accuracy & Notes \\
+\midrule
+Self-check prompt (fixed policy) & 55.14 $\pm$ 4.30 & strongest fixed prompt \\
+Label-free selector (chart-context + candidate evidence) & 56.67 $\pm$ 5.61 & paired $\Delta$ vs.\ self-check $+1.54$, 95\% CI $[+0.17,+2.86]$ \\
+Label-free selector, leave-source-out & \verify{[fill]} & \verify{falls back to self-check on most held-out sources} \\
+Best fixed policy chosen per split (oracle over fixed policies) & 57.14 $\pm$ 3.62 & uses split labels \\
+Pairwise top-8 verifier & 54.33 & candidate comparison prompt \\
+Structured-context verifier & 48.41 & image + chart context + top-4 candidates \\
+Table extraction + calculator & 42.28 & DePlot-style evidence, symbolic calculation \\
+\midrule
+Policy-pool oracle & 90.04 & upper bound \\
+Candidate top-8 oracle & 91.75 & upper bound \\
+\bottomrule
+\end{tabular}

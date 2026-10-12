@@ -7,17 +7,21 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{enumitem}
-\usepackage{microtype}
+\usepackage[expansion=false]{microtype}
+
+% Numbers carried over from the ARR author response. Each must be re-checked
+% against a result file before submission; then redefine as identity.
+\newcommand{\verify}[1]{{\color{red!70!black}#1}}
 
 \title{Scale Is Not Symmetric: Directional Scale Reliability in Chart Question Answering}
 
-\author{Anonymous EMNLP Submission}
+\author{Anonymous ACL Submission}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Chart question answering models must preserve the numerical scale expressed by visual marks, axes, labels, and units. We study a sparse but high-impact reliability failure in which a model predicts a numerically related answer at the wrong scale, such as \textit{0.61} instead of \textit{61}. The tempting repair is to normalize numbers or train a one-direction scale adapter; our central finding is that this is the wrong abstraction. Scale correction is directional and regime-dependent. We construct ScaleQA-Natural, an author-adjudicated and independently inclusion-audited diagnostic set of 520 natural scale-conflict candidates, and use adapters, prompts, structured verifiers, calculators, and policy selectors as probes. In an answer-tuned Qwen2.5-VL-7B setting, a large-positive scale-contrastive adapter improves held-out ChartQA test accuracy from 88.60 to 89.32 and recovers 49.52\% of strict test-set gold-scale errors. Yet on ScaleQA-Natural, self-check prompting and a lightweight no-leak selector outperform a global adapter, while candidate oracles reach 90--92\%. The selector's gain over self-check is modest but stable across held-out splits. The bottleneck is therefore not simply generating scaled alternatives, but selecting the scale regime required by the chart and question. Cross-backbone and external numeric checks show the same boundary: scale-like failures transfer more robustly than a particular correction recipe. Our results argue for regime-aware scale reliability evaluation and caution against unconditional numeric correction.
+Chart question answering models must preserve the numerical scale expressed by axes, labels, and units. We study a sparse but consequential failure in which a model predicts a numerically related answer at the wrong scale, such as \textit{0.61} instead of \textit{61}. Our central finding is that this cannot be repaired by unconditional numeric normalization or a one-direction correction: scale correction is \emph{directional} and \emph{regime-dependent}. We construct ScaleQA-Natural, a mined and author-adjudicated diagnostic set of 520 natural scale-conflict candidates (473 image-evaluable), and add a blinded, construction-independent verification of strict scale errors on the ChartQA test set. Using directional scale-contrastive LoRA adapters, prompting, verifiers, calculators, and selectors as probes on an answer-tuned Qwen2.5-VL-7B, we find that (i) a prefer-large adapter recovers most verified strict test-set scale errors (\verify{14/17}) and gives a small but significant held-out gain, whereas compute-matched continuation controls recover almost none (\verify{1/17}); (ii) the same adapter is unsafe as a global policy, because the correct direction reverses across subtypes; and (iii) models often already generate the correctly scaled answer (blind pass@20 of \verify{79.3\%} versus \verify{52.4\%} single-sample), while label-free selectors recover only a small part of that headroom. Our strongest evidence concerns percentage--decimal, factor-of-100 errors on ChartQA-like data; we scope our claims accordingly and argue for regime-aware scale-reliability evaluation with fix--break accounting.
 \end{abstract}
 
 \input{sections/01_introduction}

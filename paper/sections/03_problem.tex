@@ -1,9 +1,10 @@
 \section{Diagnosing Scale Inconsistency}
 
-We use three views of the same reliability problem, because no single metric tells the whole story: official ChartQA accuracy measures task utility, strict natural scale-error recovery measures whether real scale mistakes can be repaired, and ScaleQA-Natural exposes why a repair that helps one regime can damage another.
+We use three views of the same reliability problem, because no single metric tells the whole story: official ChartQA accuracy measures task utility, verified strict scale-error recovery measures whether real scale mistakes can be repaired, and ScaleQA-Natural exposes why a repair that helps one regime can damage another.
 
-\paragraph{Strict natural scale errors.}
-Let $y$ be the gold answer and $\hat{y}$ a model prediction. We extract a single numeric value $n(\cdot)$ when possible and call an example a \emph{strict gold-scale error} if the baseline prediction is incorrect, both answers contain one nonzero number, and their ratio is approximately $100$ or $1/100$:
+\paragraph{Strict scale-error candidates.}
+\label{sec:strict}
+Let $y$ be the gold answer and $\hat{y}$ a model prediction. We extract a single numeric value $n(\cdot)$ when possible and flag an example as a \emph{strict scale-error candidate} if the baseline prediction is incorrect, both answers contain one nonzero number, and their ratio is approximately $100$ or $1/100$:
 \begin{equation}
 \begin{aligned}
 \frac{|n(\hat{y})|}{|n(y)|} &\in [80,125], \\
@@ -11,36 +12,24 @@ Let $y$ be the gold answer and $\hat{y}$ a model prediction. We extract a single
 \frac{|n(\hat{y})|}{|n(y)|} &\in [0.008,0.0125].
 \end{aligned}
 \end{equation}
-The baseline accuracy on this subset is zero by construction, so we treat it as a recovery probe, not as an independent benchmark.
+A percent sign is stripped before parsing, so \textit{0.61\%} is parsed as $0.61$. This rule is a \emph{candidate filter}: a ratio near 100 can also arise from a wrong entity, a wrong operation, or a coincidental numeric miss. We therefore verify candidates manually before using them as a recovery probe.
+
+\paragraph{Blinded verification on ChartQA test.}
+To obtain evidence that is independent of the ScaleQA-Natural construction, we scanned all numeric-answer ChartQA test examples with the ratio rule and verified every strict candidate through a blinded interface that shows only the chart, question, gold answer, and model prediction, hiding the candidate group, prediction/gold ratio, and relation label. Of \verify{18} strict factor-of-100 candidates, \verify{17} were verified as true scale errors and \verify{16} as clean scale errors with no confounding issue; among \verify{30} randomly sampled non-candidates, \verify{1} was judged a missed scale error. The verified set (\verify{17} examples) is the recovery probe used in \S\ref{sec:experiments}. Baseline accuracy on it is zero by construction, so we report recovery as counts with Wilson 95\% intervals, never as a population-level rate. Item identifiers, labels, and the full list of examples are given in Appendix~\ref{app:strict_verified}.
 
 \paragraph{ScaleQA-Natural.}
-Because strict errors from a single model and split are sparse, we mine scale-conflict candidates from ChartQA predictions across model outputs and split shards, then review them with a machine-assisted annotation workflow. ScaleQA-Natural makes this rare failure mode measurable without turning it into a hidden training set or leaderboard. It contains 520 author-adjudicated positives, of which 473 are directly image-evaluable with available ChartQA images. Released items include question, gold answer, source row, model prediction, subtype, direction, review label, and audit metadata; images are referenced through original ChartQA rows. We also retain the 403-item seed set, \emph{ScaleQA-Core}, and a 192-example InternVL-mined subset for source-distribution analysis.
+Because strict errors from a single model and split are sparse, we mine scale-conflict candidates from ChartQA predictions across model outputs and split shards and review them with a machine-assisted annotation workflow. ScaleQA-Natural makes this rare failure mode measurable without turning it into a hidden training set or leaderboard. It contains 520 author-adjudicated positives, of which 473 are directly image-evaluable; we call this subset \emph{ScaleQA-Natural-473} and use it for all image-conditioned experiments. Released items include question, gold answer, source row, model prediction, subtype, direction, review label, and audit metadata; images are referenced through original ChartQA rows. We also retain the 403-item seed set, \emph{ScaleQA-Core}, and a 192-example InternVL-mined subset for source-distribution analysis.
 
-\begin{table}[t]
-\centering
-\small
-\resizebox{\linewidth}{!}{\input{tables/scaleqa_natural_set_stats}}
-\caption{ScaleQA-Natural construction statistics. We use it as a diagnostic set; official ChartQA validation/test remain the task evaluations.}
-\label{tab:scaleqa_stats}
-\end{table}
 
-\paragraph{Split hygiene and audit.}
-The main Qwen scale adapters are trained from ChartQA training rows and training-set prediction/log-probability caches. ChartQA validation is used for development; held-out ChartQA test is reserved for the main task result. ScaleQA-Natural is used for diagnosis and policy selection analysis, not for training the reported Qwen scale adapters. Because ScaleQA-Natural is mined rather than independently authored, we run two checks after the first-pass review: a deterministic metadata audit that flags suspicious inclusions, and an independent human audit of the final positive set. Supplementary data-flow, audit, and release details are reported after the main paper.
+\paragraph{Annotation pipeline and what the audit does and does not establish.}
+The pipeline has three stages that we report separately (Table~\ref{tab:annotation_audit}, appendix). (1)~\emph{First-pass labeling}: 739 mined candidates receive include/review/reject labels. (2)~\emph{Author adjudication}: a deterministic metadata audit is compared with the first-pass labels; the $\kappa=0.443$ reported there is agreement between this automatic audit and the first-pass labels, \emph{not} human--human agreement, and it flags 108 of the eventual positives for manual adjudication. (3)~\emph{Inclusion audit}: a second human reviewer audited the 520 final positives and made no changes. This second pass reviewed retained positives only, so it provides no estimate of false negatives in the rejected or uncertain pool, and its 100\% agreement should not be read as independent initial label reliability. We therefore describe ScaleQA-Natural as an author-adjudicated, inclusion-audited diagnostic set, not an independently human-authored benchmark. The blinded ChartQA-test verification above is the construction-independent check on the phenomenon itself.
 
-\begin{table}[t]
-\centering
-\small
-\resizebox{\linewidth}{!}{\input{tables/scaleqa_annotation_audit}}
-\caption{ScaleQA-Natural audit. The metadata pass flags conflicts for author adjudication; a second human reviewer independently audited the final positive inclusions.}
-\label{tab:annotation_audit}
-\end{table}
 
-Table~\ref{tab:annotation_audit} makes the reliability boundary explicit. The metadata audit has moderate agreement with the first-pass labels ($\kappa=0.443$) and flags 108 final positives for manual adjudication. After adjudication, an independent second reviewer audited the 520 final positives and made no label changes. We therefore describe ScaleQA-Natural as an author-adjudicated and independently inclusion-audited diagnostic set, not a fully independent human-authored benchmark. Table~\ref{tab:source_audit} further reports source composition and occurrence flags so that the diagnostic role of the set is visible rather than implicit.
-
-We also audit the negative side of the mining process. Automatically mined candidates that remain uncertain or are rejected often involve plausible numeric ratios but insufficient evidence that the prediction and gold answer refer to the same chart quantity. These cases are excluded from ScaleQA-Natural rather than treated as positives. Table~\ref{tab:strict_prevalence} reports strict-error prevalence across the available model/split outputs, and Table~\ref{tab:negative_audit_examples} gives representative uncertain/rejected examples.
+\paragraph{Split hygiene.}
+The main Qwen scale adapters are trained from ChartQA training rows and training-set prediction/log-probability caches. ChartQA validation is used for development; held-out ChartQA test is reserved for the main task result. ScaleQA-Natural is used for diagnosis and policy-selection analysis, not for training the reported Qwen scale adapters. \verify{We checked row-level overlap between ScaleQA-Natural and the ChartQA training rows used for answer tuning and scale-pair training; [state the number of overlapping rows here, and if nonzero, report adapter results on the row-disjoint subset in Appendix~\ref{app:overlap}].} Automatically mined candidates that remain uncertain or are rejected often involve plausible ratios but insufficient evidence that prediction and gold refer to the same chart quantity; these are excluded rather than treated as positives (Table~\ref{tab:negative_audit_examples}).
 
 \paragraph{Annotation guideline.}
-Annotators mark an item as a scale diagnostic only when the prediction and gold answer are both grounded in the chart question and differ primarily by a simple multiplicative scale relation, such as percentage versus decimal form or a visible unit-scale mismatch. Items are rejected when the prediction reflects the wrong visual entity, wrong operation, OCR failure, ambiguous wording, duplicate evidence, or an arbitrary numeric miss. Ambiguous cases are assigned to a review/uncertain queue and are not included without adjudication. This guideline is designed to make ScaleQA-Natural a reusable diagnostic artifact while keeping the benchmark claim narrow.
+Annotators mark an item as a scale diagnostic only when the prediction and gold answer are both grounded in the chart question and differ primarily by a simple multiplicative scale relation, such as percentage versus decimal form or a visible unit-scale mismatch. Items are rejected when the prediction reflects the wrong visual entity, wrong operation, OCR failure, ambiguous wording, duplicate evidence, or an arbitrary numeric miss. Ambiguous cases go to a review queue and are not included without adjudication. Annotation was performed from the chart image together with the question and answers, not from metadata alone.
 
 \paragraph{Why this decomposition matters.}
-Overall accuracy can remain stable while scale reliability changes sharply, and a correction can recover a few strict errors while breaking many non-scale examples. This decomposition is the bridge between the dataset and the experiments: ChartQA test asks whether an intervention helps the task, strict scale subsets ask whether it repairs natural scale errors, and ScaleQA-Natural asks why the same intervention helps one regime but harms another. We therefore report full accuracy, strict scale-error recovery, non-scale accuracy, and safety checks whenever possible.
+Overall accuracy can remain stable while scale reliability changes sharply, and a correction can recover a few strict errors while breaking many non-scale examples. ChartQA test asks whether an intervention helps the task, the verified strict subset asks whether it repairs natural scale errors, and ScaleQA-Natural asks why the same intervention helps one regime but harms another. We therefore report full accuracy, strict recovery counts, non-scale accuracy, and fix--break accounting whenever possible.

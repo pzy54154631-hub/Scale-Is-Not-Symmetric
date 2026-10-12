@@ -1,0 +1,11 @@
+\begin{tabular}{lc}
+\toprule
+Candidate source on ScaleQA-Natural-473 & Accuracy / coverage \\
+\midrule
+Single greedy sample (answer-tuned) & \verify{0.524} \\
+Blind pass@20, no scale prompt, no transforms & \verify{0.793} \\
+Prompt + adapter candidates (policy-pool oracle) & 0.9004 \\
+Top-8 candidates incl.\ deterministic scale variants & 0.9175 \\
+Augmented structured oracle & 0.9260 \\
+\bottomrule
+\end{tabular}

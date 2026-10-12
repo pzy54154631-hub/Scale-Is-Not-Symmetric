@@ -1,6 +1,6 @@
 \section{Diagnostic Probes and Policy Selection}
 
-We freeze the MLLM backbone and train LoRA parameters $\Delta$ \citep{hu2021lora}. For a chart image $x$, question $q$, and answer $y$, the adapted model defines $p_{\theta,\Delta}(y\mid x,q)$, with frozen $\theta$. The methods below are organized as a probe ladder rather than a single proposed fix. Directional adapters test whether scale preference can be moved; clean-direct controls test whether that movement is safe without answer tuning; policy selectors test the harder question of whether candidate evidence can be turned into a deployable regime decision.
+We freeze the MLLM backbone and train LoRA parameters $\Delta$ \citep{hu2021lora}. For a chart image $x$, question $q$, and answer $y$, the adapted model defines $p_{\theta,\Delta}(y\mid x,q)$ with frozen $\theta$. The methods below form a probe ladder rather than a single proposed fix. Directional adapters test whether scale preference can be moved; compute-matched controls test whether the movement is due to the scale objective; clean-direct controls test whether it is safe without answer tuning; blind sampling tests whether the correct answer is generated at all; and selectors test whether candidate evidence can be turned into a deployable regime decision.
 
 \begin{figure}[t]
 \centering
@@ -12,11 +12,11 @@ $\rightarrow$
 \textbf{Base answer} (e.g., \textit{0.61})\\[-0.15em]
 \rule{\linewidth}{0.3pt}\\[-0.2em]
 \textbf{Candidate pool:}
-keep base, self-check answer, directional adapter answers, and explicit scale variants.\\[-0.15em]
+base, self-check answer, directional adapter answers, blind samples, explicit scale variants.\\[-0.15em]
 \textbf{Regime evidence:}
-question form, answer magnitude, percent/unit tokens, axis labels, tick values, and candidate likelihoods.\\[-0.15em]
+question form, answer magnitude, percent/unit tokens, axis labels, tick values, candidate likelihoods.\\[-0.15em]
 \textbf{Policy decision:}
-base, self-check, large-positive, small-positive, decimal guard, or unit guard.\\[-0.15em]
+base, self-check, prefer-large, prefer-small, decimal guard, or unit guard.\\[-0.15em]
 \rule{\linewidth}{0.3pt}\\[-0.1em]
 \begin{tabular}{@{}l@{}}
 \emph{Prediction too small:} $0.61 \rightarrow 61$ \\
@@ -25,12 +25,12 @@ base, self-check, large-positive, small-positive, decimal guard, or unit guard.\
 \emph{Unit mismatch:} millions vs. raw values \\
 \end{tabular}
 \end{minipage}}
-\caption{Regime-aware diagnostic view. Our experiments test whether scale-related candidates can be generated and, more importantly, whether a deployable policy can select the scale regime required by the chart and question.}
+\caption{Regime-aware diagnostic view. The experiments test whether scale-related candidates can be generated and, more importantly, whether a deployable policy can select the scale regime required by the chart and question.}
 \label{fig:regime_pipeline}
 \end{figure}
 
 \paragraph{Directional adapters as probes.}
-For numeric training examples, we construct scale-related pairs $(y^+,y^-)$. \emph{Large-positive} pairs prefer the larger-scale value; \emph{small-positive} pairs prefer the smaller-scale value. We also evaluate balanced mixtures, all mined pairs, and real-conflict pairs mined from model disagreements. The names describe the training preference, not the observed error direction: an answer that is too small requires a large-positive correction, while an answer that is too large requires the opposite.
+For numeric training examples we construct scale-related pairs $(y^+,y^-)$ in which $y^-$ is $y^+$ rescaled by a factor of $100$ or $1/100$ (with percent signs handled as in \S\ref{sec:strict}; full pair-construction rules, rounding, and sign handling are in Appendix~\ref{app:pairs}). \emph{Prefer-large} pairs take the larger-scale value as $y^+$; \emph{prefer-small} pairs take the smaller. Tables retain the training-time labels \emph{large-positive}/\emph{small-positive}, which name the same preferences. The names describe the training preference, not the observed error direction: an answer that is too small requires a prefer-large correction, and vice versa. We also evaluate balanced mixtures, all mined pairs, and real-conflict pairs mined from model disagreements.
 
 \paragraph{Objective.}
 We compute mean token negative log-likelihood $\mathrm{NLL}(y\mid x,q)$ and minimize
@@ -44,9 +44,12 @@ We compute mean token negative log-likelihood $\mathrm{NLL}(y\mid x,q)$ and mini
 \end{equation}
 where $m$ is a margin and $\beta$ controls sharpness. The loss encourages the preferred answer to have lower NLL than its scale-related alternative.
 
-\paragraph{Adaptation regimes.}
-The main positive result uses an \emph{answer-tuned} starting point: scale adaptation continues from an answer-only LoRA adapter in the Qwen2.5-VL-7B pipeline. We also test \emph{clean direct} scale-only tuning from the raw backbone to avoid conflating answer tuning with scale tuning. Direct scale-only tuning is unsafe, so we report it as a negative control. At inference time, main results use the same deterministic short-answer decoding template as the baseline, without candidate reranking or external calculators.
+\paragraph{Adaptation regimes and controls.}
+The main positive result uses an \emph{answer-tuned} starting point: scale adaptation continues from an answer-only LoRA adapter in the Qwen2.5-VL-7B pipeline for 300 additional steps. Because any continuation could help simply through more optimization, we add \emph{compute-matched controls} that continue the same answer-tuned adapter for the same 300 steps with (a)~ordinary answer examples, (b)~random or shuffled numeric negatives, and (c)~non-directional balanced pairs with matched answer frequency. We also test \emph{clean direct} scale-only tuning from the raw backbone as a safety control. At inference, main results use the same deterministic short-answer decoding template as the baseline, without reranking or calculators.
 
-\paragraph{Regime-aware policy selection.}
+\paragraph{Blind-generation oracle.}
+To test whether candidate oracles are high only because the pool contains deterministic scale transforms of the base answer, we also draw $20$ stochastic samples from the answer-tuned model with no scale prompt and no transformation, and report single-sample accuracy against pass@20. This separates ``the model can generate the right scale'' from ``our transformation rules reproduce the mined relation.''
+
+\paragraph{Label-free policy selection.}
 \label{sec:router_method}
-ScaleQA-Natural suggests that no single direction is safe across all regimes. We therefore evaluate policy selectors that choose among base answering, self-check prompting, unit/axis guards, and directional adapters. The deployable selectors use question text, base prediction text, numeric features, and chart-context strings extracted from the image, including title, axis labels, tick values, legends, and units. To avoid reporting a selector that memorizes the diagnostic labels, the main no-leak selector trains and selects hyperparameters on held-out splits without using gold subtype or direction fields. Oracle subtype, policy-pool oracle, and candidate-pool oracle results are reported only as upper bounds; their role is to show how much headroom remains if regime detection were solved.
+ScaleQA-Natural suggests that no single direction is safe across all regimes. We therefore evaluate selectors that choose among base answering, self-check prompting, unit/axis guards, and directional adapters, using question text, base prediction text, numeric features, and chart-context strings extracted from the image (title, axis labels, tick values, legends, units). We call a selector \emph{label-free} when it uses no gold subtype or direction field; this is a weaker guarantee than an untouched test set, and we report selector results under a fixed partition and leave-source-out evaluation accordingly (\S\ref{sec:selector}). Oracle subtype, policy-pool, and candidate-pool results are upper bounds whose role is to show how much headroom remains if regime detection were solved.

@@ -6,6 +6,10 @@ The main paper compresses the evidence into the story that scale correction is d
 \paragraph{Adapters.}
 The answer-tuned setting continues from the ChartQA/TextVQA answer-only LoRA adapter used in the evaluation pipeline. The answer-only adapters use rank $r=16$, LoRA $\alpha=32$, dropout 0.05, and target the language-model projection and MLP modules \texttt{q\_proj}, \texttt{k\_proj}, \texttt{v\_proj}, \texttt{o\_proj}, \texttt{gate\_proj}, \texttt{up\_proj}, and \texttt{down\_proj}. Answer-only training uses AdamW with learning rate $2\times 10^{-5}$. The final Qwen scale adapters use large-positive pairs with $K=300$, 300 optimization steps, AdamW learning rate $10^{-6}$, weight decay 0.01, gradient clipping at 1.0, $\beta=2.0$, and margin $m=0.10$. The clean direct setting starts from the raw Qwen2.5-VL-7B-Instruct backbone and applies only the scale-contrastive update. The InternVL2.5-1B adapter check uses the same pair construction, rank $r=8$, LoRA $\alpha=16$, dropout 0.05, 200 optimization steps, and the same language-model target modules.
 
+\paragraph{Scale-pair construction.}
+\label{app:pairs}
+\verify{[Fill in from the pair-mining script: (1) which training rows qualify (single numeric gold answer, nonzero); (2) how the alternative $y^-$ is formed ($\times100$ or $/100$; rounding to the gold answer's number of decimals; sign preserved; percent sign retained if present in gold); (3) how prefer-large/prefer-small pairs assign $y^+$; (4) how balanced, all-pair, and real-conflict pair sets are sampled to $K=300$; (5) treatment of scientific notation and unit tokens; (6) how chart-context strings are extracted for selectors (OCR engine, fields). Also list selector architecture and hyperparameters, candidate-likelihood normalization across prompts, and seeds/item IDs for external subsets.]}
+
 \paragraph{Why separate answer-tuned and clean-direct settings.}
 The answer-only adapter is not a scale intervention. It mostly makes the model better aligned to short chart answers, numeric formatting, and the evaluation prompt. Keeping this setting separate matters because the clean-direct scale-only adapter is unsafe on the raw backbone (Table~\ref{tab:clean_direct}), while the answer-tuned setting can absorb a small scale-specific update without the same global collapse. This difference suggests that scale correction is not a standalone numerical operation. It depends on a model already being in a chart-answering regime where answer extraction, formatting, and short-answer calibration are reasonably stable.
 
@@ -39,15 +43,8 @@ ScaleQA-Natural is useful only if it is not mistaken for an ordinary benchmark s
 \label{tab:source_audit}
 \end{table}
 
-The annotation story has two parts. First, strict factor-of-100 failures are sparse in any single ChartQA output file (Table~\ref{tab:strict_prevalence}), so a single split underestimates the phenomenon. Second, mining introduces the opposite risk: plausible numeric ratios can be false positives when the model answered the wrong entity or operation. We therefore use ScaleQA-Natural as a diagnostic set whose positives require author adjudication and an independent inclusion audit (Table~\ref{tab:annotation_audit_app}), and we keep uncertain/rejected examples visible (Table~\ref{tab:negative_audit_examples}) rather than silently discarding them. The resulting set is deliberately conservative: it favors precision of the scale-conflict label over treating every ratio-like mismatch as a scale error.
+The annotation story has two parts. First, strict factor-of-100 failures are sparse in any single ChartQA output file (Table~\ref{tab:strict_prevalence}), so a single split underestimates the phenomenon. Second, mining introduces the opposite risk: plausible numeric ratios can be false positives when the model answered the wrong entity or operation. We therefore use ScaleQA-Natural as a diagnostic set whose positives require author adjudication and an independent inclusion audit (Table~\ref{tab:annotation_audit}), and we keep uncertain/rejected examples visible (Table~\ref{tab:negative_audit_examples}) rather than silently discarding them. The resulting set is deliberately conservative: it favors precision of the scale-conflict label over treating every ratio-like mismatch as a scale error.
 
-\begin{table}[h]
-\centering
-\small
-\resizebox{\linewidth}{!}{\input{tables/scaleqa_annotation_audit}}
-\caption{Annotation audit for ScaleQA-Natural. The deterministic metadata pass flags conflicts for author adjudication; the final positive inclusions are then independently audited by a second human reviewer.}
-\label{tab:annotation_audit_app}
-\end{table}
 
 \begin{table}[h]
 \centering
@@ -67,6 +64,115 @@ The annotation story has two parts. First, strict factor-of-100 failures are spa
 
 \section{Additional Results}
 \label{sec:appendix_tables}
+
+Tables moved from the main text for space: dataset statistics, the annotation audit, the transfer-boundary summary, the pair-mode ablation, the subtype router, and the ratio-rule test subset.
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/scaleqa_natural_set_stats}}
+\caption{ScaleQA-Natural construction statistics. It is a mined diagnostic set; official ChartQA validation/test remain the task evaluations.}
+\label{tab:scaleqa_stats}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/scaleqa_annotation_audit}}
+\caption{ScaleQA-Natural audit stages. Cohen's $\kappa$ compares the deterministic metadata audit with first-pass labels; the second human reviewer audited final inclusions only.}
+\label{tab:annotation_audit}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/official_test_attribution}}
+\caption{Held-out ChartQA test attribution for Qwen2.5-VL-7B. The scale update is measured on top of the answer-tuned adapter; clean direct scale-only tuning is a safety control. ``Large-positive'' denotes the prefer-large adapter.}
+\label{tab:official_test}
+\end{table}
+
+Table~\ref{tab:official_test} separates answer tuning from scale tuning. The raw pipeline obtains 78.04 on ChartQA test; answer tuning reaches 88.60. Continuing from that adapter, prefer-large scale-contrastive tuning reaches 89.32 over five seeds, +0.72 points with paired bootstrap 95\% CI $[+0.38,+1.09]$. Clean scale-only adaptation from the raw backbone hurts test accuracy by 3.5--6.7 points. The aggregate gain is small because strict scale errors are rare (Table~\ref{tab:strict_prevalence}); non-scale accuracy moves only from 89.35 to 89.66, and TextVQA-500 is unchanged at 94.20 (a small adjacent-task check, not a general safety guarantee).
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/compute_matched_controls}}
+\caption{Compute-matched controls. Every row continues the same answer-tuned adapter for the same number of steps; only the continuation data differs. Recovery is reported as counts over the \verify{17} blind-verified strict test errors with Wilson 95\% intervals.}
+\label{tab:controls}
+\end{table}
+
+Table~\ref{tab:controls} answers the attribution question. On the verified strict test errors the answer-tuned baseline recovers \verify{0/17}. Continuing with ordinary answer examples recovers \verify{1/17}, and non-directional or random-negative continuation is statistically tied with the baseline on ChartQA validation. Directional scale supervision recovers \verify{12/17} in the three-seed control setting and \verify{14/17} with the main five-seed prefer-large adapter. The intervals are wide because the slice is small, but they exclude the control outcomes: the targeted effect comes from directional scale supervision, not from 300 more optimization steps. We report this as a verified diagnostic-slice result, not as a population-level recovery rate. Per-seed recovery counts and the identities of consistently and inconsistently recovered items are given in Appendix~\ref{app:strict_verified}.
+
+\subsection{ScaleQA-Natural}
+
+The second question is whether the same intervention is safe when scale conflicts are collected across regimes rather than filtered to one verified recovery subset.
+
+\begin{table*}[h]
+\centering
+\small
+\resizebox{\textwidth}{!}{\input{tables/scaleqa_natural_results}}
+\caption{ScaleQA-Natural diagnostic results. The first row is the image-evaluable ScaleQA-Natural-473 subset; ScaleQA-Core and InternVL-mined report five-seed pair-mode means. Large/Small denote prefer-large/prefer-small adapters.}
+\label{tab:scaleqa_results}
+\end{table*}
+
+ScaleQA-Natural reveals why a single aggregate number is insufficient. On ScaleQA-Natural-473, answer tuning improves the raw backbone from 45.67 to 50.95, a scale-aware prompt drops to 44.19, and the global prefer-large adapter reaches 49.51, \emph{below} the answer-tuned base. On ScaleQA-Core, balanced and all-pair variants outperform the answer-tuned base; on the InternVL-mined subset, prefer-small adaptation is far stronger than every other global policy (74.90 versus 33.23 balanced). Directionality is real, but it is not ``large is good, small is bad'': the safe direction depends on the source and subtype of the conflict, and a global adapter that repairs the test-set slice breaks a comparable number of other examples (\S\ref{sec:analysis}).
+
+\begin{table}[h]
+\centering
+\small
+\input{tables/scaleqa_tta_baselines}
+\caption{Training-free prompting baselines on ScaleQA-Natural-473 with the answer-tuned Qwen2.5-VL-7B pipeline.}
+\label{tab:tta_baselines}
+\end{table}
+
+Table~\ref{tab:tta_baselines} adds stronger training-free baselines. A self-check prompt reaches 54.55, outperforming the direct prompt and the global adapter; majority voting adds little, while oracle prompt choice reaches 67.44. Global adapters are therefore not the best intervention on this set; the question becomes whether the right answer is missing or merely not selected.
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/blind_oracle}}
+\caption{Candidate coverage on ScaleQA-Natural-473 decomposed by candidate source. Blind sampling uses no scale prompt and no deterministic transformation, so its coverage is not implied by the mining rule.}
+\label{tab:blind_oracle}
+\end{table}
+
+Table~\ref{tab:blind_oracle} addresses a construction concern directly: because ScaleQA-Natural is mined through multiplicative relations and the structured oracle pools contain explicit scale variants, oracles over those pools are high partly by construction. The blind-generation row removes both. With no scale prompt and no transformation, \verify{20} stochastic samples already contain a correct answer for \verify{79.3\%} of examples, against \verify{52.4\%} for a single sample. The model frequently generates the correctly scaled answer on its own; deterministic variants raise coverage further to 91.75--92.60, but most of the gap to deployable methods is already present without them.
+
+\subsection{Cross-Backbone and External Checks}
+
+The final experimental question is scope: does the phenomenon extend beyond the main Qwen setting, and does the intervention transfer with it?
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/transfer_boundary_compact}}
+\caption{Transfer boundary summary. Full cross-backbone and external rows are in the appendix.}
+\label{tab:transfer_boundary}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\input{tables/pair_mode_ablation_full}
+\caption{Pair-mode ablation on ChartQA validation. Prefer-small (small-positive) adaptation is locally useful in some regimes but globally unsafe on this split.}
+\label{tab:pair_ablation}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/scaleqa_router_results}}
+\caption{Subtype routing on ScaleQA-Natural diagnostics. Fixed best is the best single global policy; oracle columns use gold information and are upper bounds.}
+\label{tab:router_results}
+\end{table}
+
+\begin{table}[h]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{tables/chartqa_test_subset_results}}
+\caption{Held-out ChartQA test subset analysis with the ratio-rule strict subset (21 candidates before blinded verification). The strict subset is baseline-zero by construction.}
+\label{tab:test_subset_results}
+\end{table}
+
 
 The development results explain why the paper does not present the large-positive adapter as a general correction method. On ChartQA validation, the adapter recovers strict gold-scale errors much more often than it changes ordinary examples (Tables~\ref{tab:bootstrap} and~\ref{tab:seed_consistency}), but the aggregate confidence interval is small and overlaps zero on the full split. This is exactly the diagnostic pattern we care about: the intervention finds a real failure mode, but it is not a broad accuracy engine.
 
@@ -162,6 +268,10 @@ Tables~\ref{tab:cross_backbone}--\ref{tab:external_internvl8b} show the transfer
 \end{table}
 
 The selector and verifier results give the sharpest version of the bottleneck. Self-check prompting is already a strong fixed policy, and the best no-leak selector improves on it only modestly (Table~\ref{tab:deployable_selectors}). Yet the candidate and policy oracles are much higher. The gap is not caused by a failure to generate alternatives: it is caused by failures to rank alternatives under chart-specific scale evidence. The structured verifier makes this especially clear. It is strong when the prediction is too small but nearly collapses when the prediction is too large (Table~\ref{tab:structured_verifier_direction}), even though the augmented oracle is high in both directions.
+
+\subsection{Selector Variant Ladder}
+\label{app:selectors}
+The main text reports only the strongest label-free selector. Table~\ref{tab:deployable_selectors} lists every variant for completeness. v8--v17 were developed sequentially on the same diagnostic collection using repeated held-out-fold evaluation (not nested cross-validation); variants after v10b preserve its score but do not improve it. We retain the ladder so that the extent of iteration, and hence the exposure to researcher-level overfitting, is visible.
 
 \begin{table*}[h]
 \centering
@@ -267,3 +377,30 @@ Finally, Table~\ref{tab:clean_direct} is the safety counterexample. A scale-only
 
 \paragraph{Overall appendix takeaway.}
 Taken together, the appendix strengthens the main claim in a deliberately conservative way. Scale-like mistakes are not frequent enough in a single benchmark split to support sweeping accuracy claims, but they are systematic enough to reveal a reliability failure once mined and audited. Global adapters expose the directionality, training-free self-checks provide a strong practical baseline, and expanded candidate pools show that many failures are recoverable in principle. The unresolved problem is selecting the right regime without gold subtype labels. This is the reason the paper argues for regime-aware scale reliability rather than presenting unconditional scale correction as solved.
+
+
+\section{Verified Strict Test Errors and Overlap Check}
+\label{app:strict_verified}
+
+\paragraph{Protocol.}
+All ChartQA test examples with a single numeric gold answer were scanned with the ratio rule of \S\ref{sec:strict}. Each strict candidate was shown to the annotator in a blinded interface containing only the chart image, question, gold answer, and the answer-tuned model's prediction; the candidate group, numeric ratio, and relation label were hidden. The annotator assigned one of: \emph{true scale error}, \emph{true scale error with confound} (e.g., a format convention also at play), or \emph{not a scale error}. Thirty randomly sampled non-candidate test errors were labeled under the same interface as a false-negative check.
+
+\paragraph{Outcome.}
+\verify{Of 18 candidates, 17 were labeled true scale errors and 16 clean true scale errors; 1 of 30 non-candidates was judged a missed scale error (Wilson 95\% intervals: $[0.742,0.990]$, $[0.672,0.969]$, and $[0.006,0.167]$).} \verify{[Reconcile with the 21 strict candidates in Table~\ref{tab:test_subset_results}: state whether the 18 result from a stricter parse (e.g., sign-preserving, percent-aware) and list the 3 excluded items.]}
+
+\paragraph{Per-item table.}
+\verify{[Insert table: item ID, chart source row, question, gold, baseline prediction, prefer-large prediction per seed, control predictions, manual label, recovered-by-how-many-seeds.]}
+
+\paragraph{Row-level overlap.}
+\label{app:overlap}
+\verify{[Report the number of ScaleQA-Natural rows that coincide with ChartQA training rows used for answer tuning or scale-pair construction, and, if nonzero, re-report Table~\ref{tab:scaleqa_results} on the row-disjoint subset.]}
+
+\section{Oracle Definitions}
+\label{app:oracles}
+\begin{description}[leftmargin=1.2em,itemsep=1pt]
+\item[Candidate oracle] Accuracy if the best candidate in a given pool is always selected.
+\item[Policy-pool oracle] Candidate oracle over the pool formed by one answer per policy (base, prompts, adapters).
+\item[Instance oracle] Policy-pool oracle evaluated per instance with gold subtype known.
+\item[Augmented structured oracle] Candidate oracle after adding deterministic $\times100$ and $/100$ variants of each pooled candidate.
+\item[Blind pass@$k$] Fraction of examples for which at least one of $k$ stochastic samples from the answer-tuned model (no scale prompt, no transform) is correct.
+\end{description}

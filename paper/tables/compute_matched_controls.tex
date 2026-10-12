@@ -1,0 +1,12 @@
+\begin{tabular}{lcc}
+\toprule
+Continuation from answer-tuned adapter (300 steps, 3 seeds) & ChartQA val.\ acc. & Verified strict test errors recovered \\
+\midrule
+None (answer-tuned baseline) & \verify{0.8640} & \verify{0/17} \; [0.000, 0.184] \\
+Ordinary answer replay & \verify{$\approx$0.8640} & \verify{1/17} \; [0.010, 0.270] \\
+Random / shuffled numeric negatives & \verify{$\approx$0.8640} & \verify{[fill]} \\
+Non-directional balanced pairs & \verify{$\approx$0.8640} & \verify{[fill]} \\
+Directional scale pairs (prefer-large) & \verify{0.8695} & \verify{12/17} \; [0.469, 0.867] \\
+Prefer-large adapter, main setting (5 seeds) & -- & \verify{14/17} \; [0.590, 0.938] \\
+\bottomrule
+\end{tabular}
